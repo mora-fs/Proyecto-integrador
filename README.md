@@ -28,3 +28,9 @@ Espero poder ayudar en este equipo y logremos un excelente proyecto integrador.
 
 * Nahuel Monzó Calvo: Soy de Carlos Tejedor provincia de Buenos Aires, tengo 24 años y estoy cursando el ultimo año de administración de empresas.
 
+Paleta de colores: 
+VERDE (principal) #0FD24C 
+GRIS OSCURO(muy oscuro)  #BDC0C7 
+GRIS(azulado) #BFD8BD 
+GRIS CLARO (intermedio) #DDE7C7 
+GRIS CLARO (casi blanco) #F5F5F5 

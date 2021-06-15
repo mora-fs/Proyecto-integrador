@@ -1,0 +1,22 @@
+{
+  "name": "grupo_8_digital-farma",
+  "version": "1.0.0",
+  "description": "Nuestro proyecto se llama Digital-Farma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mora-fs/grupo_8_digital-farma.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mora-fs/grupo_8_digital-farma/issues"
+  },
+  "homepage": "https://github.com/mora-fs/grupo_8_digital-farma#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
