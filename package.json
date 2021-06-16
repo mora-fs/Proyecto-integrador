@@ -2,7 +2,7 @@
   "name": "grupo_8_digital-farma",
   "version": "1.0.0",
   "description": "Nuestro proyecto se llama Digital-Farma",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="product-main">
+        <section class="area-prod">
+            <div class="container-img-prod">
+                <img src="" alt="Foto producto">
+            </div>
+            <div class="container-info-prod">
+                <h3 class="nombre-prod">Nombre del producto</h3>
+                <p class="descripcion-prod">
+                    Descripción de producto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum temporibus soluta a nobis consectetur. Distinctio rerum incidunt vitae natus molestias! Similique repudiandae impedit sequi beatae atque numquam minima quae.
+                </p>
+                <p class="ingredientes-prod">
+                    Componentes: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde illo dolore fugit delectus eveniet soluta nihil. 
+                </p>
+                <h2 class="precio-prod"></h2>
+                <form class="seccion-botones-prod" action="/carrito" method="POST">
+                    <fieldset class="container-unidades">
+                        <label for="unidades">Elige las unidades</label>
+                        <select type="text" name="unidades" id="unidades">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </fieldset>
+                    <button type="submit" id="butt-comprar-ahora">Comprar Ahora</button>
+                    <button type="submit" id="butt-add-carrito">Agregar al carrito</button>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+</body>
+</html>
