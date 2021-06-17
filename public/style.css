@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 
@@ -36,6 +37,7 @@ body {
 
 footer {
     background-color: #0FD24C;
+    
 }
 
 .barra-inferior {
