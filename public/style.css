@@ -15,6 +15,15 @@ body {
     
 }
 
+.barra-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+.barra-icons i {
+    font-size: 2em;
+}
+
 
 .search input {
     width: 600px;
