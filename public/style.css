@@ -1,0 +1,111 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.barra-superior {
+    display: flex;
+    padding: 30px;
+    background-color: #0FD24C;
+    justify-content: space-around;
+    
+    
+    
+}
+
+
+.search input {
+    width: 600px;
+}
+
+
+
+.logo {
+    width: 25%;
+    height: 25%;
+
+}
+
+
+
+.objetos-footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer {
+    background-color: #0FD24C;
+}
+
+.barra-inferior {
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+ul {
+    list-style-type: none;
+}
+
+.boton1 {
+   border: 1px solid black ;
+   width: 20%;
+   text-align: left;
+   padding: 5px;
+   border-radius: 5px;
+   background-color: #0FD24C;
+}
+.boton2 {
+    border: 1px solid black ;
+   width: 20%;
+   text-align: center;
+   padding: 5px;
+   border-radius: 5px;
+   background-color: #0FD24C;
+}
+.boton3 {
+    border: 1px solid black ;
+   width: 20%;
+   text-align: center;
+   padding: 5px;
+   border-radius: 5px;
+   background-color: #0FD24C;
+}
+.boton4 {
+    border: 1px solid black ;
+    width: 20%;
+    text-align: center; 
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #0FD24C;
+}
+ form {
+     display: flex;
+     justify-content: center;
+     margin: 11%;
+
+ }
+
+ .user-pass {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .buttons {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     margin-top: 20px;
+     margin-left: 10px;
+ }
+
+ .button button {
+     border-radius: 10px;
+ }
+
+ .image-user {
+   display: flex;
+   
+ }
