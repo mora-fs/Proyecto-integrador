@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b5f369b57d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
@@ -15,13 +18,29 @@
             </div>
             <div class="container-info-prod">
                 <h3 class="nombre-prod">Nombre del producto</h3>
-                <p class="descripcion-prod">
-                    Descripción de producto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum temporibus soluta a nobis consectetur. Distinctio rerum incidunt vitae natus molestias! Similique repudiandae impedit sequi beatae atque numquam minima quae.
-                </p>
-                <p class="ingredientes-prod">
-                    Componentes: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde illo dolore fugit delectus eveniet soluta nihil. 
-                </p>
-                <h2 class="precio-prod"></h2>
+                <div class="descripcion-prod">
+                    <div class="box-descripcion-prod">
+                        <h4 class="titulo-descripcion-prod">Descripcion del producto</h4>
+                        <div id="logo-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <p class="texto-descripcion-prod">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum temporibus soluta a nobis consectetur. Distinctio rerum incidunt vitae natus molestias! Similique repudiandae impedit sequi beatae atque numquam minima quae.
+                    </p>
+                </div>
+                <div class="componentes-prod">
+                    <div class="box-componentes-prod">
+                        <h4 class="titulo-componentes-prod">Componentes producto</h4>
+                        <div id="logo-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <p class="texto-componentes-prod">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus minima, non nesciunt dolorem nisi deleniti! Ipsum quas repellat similique cumque! Harum nobis dolorum quos debitis, porro facilis temporibus quidem.
+                    </p>
+                </div>
+                <h2 class="precio-prod">$300</h2>
                 <form class="seccion-botones-prod" action="/carrito" method="POST">
                     <fieldset class="container-unidades">
                         <label for="unidades">Elige las unidades</label>
@@ -37,7 +56,9 @@
                 </form>
             </div>
         </section>
-        
+        <section class="relacionados">
+
+        </section>
     </main>
 </body>
 </html>
