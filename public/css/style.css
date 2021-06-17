@@ -92,31 +92,4 @@ ul {
     border-radius: 5px;
     background-color: #0FD24C;
 }
- form {
-     display: flex;
-     justify-content: center;
-     margin: 11%;
-
- }
-
- .user-pass {
-     display: flex;
-     flex-direction: column;
- }
-
- .buttons {
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     margin-top: 20px;
-     margin-left: 10px;
- }
-
- .button button {
-     border-radius: 10px;
- }
-
- .image-user {
-   display: flex;
-   
- }
+ 
