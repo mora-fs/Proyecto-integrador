@@ -9,7 +9,7 @@
     width: 100%;
 }
 .descripcion-prod, .componentes-prod{
-    border: 2px #BFD8BD solid;
+    border: 1px #BFD8BD solid;
     margin: 10px 0;
     height: 60px;
 }
@@ -19,10 +19,8 @@
     align-items: center;
 }
 .texto-hover-appear{
-    opacity: 0;
-}
-.box-hover :hover .texto-hover-appear{
-    opacity: 1;
+    display: none;
+    padding: 0 15px;
 }
 .box-hover :hover .desc-comp-hover{
     height: fit-content;
@@ -32,16 +30,23 @@
 }
 #logo-arrow{
     padding-right: 20px;
+    padding-left: 20px;
     font-size: 20px;
     color: #BFD8BD;
 }
 .form-compra{
     width: 100%;
 }
-.container-unidades{
+.unidades-carrito{
     padding: 5px;
-    border: 1px #BDC0C7 solid;
-    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+}
+.caja-unidades{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 select#unidades{
     border: 1px solid #BDC0C7;
@@ -50,30 +55,63 @@ select#unidades{
 label{
     padding: 5px;
 }
-.seccion-botones-prod{
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-around;
-    border: none;
+#butt-add-carrito{
+    width: 30%;
 }
-button{
+#butt-comprar-ahora{
+    width: 100%;
+    margin: 10px 0;
+}
+#butt-comprar-ahora, #butt-add-carrito{
     padding: 10px;
     background-color: #FFFFFF;
     border: #BDC0C7 1px solid;
     border-radius: 5px;
-}
-#butt-comprar-ahora, #butt-add-carrito{
     transition: all 500ms;
 }
-#butt-comprar-ahora:hover, #butt-add-carrito:hover{
+#butt-comprar-ahora:hover{
     background-color: #0FD24C;
     color: #FFFFFF;
 }
-/* @media (min-width:760px){
+#butt-add-carrito:hover{
+    background-color: #0FD24C;
+    color: #FFFFFF;
+}
+.img-relacionado{
+    width: 90%;
+    border: 1px #000 solid;
+    margin: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+@media (min-width:760px){
     .texto-descripcion-prod, .texto-componentes-prod{
-        opacity: 1;
+        display: inline-block;
     }
     .descripcion-prod, .componentes-prod{
         height: fit-content;
+    }
+    .imagenes-relacionados{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .img-relacionado{
+        width: 30%;
+    }
+}
+@media (min-width:1000px){
+    .container-textos{
+        display: flex;
+        justify-content: space-between;
+    }
+    .desc-comp-hover{
+        height: 185px;
+    }
+    .descripcion-prod{
+        margin-right: 15px;
+    }
+    .componentes-prod{
+        margin-left: 15px;
     }
 }

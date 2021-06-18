@@ -19,48 +19,55 @@
             </div>
             <div class="container-info-prod">
                 <h3 class="nombre-prod">Nombre del producto</h3>
-                <div class="descripcion-prod desc-comp-hover">
-                    <div class="box-descripcion-prod box-hover">
-                        <h4 class="titulo-descripcion-prod">Descripcion del producto</h4>
-                        <div id="logo-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </div>
-                    <p class="texto-descripcion-prod texto-hover-appear">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum temporibus soluta a nobis consectetur. Distinctio rerum incidunt vitae natus molestias! Similique repudiandae impedit sequi beatae atque numquam minima quae.
-                    </p>
-                </div>
-                <div class="componentes-prod desc-comp-hover">
-                    <div class="box-componentes-prod box-hover">
-                        <h4 class="titulo-componentes-prod">Componentes producto</h4>
-                        <div id="logo-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </div>
-                    <p class="texto-componentes-prod texto-hover-appear">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus minima, non nesciunt dolorem nisi deleniti! Ipsum quas repellat similique cumque! Harum nobis dolorum quos debitis, porro facilis temporibus quidem.
-                    </p>
-                </div>
                 <h2 class="precio-prod">$300</h2>
+                <div class="container-textos">
+                    <div class="descripcion-prod desc-comp-hover">
+                        <div class="box-descripcion-prod box-hover">
+                            <h4 class="titulo-descripcion-prod">Descripcion del producto</h4>
+                            <div id="logo-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <p class="texto-descripcion-prod texto-hover-appear">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum temporibus soluta a nobis consectetur. Distinctio rerum incidunt vitae natus molestias! Similique repudiandae impedit sequi beatae atque numquam minima quae.
+                        </p>
+                    </div>
+                    <div class="componentes-prod desc-comp-hover">
+                        <div class="box-componentes-prod box-hover">
+                            <h4 class="titulo-componentes-prod">Componentes producto</h4>
+                            <div id="logo-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <p class="texto-componentes-prod texto-hover-appear">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus minima, non nesciunt dolorem nisi deleniti! Ipsum quas repellat similique cumque! Harum nobis dolorum quos debitis, porro facilis temporibus quidem.
+                        </p>
+                    </div>
+                </div>
                 <form action="/carrito" method="POST" class="form-compra">
-                    <fieldset class="container-unidades">
-                        <label for="unidades">Elige las unidades</label>
+                    <fieldset class="unidades-carrito">
+                        <div class="caja-unidades">
+                            <label for="unidades">Elige las unidades</label>
                             <select type="text" name="unidades" id="unidades">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                             </select>
-                    </fieldset>
-                    <fieldset class="seccion-botones-prod">
-                        <button type="submit" id="butt-comprar-ahora">Comprar Ahora</button>
+                        </div>
                         <button type="submit" id="butt-add-carrito">Agregar al carrito</button>
                     </fieldset>
+                    <button type="submit" id="butt-comprar-ahora">Comprar Ahora</button>
                 </form>
             </div>
         </section>
         <section class="relacionados">
-
+            <h3>Poductos relacionados</h3>
+            <div class="imagenes-relacionados">
+                <img src="#" alt="Foto 1" class="img-relacionado">
+                <img src="#" alt="Foto 2" class="img-relacionado">
+                <img src="#" alt="Foto 3" class="img-relacionado">
+            </div>
         </section>
     </main>
 </body>
