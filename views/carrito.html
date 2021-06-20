@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi Carrito</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/carrito.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header>ACA IRIA EL HEADER</header>
-    <h2>Tu Carrito</h2>
-    <section>
-        <article>
-            <div>
-                <img src="" alt="">
-            </div>
-            <div>
-                <h3>Nombre Producto 1</h3>
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aliquam quod possimus explicabo incidunt, architecto rerum consequatur debitis nemo reiciendis eos. Provident voluptas, molestiae exercitationem alias necessitatibus iure quia mollitia.</h5>
-                <h4>Precio</h4>
-            </div>
-            <div>
-                <button>Icono-borrar-elemento</button>
-            </div>
-        </article>
-    </section>
-    <section>
+    <header class="referencia-del-header">ACA IRIA EL HEADER</header>
+    <h2 class="titulo">Tu Carrito</h2>
+    <div class="contenedor-carrito">
+        <section class="lista-productos">
+            <article class="producto">
+                <div class="contenedor-img">
+                    <img src="./images/crema-img.jpg" alt="">
+                </div>
+                <div class="info-producto">
+                    <h3 class="nombre-producto">Crema Generica</h3>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum </p>
+                    <h4 class="precio-producto">Precio</h4>
+                </div>
+                <div class="contenedor-boton-borrar">
+                    <button type="button"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </article>
+        </section>
+    </div>
+    <section class="botones">
         <button>Seguir Comprando</button>
         <button>Finalizar Compra</button>
     </section>

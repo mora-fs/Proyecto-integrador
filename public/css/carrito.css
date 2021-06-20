@@ -1,0 +1,144 @@
+/* 
+VERDE (principal) #0FD24C 
+GRIS OSCURO(muy oscuro)  #BDC0C7 
+GRIS(azulado) #BFD8BD 
+GRIS CLARO (intermedio) #DDE7C7 
+GRIS CLARO (casi blanco) #F5F5F5 
+ */
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #F5F5F5;
+}
+
+.referencia-del-header{
+    background-color: #0FD24C;
+    width: 100%;
+    height: 150px;
+}
+
+
+.titulo{
+    text-align: center;
+}
+
+
+
+.contenedor-carrito{
+    background-color: #FFF;
+    
+    width: 100%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding: 30px;
+    /* border-top: solid 2px #DDE7C7;
+    border-radius: 5px; */
+    margin: auto;
+}
+
+.lista-productos{
+    width: 100%;
+}
+
+.botones{
+    width: 100%;
+}
+
+.producto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-img{
+    width: 30%;
+    border: solid 2px #DDE7C7;
+    border-radius: 5px;
+}
+
+.contenedor-img img{
+    max-width: 100%;
+    height: auto;
+}
+
+.info-producto{
+    width: 50%;
+}
+.nombre-producto{
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+.precio-producto{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #0FD24C;
+    font-size: 18px;
+}
+.contenedor-boton-borrar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    padding: 10px;
+}
+.contenedor-boton-borrar button{
+    border: none;
+    background-color: inherit;
+
+}
+.contenedor-boton-borrar button i{
+    font-size: 1.5rem;
+}
+
+.descripcion-producto{
+    display: none;
+}
+
+
+
+
+@media(min-width:500px){
+    .nombre-producto{
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .contenedor-img{
+        width: 20%;
+    }
+    .contenedor-boton-borrar{
+        width: 10%;
+    }
+    
+
+}
+@media(min-width:760px){
+    .descripcion-producto{
+        margin: 10px 0px 10px 0px;
+        display: block;
+    }
+    .info-producto{
+        height: 150px;
+        width: 55%;
+    }
+    .contenedor-carrito{
+        width: 90%;
+        border-radius: 5px;
+        padding: 50px;
+    }
+    
+    .contenedor-img{
+        width: 22%;
+    }
+    .nombre-producto{
+        font-size: 24px;
+    }
+    .precio-producto{
+        font-size: 20px;
+    }
+}
