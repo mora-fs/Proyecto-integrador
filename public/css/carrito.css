@@ -6,6 +6,7 @@ GRIS CLARO (intermedio) #DDE7C7
 GRIS CLARO (casi blanco) #F5F5F5 
  */
 
+ /* estilos a elementos generales */
 *{
     box-sizing: border-box;
 }
@@ -20,29 +21,29 @@ body{
 }
 
 
+/* MAIN / CARRITO */
 .titulo{
-    text-align: center;
-    margin: 40px 0px;
     font-size: 30px;
+    text-align: center;
+ 
+    margin: 40px 0px;
 }
 
 
 
 .contenedor-carrito{
     background-color: #FFF;
-    border-top: 3px solid #DDE7C7;
-    border-bottom: 3px solid #DDE7C7;
-    
-    /* border-top: 3px solid #DDE7C7; */
     
     width: 100%;
     
     display: flex;
     flex-wrap: wrap;
     
+    border-top: 3px solid #DDE7C7;
+    border-bottom: 3px solid #DDE7C7;
+
     padding: 20px 0px;
-    /* border-top: solid 2px #DDE7C7;
-    border-radius: 5px; */
+
     margin: auto;
 }
 
@@ -56,12 +57,16 @@ body{
 
 .producto{
     height: 115px;
-    padding: 5px 5px 5px 20px;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    
     border-radius: 3px;
+    
+    padding: 5px 5px 5px 20px;
+    
     margin-bottom: 20px;
 }
 
@@ -69,6 +74,7 @@ body{
     width: 20%;
     max-width: 105px;
     min-width: 45px;
+   
     border: solid 2px #DDE7C7;
     border-radius: 5px;
 }
@@ -77,11 +83,13 @@ body{
     width: 100%;
     max-width: 100px;
     min-width: 40px;
+   
     border-radius: 5px;
 }
 
 .contenedor-img-info{
     width: 85%;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -90,78 +98,114 @@ body{
 
 .info-producto{
     width: 75%;
-
-
 }
+
 .nombre-producto{
     color: black;
     font-size: 16px;
-    margin: 0px;
+    
     width: 100%;
     position: relative;
     top: -5px;
-
-
+    
+    margin: 0px;
 }
+
 .precio-producto{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: #0FD24C;
     font-size: 14px;
+    color: #0FD24C;
+
     width: 100%;
     position: relative;
     bottom: -5px;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
+
 .contenedor-boton-borrar{
+    width: 15%;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 15%;
+
     padding: 10px;
-    
 }
+
 .contenedor-boton-borrar button{
-    border: none;
     background-color: inherit;
 
+    border: none;
 }
+
 .contenedor-boton-borrar button i{
     font-size: 1.5rem;
 }
 
 .descripcion-producto{
-    display: none;
-    width: 100%;
     font-size: 14px;
+    
+    width: 100%;
+    
+    display: none;
 }
-
 
 
 .botones{
     width: 100%;
-    padding: 0px 10px;
+    max-width: 250px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center ;
+   
+    padding: 0px 10px;
+   
     margin: auto;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 200px;
-    justify-content: space-between ;
-
 }
-.botones button{
 
-    min-width: 94px;
-    width: 100%;
+.botones button{
     font-size: 16px;
-    width: 45%;
-    height: 55px;
+    
+    width: 100%;
+    min-width: 94px;
+    max-width: 250px;
+    height: 40px;
     color: black;
     background-color: #0FD24C;
     border-radius: 3px;
     border: none;
+    margin-bottom: 25px;
 
 }
+
+.precio-a-pagar{
+    padding: 45px 20% 5px;
+
+
+    border-top: 3px solid #DDE7C7;
+}
+.precio-a-pagar div{
+    color: #717274;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+
+    justify-content: space-between;
+
+}
+
+.total-a-pagar{
+    border-top: 1px solid #DDE7C7;
+}
+.total-a-pagar h3{
+    color: black;
+    font-size: 18px;
+}
+
 
 .botones button:hover{
     background-color: #0daf40;
@@ -205,10 +249,19 @@ body{
     }
     .botones{
         width: 55%;
+        max-width: 600px;
+        justify-content: space-between ;
     }
     .botones button{
         font-size: 18px;
         height: 60px;
         width: 45%;
+    }
+
+    .precio-a-pagar{
+        font-size: 16px;
+    }
+    .total-a-pagar h3{
+        font-size: 22px;
     }
 }
