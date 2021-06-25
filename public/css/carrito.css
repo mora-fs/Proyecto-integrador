@@ -68,6 +68,8 @@ body{
     padding: 5px 5px 5px 20px;
     
     margin-bottom: 20px;
+
+    transition: all 200ms;
 }
 
 .contenedor-img{
@@ -174,16 +176,18 @@ body{
     min-width: 94px;
     max-width: 250px;
     height: 40px;
-    color: black;
-    background-color: #0FD24C;
+    color: #0FD24C;
+    background-color: white;
     border-radius: 3px;
-    border: none;
+    border: 1px solid #0FD24C;
     margin-bottom: 25px;
+
+    transition: all 150ms;
 
 }
 
 .precio-a-pagar{
-    padding: 45px 20% 5px;
+    padding: 25px 20% 5px;
 
 
     border-top: 3px solid #DDE7C7;
@@ -208,7 +212,8 @@ body{
 
 
 .botones button:hover{
-    background-color: #0daf40;
+    background-color: #18e659;
+    color: black;
 }
 
 
