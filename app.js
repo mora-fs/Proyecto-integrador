@@ -20,11 +20,6 @@ app.set('views', './views');
 
 app.use('/', rutas);
 
-
-app.get('/product', (req,res)=>{
-    res.sendFile(path.resolve(__dirname, './views/product.html'))
-})
-
 app.get('/login', (req, res) => res.sendFile(loginPath))
 
 // app.get('/carrito', (req, res) => {

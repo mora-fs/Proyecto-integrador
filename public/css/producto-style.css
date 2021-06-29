@@ -5,8 +5,16 @@
 .area-prod{
     margin-top: 30px;
 }
-.container-img-prod{
+.prod-precio{
+    display: flex;
+    justify-content: space-between;
+}
+.nombre-prod, .precio-prod{
+    margin: 15px 5%;
+}
+img{
     width: 100%;
+    margin: auto;
 }
 .descripcion-prod, .componentes-prod{
     border: 1px #BFD8BD solid;
@@ -101,6 +109,10 @@ label{
     }
 }
 @media (min-width:1000px){
+    .container-img-prod{
+        width: 50vw;
+        margin: auto;
+    }
     .container-textos{
         display: flex;
         justify-content: space-between;
