@@ -5,5 +5,6 @@ const controlador = require('../controladores/controller');
 
 router.get('/carrito', controlador.carrito);
 router.get('/producto', controlador.producto);
+router.post('/login', controlador.login)
 
 module.exports = router;
