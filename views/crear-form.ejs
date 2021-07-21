@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b5f369b57d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/crear-style.css">
+    <title>Crear producto</title>
+</head>
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <form action="/productos" method="POST">
+            <div class="campo">
+                <label for="nombre">Nombre del producto:</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <button type="submit" class="campo">Crear producto</button>
+        </form>
+            <!--
+            <div class="campo">
+                <label for="marca">Marca:</label>
+                <input type="text" name="marca">
+            </div>
+            <div class="campo">
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio">
+            </div>
+            <div class="campo">
+                <label for="descuento">Descuento:</label>
+                <input type="number" name="descuento">
+            </div>
+            <div class="campo">
+                <label for="cantidad">Cantidad:</label>
+                <input type="text" name="cantidad">
+            </div>
+            <div class="campo">
+                <label for="color">Color:</label>
+                <input type="text" name="color">
+            </div>
+            <div class="campo">
+                <label for="categoria">Categoría:</label>
+                <select name="categoria" id="categoria">
+                    <option value="bucal">Cuidado bucal</option>
+                    <option value="corporal">Cuidado corporal</option>
+                    <option value="facial">Cuidado facial</option>
+                    <option value="verano">Verano</option>
+                    <option value="capilar">Capilar</option>
+                    <option value="higiene">Higiene</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion"></textarea>
+            </div>
+            <div class="campo">
+                <label for="img-nuevo-prod">Imagen:</label>
+                <input type="file" name="img-nuevo-prod">
+            </div>
+            -->
+    </main>
+    <%- include('partials/footer') %> 
+</body>
+</html>
