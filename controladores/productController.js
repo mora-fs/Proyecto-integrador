@@ -9,12 +9,6 @@ const controlador = {
     productos: (req, res) =>{
         res.render('productos');
     },
-    crear: (req, res) =>{
-        res.render('crear-form');
-    },
-    guardarProd: (req, res) =>{
-        res.send(req.body);
-    },
     detalle: (req, res)=>{
         idDetalle= req.params.id;
         productoDetalle= parsedProductosDB.find(producto=> producto.id == idDetalle);

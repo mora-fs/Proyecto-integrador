@@ -100,19 +100,18 @@
   },
   {
     "id": 7,
-    "name": "unavailable",
+    "name": "Hymenolaimus malacorhynchus",
     "image": "product_7.jpg",
-    "price": 1069.66,
-    "descuento": 36,
-    "marca": "Foxtrot",
-    "tamaño": 507,
-    "color": "Oscar",
-    "description": "pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque",
-    "category": "Music",
+    "price": 2836.8,
+    "descuento": 25,
+    "marca": "Dino",
+    "tamaño": 449,
+    "color": "X-ray",
+    "description": "in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer",
+    "category": "Health",
     "keywords": [
-      "Quebec",
-      "Alfa",
-      "Charlie"
+      "Foxtrot",
+      "Zulu"
     ]
   },
   {
