@@ -39,7 +39,9 @@ const controlador = {
     },
     delete: (req, res)=>{
         const idDelete= req.params.id;
-        res.send(idDelete);
+        const productosNoBorrados= parsedProductosDB.filter(producto=> producto.id != idDelete);
+        fs.writeFileSync(productosDB, JSON.stringify(productosNoBorrados, null, 2));
+        res.render('productos')
     }
 };
 
