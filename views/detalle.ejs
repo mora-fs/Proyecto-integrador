@@ -49,8 +49,7 @@
                             </p>
                         </div>
                     </div>
-                    <form action="/carrito" method="POST" class="form-compra">
-                        <fieldset class="unidades-carrito">
+                    <form action="/carrito" method="POST" class="unidades-carrito">
                             <div class="caja-unidades">
                                 <label for="unidades">Elige las unidades</label>
                                 <select type="text" name="unidades" id="unidades">
@@ -60,10 +59,14 @@
                                     <option value="4">4</option>
                                 </select>
                             </div>
-                            <button type="submit" id="butt-add-carrito">Agregar al carrito</button>
-                        </fieldset>
-                        <button type="submit" id="butt-comprar-ahora">Comprar Ahora</button>
+                            <button type="submit" id="butt-comprar-ahora">Agregar al carrito</button>
                     </form>
+                    <div class="botones-empleado">
+                        <a href="/productos/<%= productoParam.id %>/editar"  id="butt-add-carrito">Editar producto</a>
+                        <form action="/productos/<%= productoParam.id %>/?_method=DELETE" method="POST" id="butt-add-carrito">
+                            <button type="submit">Eliminar producto</button>
+                        </form>
+                    </div>
                 </div>
         </section>
         <section class="relacionados">

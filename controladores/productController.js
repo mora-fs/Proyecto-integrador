@@ -21,8 +21,25 @@ const controlador = {
         const productoParam= {
             productoParam: productoDetalle
         };
-        //res.send(idDetalle);
+        if (!productoDetalle){
+            return res.send('El producto solicitado no se encontró');
+        }
         res.render('detalle', productoParam);
+    },
+    editar: (req, res)=>{
+        const idEdit= req.params.id;
+        const productoEdit= parsedProductosDB.find(producto=>producto.id == idEdit);
+        if (!productoEdit){
+            return res.send('El producto solicitado no se encontró');
+        }
+        const editarParam={
+            editarParam: productoEdit
+        }
+        return res.render('edit-form', editarParam);
+    },
+    delete: (req, res)=>{
+        const idDelete= req.params.id;
+        res.send(idDelete);
     }
 };
 
