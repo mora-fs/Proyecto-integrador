@@ -13,7 +13,7 @@ const controlador = {
         res.render('crear-form');
     },
     guardarProd: (req, res) =>{
-        res.send(req.body);
+        res.send("jlivdsñoliwajcs");
     },
     detalle: (req, res)=>{
         res.render('detalle');
