@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": 1,
     "name": "Crema Corporal Ultranutritiva ",
     "image": "118411_crema-mejora-zonas-con-varices-ultra-nutritiva-x-400-ml_imagen-1.jpg",
@@ -14,7 +15,8 @@
       "Corporal",
       "Goicochea"
     ]
-  }, {
+  },
+  {
     "id": 2,
     "name": "Loción Corporal Ureadin Ultra 10 Lotion Plus",
     "image": "137480_locion-corporal-ureadin-rx10-lotion-plus-x-400-ml_imagen-1.jpg",
@@ -30,7 +32,8 @@
       "Corporal",
       "ISDIN"
     ]
-  }, {
+  },
+  {
     "id": 3,
     "name": "Protector Solar Sun Protect & Bronze Spray Fps 30",
     "image": "147168_protector-solar-en-spray-protect-bronze-fps-30-x-200-ml_imagen-1.jpg",
@@ -46,7 +49,8 @@
       "Bronceador",
       "Corporal"
     ]
-  }, {
+  },
+  {
     "id": 4,
     "name": "Protector Solar Facial SPF30",
     "image": "66171.jpg",
@@ -61,7 +65,8 @@
       "Solar",
       "Facial"
     ]
-  }, {
+  },
+  {
     "id": 5,
     "name": "Protector solar con FPS 50",
     "image": "product_5.jpg",
@@ -76,7 +81,8 @@
       "Solar",
       "Corporal"
     ]
-  }, {
+  },
+  {
     "id": 6,
     "name": "Chlamydosaurus kingii",
     "image": "product_6.jpg",
@@ -91,23 +97,24 @@
       "Juliett",
       "Echo"
     ]
-  }, {
+  },
+  {
     "id": 7,
-    "name": "unavailable",
+    "name": "Hymenolaimus malacorhynchus",
     "image": "product_7.jpg",
-    "price": 1069.66,
-    "descuento": 36,
-    "marca": "Foxtrot",
-    "tamaño": 507,
-    "color": "Oscar",
-    "description": "pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque",
-    "category": "Music",
+    "price": 2836.8,
+    "descuento": 25,
+    "marca": "Dino",
+    "tamaño": 449,
+    "color": "X-ray",
+    "description": "in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer",
+    "category": "Health",
     "keywords": [
-      "Quebec",
-      "Alfa",
-      "Charlie"
+      "Foxtrot",
+      "Zulu"
     ]
-  }, {
+  },
+  {
     "id": 8,
     "name": "Larus fuliginosus",
     "image": "product_8.jpg",
@@ -122,7 +129,8 @@
       "Hotel",
       "Romeo"
     ]
-  }, {
+  },
+  {
     "id": 9,
     "name": "Paraxerus cepapi",
     "image": "product_9.jpg",
@@ -140,7 +148,8 @@
       "Bravo",
       "Whiskey"
     ]
-  }, {
+  },
+  {
     "id": 10,
     "name": "Ephippiorhynchus mycteria",
     "image": "product_10.jpg",
@@ -156,7 +165,8 @@
       "Delta",
       "Yankee"
     ]
-  }, {
+  },
+  {
     "id": 11,
     "name": "Gopherus agassizii",
     "image": "product_11.jpg",
@@ -172,7 +182,8 @@
       "Lima",
       "Alfa"
     ]
-  }, {
+  },
+  {
     "id": 12,
     "name": "Lama pacos",
     "image": "product_12.jpg",
@@ -189,7 +200,8 @@
       "Foxtrot",
       "Bravo"
     ]
-  }, {
+  },
+  {
     "id": 13,
     "name": "Coluber constrictor foxii",
     "image": "product_13.jpg",
@@ -205,7 +217,8 @@
       "Alfa",
       "Quebec"
     ]
-  }, {
+  },
+  {
     "id": 14,
     "name": "Uraeginthus angolensis",
     "image": "product_14.jpg",
@@ -222,7 +235,8 @@
       "Bravo",
       "Mike"
     ]
-  }, {
+  },
+  {
     "id": 15,
     "name": "Lutra canadensis",
     "image": "product_15.jpg",
@@ -239,7 +253,8 @@
       "Mike",
       "Romeo"
     ]
-  }, {
+  },
+  {
     "id": 16,
     "name": "Bucephala clangula",
     "image": "product_16.jpg",
@@ -256,7 +271,8 @@
       "Lima",
       "Foxtrot"
     ]
-  }, {
+  },
+  {
     "id": 17,
     "name": "Chloephaga melanoptera",
     "image": "product_17.jpg",
@@ -273,7 +289,8 @@
       "Mike",
       "Echo"
     ]
-  }, {
+  },
+  {
     "id": 18,
     "name": "Cebus apella",
     "image": "product_18.jpg",
@@ -290,7 +307,8 @@
       "Yankee",
       "Bravo"
     ]
-  }, {
+  },
+  {
     "id": 19,
     "name": "Graspus graspus",
     "image": "product_19.jpg",
@@ -307,7 +325,8 @@
       "X-ray",
       "Papa"
     ]
-  }, {
+  },
+  {
     "id": 20,
     "name": "Odocoilenaus virginianus",
     "image": "product_20.jpg",
@@ -323,7 +342,8 @@
       "Sierra",
       "Alfa"
     ]
-  }, {
+  },
+  {
     "id": 21,
     "name": "Marmota monax",
     "image": "product_21.jpg",
@@ -339,7 +359,8 @@
       "Quebec",
       "Juliett"
     ]
-  }, {
+  },
+  {
     "id": 22,
     "name": "Columba livia",
     "image": "product_22.jpg",
@@ -354,7 +375,8 @@
       "Alfa",
       "India"
     ]
-  }, {
+  },
+  {
     "id": 23,
     "name": "Bassariscus astutus",
     "image": "product_23.jpg",
@@ -370,7 +392,8 @@
       "Tango",
       "Bravo"
     ]
-  }, {
+  },
+  {
     "id": 24,
     "name": "Felis caracal",
     "image": "product_24.jpg",
@@ -388,7 +411,8 @@
       "Bravo",
       "Charlie"
     ]
-  }, {
+  },
+  {
     "id": 25,
     "name": "Zosterops pallidus",
     "image": "product_25.jpg",
@@ -404,7 +428,8 @@
       "Oscar",
       "Oscar"
     ]
-  }, {
+  },
+  {
     "id": 26,
     "name": "Grus canadensis",
     "image": "product_26.jpg",
@@ -420,7 +445,8 @@
       "Zulu",
       "Victor"
     ]
-  }, {
+  },
+  {
     "id": 27,
     "name": "Plegadis ridgwayi",
     "image": "product_27.jpg",
@@ -438,4 +464,5 @@
       "Romeo",
       "Whiskey"
     ]
-  }]
+  }
+]

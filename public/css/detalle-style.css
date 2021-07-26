@@ -42,9 +42,6 @@ img{
     font-size: 20px;
     color: #BFD8BD;
 }
-.form-compra{
-    width: 100%;
-}
 .unidades-carrito{
     padding: 5px;
     border: none;
@@ -53,7 +50,7 @@ img{
 }
 .caja-unidades{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
 }
 select#unidades{
@@ -63,12 +60,8 @@ select#unidades{
 label{
     padding: 5px;
 }
-#butt-add-carrito{
+#butt-delete{
     width: 30%;
-}
-#butt-comprar-ahora{
-    width: 100%;
-    margin: 10px 0;
 }
 #butt-comprar-ahora, #butt-add-carrito{
     padding: 10px;

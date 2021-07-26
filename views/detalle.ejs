@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/b5f369b57d.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/producto-style.css">
-    <title>Document</title>
+    <%- include('./partials/head', {title: productoParam.name, stylesheet: 'detalle-style.css'}) %> 
 </head>
 <%- include('partials/header') %> 
 <body>
@@ -17,11 +9,11 @@
         <section class="area-prod">
                 <div class="tituloyfoto">
                     <div class="prodyprecio">
-                        <h3 class="nombre-prod">Nombre del producto</h3>
-                        <h2 class="precio-prod">$300</h2>
+                        <h3 class="nombre-prod"><%= productoParam.name %> </h3>
+                        <h2 class="precio-prod">$<% productoParam.price %> </h2>
                     </div>                
                     <div class="container-img-prod">
-                        <img src="./images/crema-img.jpg" alt="Foto producto">
+                        <img src="IMAGEN" alt="Foto <%= productoParam.name %> ">
                     </div>
                 </div>
                 <div class="desarrollo-prod">
@@ -34,23 +26,22 @@
                                 </div>
                             </div>
                             <p class="texto-descripcion-prod texto-hover-appear">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum temporibus soluta a nobis consectetur. Distinctio rerum incidunt vitae natus molestias! Similique repudiandae impedit sequi beatae atque numquam minima quae.
+                                <%= productoParam.description %>
                             </p>
                         </div>
                         <div class="componentes-prod desc-comp-hover">
                             <div class="box-componentes-prod box-hover">
-                                <h4 class="titulo-componentes-prod">Componentes producto</h4>
+                                <h4 class="titulo-componentes-prod">Marca</h4>
                                 <div id="logo-arrow">
                                     <i class="fas fa-chevron-down"></i>
                                 </div>
                             </div>
                             <p class="texto-componentes-prod texto-hover-appear">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus minima, non nesciunt dolorem nisi deleniti! Ipsum quas repellat similique cumque! Harum nobis dolorum quos debitis, porro facilis temporibus quidem.
+                                <%= productoParam.marca %>
                             </p>
                         </div>
                     </div>
-                    <form action="/carrito" method="POST" class="form-compra">
-                        <fieldset class="unidades-carrito">
+                    <form action="/carrito" method="POST" class="unidades-carrito">
                             <div class="caja-unidades">
                                 <label for="unidades">Elige las unidades</label>
                                 <select type="text" name="unidades" id="unidades">
@@ -60,10 +51,14 @@
                                     <option value="4">4</option>
                                 </select>
                             </div>
-                            <button type="submit" id="butt-add-carrito">Agregar al carrito</button>
-                        </fieldset>
-                        <button type="submit" id="butt-comprar-ahora">Comprar Ahora</button>
+                            <button type="submit" id="butt-comprar-ahora">Agregar al carrito</button>
                     </form>
+                    <div class="botones-empleado">
+                        <a href="/productos/<%= productoParam.id %>/editar"  id="butt-add-carrito">Editar producto</a>
+                        <form action="/productos/<%= productoParam.id %>/?_method=DELETE" method="POST" id="butt-add-carrito">
+                            <button type="submit">Eliminar producto</button>
+                        </form>
+                    </div>
                 </div>
         </section>
         <section class="relacionados">
