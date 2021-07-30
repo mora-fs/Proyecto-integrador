@@ -1,6 +1,7 @@
 const express= require('express');
 const app= express();
 const fs= require('fs');
+const { parse } = require('path');
 const path= require('path');
 const productosDB= path.join(__dirname, '../data/productsDataBase.json');
 const parsedProductosDB= JSON.parse(fs.readFileSync(productosDB, 'utf-8'));
@@ -22,17 +23,31 @@ const controlador = {
         res.render('detalle', productoParam);
     },
 
-    guardarProd: (req, res) =>{
-        res.send("jlivdsñoliwajcs");
+    createForm: (req,res) => {
+        return res.render('crear-form');
     },
 
-    crear: (req,res) => {
-        let idEdit= req.params.id;
-        let productoEdit= parsedProductosDB.find(producto=>producto.id == idEdit);
-        return res.send(productoEdit)
+    createProduct: (req, res) =>{
+
+        let idLastProduct = (parsedProductosDB.length)-1;
+        let idNewProduct = idLastProduct + 1;
+        
+        let newProduct = {};
+
+        newProduct.id = idNewProduct;
+        newProduct.name = req.body.nombre;
+        // newProduct.image = req.body.;
+        newProduct.price = req.body.precio;
+        newProduct.descuento = req.body.descuento;
+        newProduct.marca = req.body.marca;
+        // newProduct.color = req.body.color;
+        newProduct.description = req.body.descripcion;
+        newProduct.category = req.body.categoria;
+
+        return res.send(newProduct)
     },
 
-    editar: (req, res)=>{
+    editForm: (req, res)=>{
         let idEdit= req.params.id;
         let productoEdit= parsedProductosDB.find(producto=>producto.id == idEdit);
         if (productoEdit){
@@ -42,7 +57,7 @@ const controlador = {
             return res.render('edit-form', editarParam);
         }
         else{
-            return res.send(productoEdit + "hola");
+            return res.send("Producto no encontrado...");
         }
     },
 

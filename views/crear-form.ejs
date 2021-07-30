@@ -7,14 +7,12 @@
 <body>
     <%- include('partials/header') %> 
     <main>
-        <form action="/productos/crear" method="POST">
+        <form action="/products/create" method="POST">
             <div class="campo">
                 <label for="nombre">Nombre del producto:</label>
                 <input type="text" id="nombre" name="nombre">
             </div>
-            <button type="submit" class="campo">Crear producto</button>
-        </form>
-            <!--
+            
             <div class="campo">
                 <label for="marca">Marca:</label>
                 <input type="text" name="marca">
@@ -31,10 +29,10 @@
                 <label for="cantidad">Cantidad:</label>
                 <input type="text" name="cantidad">
             </div>
-            <div class="campo">
+            <!-- <div class="campo">
                 <label for="color">Color:</label>
                 <input type="text" name="color">
-            </div>
+            </div> -->
             <div class="campo">
                 <label for="categoria">Categoría:</label>
                 <select name="categoria" id="categoria">
@@ -54,8 +52,10 @@
                 <label for="img-nuevo-prod">Imagen:</label>
                 <input type="file" name="img-nuevo-prod">
             </div>
-            -->
-    </main>
-    <%- include('partials/footer') %> 
+            <button type="submit" class="campo">Crear producto</button>
+        </form>
+            
+        </main>
+        <%- include('partials/footer') %> 
 </body>
 </html>

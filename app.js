@@ -4,6 +4,9 @@ const app = express();
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 const path = require('path')
 const publicPath = path.resolve(__dirname, './public')
 app.use(express.static(publicPath))
@@ -22,4 +25,4 @@ const rutasMain = require('./routes/rutasMain');
 const rutasProductos= require('./routes/rutasProductos');
 
 app.use('/', rutasMain);
-app.use('/productos', rutasProductos);
+app.use('/products', rutasProductos);
