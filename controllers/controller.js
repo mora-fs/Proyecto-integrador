@@ -1,11 +1,9 @@
-const express = require('express');
-
 const controlador = {
-    carrito: (req, res) => {
-        res.render('carrito');
+    cart: (req, res) => {
+        res.render('cart');
     },
-    producto: (req, res)=>{
-        res.render('product');
+    product: (req, res)=>{
+        res.render('productsList');
     },
     login: (req, res) => {
         res.render('login');

@@ -1,21 +1,22 @@
-[
-  {
-    "id": 1,
-    "name": "Crema Corporal Ultranutritiva ",
-    "image": "118411_crema-mejora-zonas-con-varices-ultra-nutritiva-x-400-ml_imagen-1.jpg",
-    "price": 600,
-    "descuento": 5,
-    "marca": "Goicochea",
-    "tamaño": "400 ml",
-    "color": "",
-    "description": "nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum",
-    "category": "Cuidado corporal",
-    "keywords": [
-      "Hidratación",
-      "Corporal",
-      "Goicochea"
-    ]
-  },
+[{
+  "id": 1,
+  "name": "Paraxerus cepapi",
+  "image": "product_9.jpg",
+  "price": 1604.53,
+  "descuento": 10,
+  "marca": "X-ray",
+  "tamaño": 504,
+  "color": "Quebec",
+  "description": "vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam",
+  "category": "Shoes",
+  "keywords": [
+    "Juliett",
+    "India",
+    "Juliett",
+    "Bravo",
+    "Whiskey"
+  ]
+},
   {
     "id": 2,
     "name": "Loción Corporal Ureadin Ultra 10 Lotion Plus",

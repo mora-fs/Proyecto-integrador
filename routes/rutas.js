@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const controlador = require('../controladores/controller');
+const controller = require('../controladores/controller');
 
-router.get('/carrito', controlador.carrito);
-router.get('/producto', controlador.producto);
-router.post('/login', controlador.loginValidacion);
-router.get('/login', controlador.login);
+router.get('/carrito', controller.cart);
+router.get('/producto', controller.product);
+router.post('/login', controller.loginValidacion);
+router.get('/login', controller.login);
 
 module.exports = router;

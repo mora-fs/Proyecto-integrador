@@ -21,8 +21,10 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // ACA PUSE LA "ESTRUCTURA" DE EL SISTEMA DE RUTEO, ASI VAYA CADA UNO AGREGANDO SU PARTE O CORRIGIENDO"
-const rutasMain = require('./routes/rutasMain');
-const rutasProductos= require('./routes/rutasProductos');
+const routesMain = require('./routes/routesMain');
+const routesProducts= require('./routes/routesProducts');
+const routesUsers = require('./routes/routesUsers');
 
-app.use('/', rutasMain);
-app.use('/products', rutasProductos);
+app.use('/', routesMain);
+app.use('/productos', routesProducts);
+app.use('/:user', routesUsers);

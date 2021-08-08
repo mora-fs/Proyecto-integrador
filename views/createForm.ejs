@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head', {title: 'Creando producto', stylesheet: 'crear-style.css'}) %>
+    <%- include('./partials/head', {title: 'Creando producto', stylesheet: 'createStyle.css'}) %>
     
 </head>
 <body>
@@ -10,7 +10,7 @@
         <form action="/products/create" method="POST">
             <div class="campo">
                 <label for="nombre">Nombre del producto:</label>
-                <input type="text" id="nombre" name="nombre">
+                <input type="text" id="name" name="nombre">
             </div>
             
             <div class="campo">
@@ -18,12 +18,12 @@
                 <input type="text" name="marca">
             </div>
             <div class="campo">
-                <label for="precio">Precio:</label>
-                <input type="number" name="precio">
+                <label for="price">Precio:</label>
+                <input type="number" name="price">
             </div>
             <div class="campo">
-                <label for="descuento">Descuento:</label>
-                <input type="number" name="descuento">
+                <label for="discount">Descuento:</label>
+                <input type="number" name="discount">
             </div>
             <div class="campo">
                 <label for="cantidad">Cantidad:</label>
@@ -34,8 +34,8 @@
                 <input type="text" name="color">
             </div> -->
             <div class="campo">
-                <label for="categoria">Categoría:</label>
-                <select name="categoria" id="categoria">
+                <label for="category">Categoría:</label>
+                <select name="category" id="categoria">
                     <option value="bucal">Cuidado bucal</option>
                     <option value="corporal">Cuidado corporal</option>
                     <option value="facial">Cuidado facial</option>
@@ -45,12 +45,12 @@
                 </select>
             </div>
             <div class="campo">
-                <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion"></textarea>
+                <label for="description">Descripción:</label>
+                <textarea name="description"></textarea>
             </div>
             <div class="campo">
-                <label for="img-nuevo-prod">Imagen:</label>
-                <input type="file" name="img-nuevo-prod">
+                <label for="img-new-prod">Imagen:</label>
+                <input type="file" name="img-new-prod">
             </div>
             <button type="submit" class="campo">Crear producto</button>
         </form>
