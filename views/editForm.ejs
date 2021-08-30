@@ -7,9 +7,51 @@
     <%- include('./partials/header') %> 
     <main>
         <form action="/products/ID/?_method=PUT" method="POST">
-            <div>
-                
+            <div class="campo">
+                <label for="nombre">Nombre del producto:</label>
+                <input type="text" id="name" name="nombre" value= <%- editParam.name %>>
             </div>
+            
+            <div class="campo">
+                <label for="marca">Marca:</label>
+                <input type="text" name="marca" value= <%- editParam.marca %>>
+            </div>
+            <div class="campo">
+                <label for="price">Precio:</label>
+                <input type="number" name="price" value= <%- editParam.price %>>
+            </div>
+            <div class="campo">
+                <label for="discount">Descuento:</label>
+                <input type="number" name="discount" value= <%- editParam.descuento %>>
+            </div>
+            <div class="campo">
+                <label for="cantidad">Cantidad:</label>
+                <input type="text" name="cantidad">
+            </div>
+            <!-- <div class="campo">
+                <label for="color">Color:</label>
+                <input type="text" name="color">
+            </div> -->
+            <div class="campo">
+                <label for="category">Categoría:</label>
+                <select name="category" id="categoria" value= <%- editParam.category %>>
+                    <option value="bucal">Cuidado bucal</option>
+                    <option value="corporal">Cuidado corporal</option>
+                    <option value="facial">Cuidado facial</option>
+                    <option value="verano">Verano</option>
+                    <option value="capilar">Capilar</option>
+                    <option value="higiene">Higiene</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="description">Descripción:</label>
+                <textarea name="description" value= <%- editParam.description %>></textarea>
+            </div>
+            <div class="campo">
+                <label for="img-new-prod">Imagen:</label>
+                <input type="file" name="img-new-prod" value= <%- editParam.image %>>
+            </div>
+            <button type="submit" class="campo">Crear producto</button>
         </form>
     <%- include('./partials/footer') %> 
 </body>
