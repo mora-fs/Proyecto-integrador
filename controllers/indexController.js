@@ -7,6 +7,9 @@ const controller = {
     }, 
     login: (req, res)=>{
         return res.render('login')
+    },
+    cart: (req, res) => {
+        return res.render('shoppingCart')
     }
 }
 module.exports = controller
