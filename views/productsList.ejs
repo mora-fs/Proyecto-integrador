@@ -6,7 +6,24 @@
 <body>
     <%- include('partials/header') %> 
     <main>
-        <h3>Listado de productos</h3>
+        <h2 class="listadoTitulo">Listado de productos</h2>
+        <div class="productos">
+            <% products.forEach(product => { %>
+                <div class="producto">
+                    <div class="imgProducto">
+                        <img src="/images/<%= product.image %>"  alt="Imágen del producto <%= product.name %>" class="productImg">
+                    </div>
+                    <div>
+                        <h3 class="productName"><%= product.name %></h3>
+                        <div class="productPricing">
+                            <p class="price"><%= product.price %></p>
+                            <p class="discount"><%= product.discount %></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %> 
+        </div>
+        
     </main>
     <%- include('partials/footer') %> 
 </body>

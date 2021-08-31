@@ -6,7 +6,10 @@ const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
 
 const controller = {
     productsList: (req, res) =>{
-        return res.render('productsList');
+        let products= {
+            products: parsedProductsDb
+        };
+        return res.render('productsList', products);
     },
     detail: (req, res)=>{
         idDetail= req.params.id;
