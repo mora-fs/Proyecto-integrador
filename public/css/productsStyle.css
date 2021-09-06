@@ -19,6 +19,14 @@ body {
 .productImg {
     width: 100%;
 }
+.price{
+    color: #0FD24C;
+}
+a{
+    color: black;
+    font-style: none;
+    text-decoration: none;
+}
 @media (min-width: 768px) {
     .producto {
         width: 40vw;

@@ -10,6 +10,7 @@
         <div class="productos">
             <% products.forEach(product => { %>
                 <div class="producto">
+                    <a href="/productos/<%= product.id%>">
                         <img src="/images/productos/<%= product.image %>"  alt="Imágen del producto <%= product.name %>" class="productImg">
                     <div>
                         <h3 class="productName"><%= product.name %></h3>
@@ -18,6 +19,7 @@
                             <p class="discount"><%= product.discount %></p>
                         </div>
                     </div>
+                    </a>
                 </div>
             <% }); %> 
         </div>
