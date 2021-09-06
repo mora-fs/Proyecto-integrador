@@ -2,9 +2,7 @@ form {
     /* display: flex; */
     /* justify-content: center; */
     margin: 50px 30px 90px 30px;
-
 }
-
 h2{
     margin-top: 50px;
     text-align: center;
@@ -13,6 +11,8 @@ h2{
     /* border-bottom: 0.1px solid grey; */
 }
 .contenedor-link{
+    text-decoration: none;
+    color: #0FD24C;
     margin: auto;
     text-align: center;
     margin-bottom: 20px;
@@ -26,7 +26,6 @@ h2{
     font-size: 16px;
     text-align: center;
 }
-
 .image-user i{
     font-size: 100px;
 }
@@ -36,27 +35,18 @@ h2{
     width: 80%;
     margin: auto;
 }
-
 .user-pass {
     display: flex;
     flex-direction: column;
     width: 55%;
 }
-
 .button {
     margin-top: 15px;
     text-align: center;
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    /* margin-top: 20px;
-    margin-left: 10px; */
 } 
 .buttons{
     margin-top: 60px;
 }
-/* .button{ */
-    /* width: 48%;
-} */
 .username{
     display: flex;
     flex-wrap: none;
@@ -81,7 +71,6 @@ h2{
     background-color: white;
     height: 25px;
     margin-top: 10px;
-
 }
 .password input{
     width: 60%;
@@ -90,16 +79,8 @@ h2{
     background-color: white;
     height: 25px;
     margin-top: 10px;
-
 }
-
 .button button {
-    /* border-radius: 5px;
-    width: 150px;
-    height: 40px;
-    background-color: #0FD24C;
-    border: none;
-    color: black; */
     width: 100%;
     min-width: 94px;
     max-width: 450px;
@@ -111,17 +92,13 @@ h2{
     margin-bottom: 10px;
     cursor: pointer;
     font-size: 14px;
-
     transition: all 150ms;
 } 
 .buttons button:hover{
     background-color: #18e659;
     color: black;
 }
-
 .image-user {
-  /* display: flex; */
     text-align: right;
-  width: 40%;
+    width: 40%;
 }
-
