@@ -1,7 +1,7 @@
 [{
   "id": 1,
   "name": "Paraxerus cepapi",
-  "image": "product_9.jpg",
+  "image": "acondicionador.jpg",
   "price": 1604.53,
   "descuento": 10,
   "marca": "X-ray",
@@ -20,7 +20,7 @@
   {
     "id": 2,
     "name": "Loción Corporal Ureadin Ultra 10 Lotion Plus",
-    "image": "137480_locion-corporal-ureadin-rx10-lotion-plus-x-400-ml_imagen-1.jpg",
+    "image": "acondicionador2.jpg",
     "price": 4441.83,
     "descuento": 6,
     "marca": "ISDIN",
@@ -37,7 +37,7 @@
   {
     "id": 3,
     "name": "Protector Solar Sun Protect & Bronze Spray Fps 30",
-    "image": "147168_protector-solar-en-spray-protect-bronze-fps-30-x-200-ml_imagen-1.jpg",
+    "image": "dentifrico.jpg",
     "price": 1349.95,
     "descuento": 43,
     "marca": "Nivea",
@@ -54,7 +54,7 @@
   {
     "id": 4,
     "name": "Protector Solar Facial SPF30",
-    "image": "66171.jpg",
+    "image": "desodorante.jpg",
     "price": 4618.29,
     "descuento": 24,
     "marca": "Dermaglós",
@@ -70,7 +70,7 @@
   {
     "id": 5,
     "name": "Protector solar con FPS 50",
-    "image": "product_5.jpg",
+    "image": "crema-img.jpg",
     "price": 1115,
     "descuento": 10,
     "marca": "Dermaglós",
@@ -86,7 +86,7 @@
   {
     "id": 6,
     "name": "Chlamydosaurus kingii",
-    "image": "product_6.jpg",
+    "image": "jabon.jpg",
     "price": 2686.78,
     "descuento": 46,
     "marca": "X-ray",
@@ -102,7 +102,7 @@
   {
     "id": 7,
     "name": "Hymenolaimus malacorhynchus",
-    "image": "product_7.jpg",
+    "image": "pañales.jpg",
     "price": 2836.8,
     "descuento": 25,
     "marca": "Dino",
@@ -118,7 +118,7 @@
   {
     "id": 8,
     "name": "Larus fuliginosus",
-    "image": "product_8.jpg",
+    "image": "shampoo.jpg",
     "price": 816.1,
     "descuento": 15,
     "marca": "Foxtrot",
@@ -134,7 +134,7 @@
   {
     "id": 9,
     "name": "Paraxerus cepapi",
-    "image": "product_9.jpg",
+    "image": "shampoo2.jpg",
     "price": 1604.53,
     "descuento": 10,
     "marca": "X-ray",
@@ -153,7 +153,7 @@
   {
     "id": 10,
     "name": "Ephippiorhynchus mycteria",
-    "image": "product_10.jpg",
+    "image": "solarBronceador.jpg",
     "price": 3057.71,
     "descuento": 6,
     "marca": "Echo",
@@ -170,7 +170,7 @@
   {
     "id": 11,
     "name": "Gopherus agassizii",
-    "image": "product_11.jpg",
+    "image": "solarCorporal.jpg",
     "price": 3104.83,
     "descuento": 37,
     "marca": "Oscar",
@@ -187,7 +187,7 @@
   {
     "id": 12,
     "name": "Lama pacos",
-    "image": "product_12.jpg",
+    "image": "solarRostro.jpg",
     "price": 2346.16,
     "descuento": 42,
     "marca": "Golf",
@@ -205,7 +205,7 @@
   {
     "id": 13,
     "name": "Coluber constrictor foxii",
-    "image": "product_13.jpg",
+    "image": "hidratanteCorporal.jpg",
     "price": 4288.9,
     "descuento": 20,
     "marca": "Kilo",
@@ -222,7 +222,7 @@
   {
     "id": 14,
     "name": "Uraeginthus angolensis",
-    "image": "product_14.jpg",
+    "image": "toallitasHumedas.jpg",
     "price": 2881.1,
     "descuento": 29,
     "marca": "X-ray",
@@ -240,7 +240,7 @@
   {
     "id": 15,
     "name": "Lutra canadensis",
-    "image": "product_15.jpg",
+    "image": "cepilloDental.jpg",
     "price": 1157.22,
     "descuento": 32,
     "marca": "Lima",
@@ -258,7 +258,7 @@
   {
     "id": 16,
     "name": "Bucephala clangula",
-    "image": "product_16.jpg",
+    "image": "enjuagueBucal.jpg",
     "price": 4475.29,
     "descuento": 11,
     "marca": "Lima",
@@ -276,7 +276,7 @@
   {
     "id": 17,
     "name": "Chloephaga melanoptera",
-    "image": "product_17.jpg",
+    "image": "afeitadora.jpg",
     "price": 4921.27,
     "descuento": 42,
     "marca": "Victor",
@@ -294,7 +294,7 @@
   {
     "id": 18,
     "name": "Cebus apella",
-    "image": "product_18.jpg",
+    "image": "blanqueadores.jpg",
     "price": 1229.68,
     "descuento": 7,
     "marca": "Bravo",
@@ -312,7 +312,7 @@
   {
     "id": 19,
     "name": "Graspus graspus",
-    "image": "product_19.jpg",
+    "image": "jabonLiquido.jpg",
     "price": 3884.06,
     "descuento": 26,
     "marca": "Yankee",
@@ -330,7 +330,7 @@
   {
     "id": 20,
     "name": "Odocoilenaus virginianus",
-    "image": "product_20.jpg",
+    "image": "exfoliante.jpg",
     "price": 1055.8,
     "descuento": 49,
     "marca": "Lima",
@@ -347,7 +347,7 @@
   {
     "id": 21,
     "name": "Marmota monax",
-    "image": "product_21.jpg",
+    "image": "limpiezaRostro.jpg",
     "price": 4324.2,
     "descuento": 28,
     "marca": "Delta",
@@ -364,7 +364,7 @@
   {
     "id": 22,
     "name": "Columba livia",
-    "image": "product_22.jpg",
+    "image": "barbijoDescartable.jpg",
     "price": 4019.34,
     "descuento": 23,
     "marca": "X-ray",
@@ -380,7 +380,7 @@
   {
     "id": 23,
     "name": "Bassariscus astutus",
-    "image": "product_23.jpg",
+    "image": "alcoholGel.jpg",
     "price": 4638.27,
     "descuento": 9,
     "marca": "Juliett",
@@ -397,7 +397,7 @@
   {
     "id": 24,
     "name": "Felis caracal",
-    "image": "product_24.jpg",
+    "image": "alcoholAerosol.jpg",
     "price": 4041.79,
     "descuento": 17,
     "marca": "Golf",
@@ -416,7 +416,7 @@
   {
     "id": 25,
     "name": "Zosterops pallidus",
-    "image": "product_25.jpg",
+    "image": "barbijo.jpg",
     "price": 1313.45,
     "descuento": 27,
     "marca": "Tango",
@@ -433,7 +433,7 @@
   {
     "id": 26,
     "name": "Grus canadensis",
-    "image": "product_26.jpg",
+    "image": "repelente.jpg",
     "price": 4604.7,
     "descuento": 38,
     "marca": "Foxtrot",
@@ -450,7 +450,7 @@
   {
     "id": 27,
     "name": "Plegadis ridgwayi",
-    "image": "product_27.jpg",
+    "image": "aceiteBebe.jpg",
     "price": 4271.42,
     "descuento": 40,
     "marca": "India",
