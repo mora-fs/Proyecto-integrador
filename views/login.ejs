@@ -7,16 +7,24 @@
     <%- include('./partials/header') %>
     <main>
         <form method="POST" action="/">
+            <!--
             <div class="image-user"><img src='' alt="Imagen usuario"></div>
-            <div class="user-pass">
-            <label for="nombre-usuario">USUARIO</label>
-            <input id="nombre-usuario" name="nombre-usuario" required>
-            <label for="contraseña">CONTRASEÑA</label>
-            <input type="password" id="password"  name="password" required>
+            -->
+            <div class="user-password campo">
+                <div class="user-div">
+                    <label for="nombre-usuario">USUARIO</label>
+                    <input id="nombre-usuario" name="nombre-usuario" required>
+                </div>
+                <div class="password-div campo">
+                    <label for="contraseña">CONTRASEÑA</label>
+                    <input type="password" id="password"  name="password" required>
+                </div>
             </div>
             <div class="buttons">
+            <!--
             <span class="button"><button type="submit">Button</button></span>
-            <span class="button"><button type="reset">Button</button></span>
+            -->
+            <span class="button"><button type="reset">Log In</button></span>
             </div>
         </form>
     </main>
