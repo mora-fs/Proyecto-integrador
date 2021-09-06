@@ -6,27 +6,29 @@
 <body>
     <%- include('./partials/header') %>
     <main>
+        <h2>INICIÁ SESIÓN</h2>
         <form method="POST" action="/">
-            <!--
-            <div class="image-user"><img src='' alt="Imagen usuario"></div>
-            -->
-            <div class="user-password campo">
-                <div class="user-div">
-                    <label for="nombre-usuario">USUARIO</label>
-                    <input id="nombre-usuario" name="nombre-usuario" required>
+            <div class="form-and-logo">    
+                <div class="image-user">
+                    <i class="fas fa-users"></i>
                 </div>
-                <div class="password-div campo">
-                    <label for="contraseña">CONTRASEÑA</label>
-                    <input type="password" id="password"  name="password" required>
+                <div class="user-pass">
+                    <div class="username">
+                        <label for="nombre-usuario">USUARIO</label>
+                        <input id="nombre-usuario" name="nombre-usuario" required>
+                    </div>
+                    <div class="password">    
+                        <label for="contraseña">CONTRASEÑA</label>
+                        <input type="password" id="password"  name="password" required>
+                    </div>
                 </div>
             </div>
             <div class="buttons">
-            <!--
-            <span class="button"><button type="submit">Button</button></span>
-            -->
-            <span class="button"><button type="reset">Log In</button></span>
+                <div class="button"><button type="submit">INGRESAR</button></div>
+                <div class="button"><button type="reset">BORRAR DATOS</button></div>
             </div>
         </form>
+        <div class="contenedor-link"><a class="link-redireccion" href="/register">¿Aún no tienes cuenta?</a></div>
     </main>
     <%- include('./partials/footer') %>
 </body>

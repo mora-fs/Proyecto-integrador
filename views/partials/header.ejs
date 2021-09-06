@@ -1,7 +1,7 @@
 <header>
     <div class="barra-superior">
        <span class="logo-search">
-       <div class="logo"><img class="logo-img"src='/images/logo/logo-digital-farma.png' alt="Imagen logo"></div>
+       <div class="logo"><a href="/"><img class="logo-img"src='/images/logo/logo-digital-farma.png' alt="Imagen logo"></a></div>
        <span class="search">
            <input type="search" value="Search">
            <button type="submit"><i class="fas fa-search"></i></button>
@@ -11,12 +11,16 @@
    </span>
        <span class="barra-icons">
        <form action="/cart" method="GET">    
-       <button type="submit" class="shopping-cart boton">
-           <span><i class="fas fa-shopping-cart "></i></span>
-        </button>
+            <button type="submit" class="shopping-cart boton">
+                <span><i class="fas fa-shopping-cart "></i></span>
+            </button>
         </form>
-       <span class="boton-user boton"><i class="fas fa-user"></i></span>
-       </span>
+        <form action="/login" method="GET">
+            <button type="submit" class="user-profile boton">
+                <span><i class="fas fa-user"></i></span>
+            </button>
+        </form>
+        </span>
      </div>
      <div class="barra-inferior">
          <span class="botonesMenu"><a>Menu</a></span>
