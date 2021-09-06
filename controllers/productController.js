@@ -23,6 +23,8 @@ const controller = {
         return res.render('detail', productParam);
     },
     createForm: (req,res) => {
+        // console.log(parsedProductsDb)
+
         return res.render('createForm');
     },
     createProduct: (req, res) =>{
@@ -39,7 +41,10 @@ const controller = {
         newProduct.description = req.body.descripcion;
         newProduct.category = req.body.categoria;
 
-        return res.send(newProduct)
+        parsedProductsDb.push(newProduct)
+        // console.log(finalProduct)
+        fs.writeFileSync(productsDbPath, JSON.stringify(parsedProductsDb))
+        return res.redirect('/productos')
     },
     editForm: (req, res)=>{
         let idEdit= req.params.id;
