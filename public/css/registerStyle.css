@@ -1,0 +1,102 @@
+/*  */
+/* MAIN  */
+/*  */
+main{
+    width: 60%;
+    margin: auto;
+}
+.texto-centrado{
+    text-align: center;
+    font-size: 30px;
+}
+form{
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+form div label{
+    font-size: 16px;
+    /* font-style: italic; */
+    color: black;
+    display: block;
+}
+.formulario-registro div, .formulario-login div{
+    width: 100%;
+    text-align: center;
+    margin: 15px 0px 25px 0px;
+}
+.input-tipo-texto{
+    height: 18px;
+    width: 65%;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 6px;
+    padding: 17px;
+    margin-top: 5px;
+}
+
+
+/* .input-tipo-archivo{
+    margin: 20px 0px;
+    font-size: 12px;
+    width: 125px;
+} */
+
+/* form div div div{
+    margin: 300px 0px;
+} */
+
+.contenedor-categorias{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.contenedor-categorias label{
+    width: 100%;
+}
+
+.formulario-registro div .opciones-izq{
+    width: 50%;
+    width: fit-content;
+    margin-right: 30px;
+}
+
+.formulario-registro div .opciones-izq div{
+    text-align: left;
+}
+
+.formulario-registro div .opciones-der{
+    width: 50%;
+    width: fit-content;
+    margin-left: 30px;
+}
+
+.formulario-registro div .opciones-der div{
+    text-align: left;
+}
+
+.perfil-usuario input{
+    margin: 20px 15px;
+}
+
+.boton-formulario{
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0px 0px;
+    width: 65%;
+    height: 50px;
+    color: #18e659;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #18e659;
+}
+.boton-formulario:hover{
+    background-color: #18e659;
+    color: black;
+}

@@ -4,6 +4,42 @@
     <%- include('./partials/head', {title: 'Register', stylesheet: 'registerStyle.css'}) %> 
 </head>
 <body>
-    
+    <%- include('./partials/header')  %> 
+    <main>
+        <h3 class="texto-centrado">Creá tu cuenta</h3>
+        <form action="" method="POST" class="formulario-registro">
+            <div>
+                <input type="text" placeholder="Nombre y Apellido" class="input-tipo-texto" required>
+            </div>
+            <div>
+                <input type="text" placeholder="Nombre de Usuario" class="input-tipo-texto" required>
+            </div>
+            <div>
+                <input type="email" placeholder="Correo Electronico" class="input-tipo-texto" required>
+            </div>
+            <div>
+                <input type="password" placeholder="Contraseña" class="input-tipo-texto" required>
+            </div>
+            <div>
+                <input type="password" placeholder="Confirmar Contraseña" class="input-tipo-texto" required>
+            </div>
+            <div>
+                <label for="">Fecha de Nacimiento:</label>
+                <input type="date" class="input-tipo-texto" required>
+            </div>
+
+            <!-- <div>
+                <label for="">Foto de Perfil (opcional)</label>
+                <input type="file" name="foto-perfil" title=" sefdc"accept=".jpg , .png" class="input-tipo-archivo">
+            </div> -->
+            <div>
+                <button type="submit" class="boton-formulario">Guardar</button>
+            </div>
+            <div>
+                <button type="reset" class="boton-formulario">Borrar</button>
+            </div>
+
+        </form>
+    </main>
 </body>
 </html>
