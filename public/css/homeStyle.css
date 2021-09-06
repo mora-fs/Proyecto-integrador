@@ -2,3 +2,10 @@
    display: flex;
    justify-content: space-between; 
 }
+.carousel{
+   background-color:  #18e659;
+   width: 100%;
+   height: 500px;
+   margin-top: 30px;
+   margin-bottom: 90px;
+}
