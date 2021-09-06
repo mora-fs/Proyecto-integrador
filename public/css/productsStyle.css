@@ -1,5 +1,5 @@
 body {
-    margin: 0 ;
+    margin: 0;
 }
 .listadoTitulo {
     color: #bec4bf;
@@ -7,18 +7,25 @@ body {
 .productos {
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+    padding: 10px;
 }
 .producto {
     width: 90vw;
-    margin: 30px;
+    margin: 30px auto;
     background-color: #ebebeb;
     padding: 10px;
 }
 .productImg {
     width: 100%;
 }
-@media (min-width: 760px) {
+@media (min-width: 768px) {
     .producto {
-        width: 25vw;
+        width: 40vw;
+    }
+}
+@media (min-width: 1025px) {
+    .producto {
+        width: 20vw;
     }
 }
