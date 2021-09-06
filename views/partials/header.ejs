@@ -1,21 +1,27 @@
 <header>
     <div class="barra-superior">
        <span class="logo-search">
-       <span class="logo"><img src='' alt="Imagen logo"></span>
+       <div class="logo"><img class="logo-img"src='/images/logo/logo-digital-farma.png' alt="Imagen logo"></div>
        <span class="search">
            <input type="search" value="Search">
+           <button type="submit"><i class="fas fa-search"></i></button>
+           
+           
        </span>
    </span>
        <span class="barra-icons">
-       <span><i class="fas fa-shopping-cart"></i></span>
-       <span><i class="fas fa-user"></i></span>
+       <form action="/cart" method="GET">    
+       <button type="submit" class="shopping-cart boton">
+           <span><i class="fas fa-shopping-cart "></i></span>
+        </button>
+        </form>
+       <span class="boton-user boton"><i class="fas fa-user"></i></span>
        </span>
      </div>
      <div class="barra-inferior">
-         <span class="boton1">Select</span>
-         <span class="boton2">Button</span>
-         <span class="boton3">Button</span>
-         <span class="boton4">Button</span>
-
+         <span class="botonesMenu"><a>Menu</a></span>
+         <span class="botonesMenu"><a href="/productos">Productos</a></span>
+         <span class="botonesMenu"><a href="">Login</a></span>
+         <span class="botonesMenu"><a href="">Registro</a></span>
      </div>
    </header>
