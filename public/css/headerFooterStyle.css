@@ -16,27 +16,32 @@ body {
 header{
     background-color: #0FD24C;
 }
-.shopping-cart{
-    background: none;
-    border: none;
-    
-}
 
 .barra-icons {
     display: flex;
     justify-content: space-between;
-    width: 25%;
-    padding-top: 20px;
+    width: 15%;
+    /* padding-top: 25px; */
+    /* align-content: center; */
+    margin: auto;
 }
 
 .boton{
     width: 48%;
+    background: none;
+    border: none;
+}
+
+.boton span i{
+    cursor: pointer;
 }
 .barra-icons form {
     width: 48%;
+    /* align-self: center; */
 }
 .barra-icons i {
     font-size: 2em;
+    /* align-self: center; */
 }
 
 
@@ -62,22 +67,23 @@ header{
 .search{
     display: flex;
     justify-content: space-between;
-    width: 89%;
+    width: 84%;
     padding: 20px;
+   align-self: center;
 }
 
 
 .logo-search{
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 84%;
 }
 .logo-img{
     width: 100%;
     border-radius: 100%;
 }
 .logo {
-    width: 10%;
+    width: 13%;
     min-width: 75px;
     /* height: 25px; */
 
