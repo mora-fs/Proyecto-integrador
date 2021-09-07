@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 
@@ -9,12 +9,12 @@ body {
 .barra-superior {
     display: flex;
     padding: 30px;
-    background-color: #0FD24C;
+    background-color: #0FD24C  ;
     justify-content: space-around;
 }
 
 header{
-    background-color: #0FD24C;
+    background-color: #dfdfdf    ;
 }
 
 .barra-icons {
@@ -101,27 +101,62 @@ footer {
 
 .barra-inferior {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    height: 50px;
+    height: 48px;
+    /* padding-top: 12px;
+    padding-bottom: 12px; */
+    border-top: 0.2px solid #25e963;
+    /* background-color: #DDE7C7  ; */
 }
 
 ul {
     list-style-type: none;
 }
 
-.botonesMenu {
-   border: 1px solid black ;
-   width: 25%;
-   /* text-align: left; */
-   padding: 5px;
-   border-radius: 5px;
-   background-color: #0FD24C;
-   height: 60%;
-}
 
-.botonesMenu a{
+.barra-inferior div a{
     color: black;
     text-decoration: none;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 17px;
+
+       /* border: 1px solid black ; */
+
+   /* text-align: left; */
+   /* padding: 5px; */
+   /* border-radius: 5px; */
+   /* background-color: #0FD24C; */
+   height: 80%;
+
+   transition: all 300ms;
+}
+.barra-inferior div a:hover{
+    background-color: #cac5c5;
+    border-radius: 2px;
+    font-weight: bold;
+}
+.left-menu{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    text-align: left;
+    margin-left: 30px;
+}
+.right-menu{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    width: 30%;
+    margin-right: 30px;
+}
+
+.left-menu a{
+    width: 50%;
+}
+.right-menu a{
+    width: 50%;
 }
 /* .boton2 {
     border: 1px solid black ;

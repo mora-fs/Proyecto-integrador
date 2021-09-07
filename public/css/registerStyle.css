@@ -9,7 +9,7 @@ main{
     text-align: center;
     font-size: 30px;
 }
-form{
+.formulario-registro{
     color: #666;
     display: flex;
     flex-wrap: wrap;

@@ -10,10 +10,10 @@
                 <div class="tituloyfoto">
                     <div class="prodyprecio">
                         <h3 class="nombre-prod"><%= productParam.name %> </h3>
-                        <h2 class="precio-prod">$<% productParam.price %> </h2>
+                        <h2 class="precio-prod">$<%= productParam.price %> </h2>
                     </div>                
                     <div class="container-img-prod">
-                        <img src="IMAGEN" alt="Foto <%= productParam.name %> ">
+                        <img src="/images/productos/<%= productParam.image%>" alt="Foto <%= productParam.name %> ">
                     </div>
                 </div>
                 <div class="desarrollo-prod">
