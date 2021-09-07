@@ -8,10 +8,32 @@
     <h2 class="titulo">Tu Carrito</h2>
     <div class="contenedor-carrito">
         <section class="lista-productos">
+            <% productos.forEach(producto=>{ %>
+                <% if (producto.id < 5) { %> 
+                <article class="producto">
+                    <div class="contenedor-img-info">
+                        <div class="contenedor-img">
+                            <img src="images/productos/<%= producto.image %>" alt="<%= producto.name %>">
+                        </div>
+                        <div class="info-producto">
+                            <h3 class="nombre-producto"><%= producto.name %></h3>
+                            <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur, adipisicing elit</p>
+                            <h4 class="precio-producto"><%= producto.price %></h4>
+                        </div>
+                    </div>
+                    <div class="contenedor-boton-borrar">
+                        <form action="">
+                            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </div>
+                </article>
+                <% } %> 
+            <% }) %> 
+            <!--
             <article class="producto">
                 <div class="contenedor-img-info">
                     <div class="contenedor-img">
-                        <img src="/images/crema-img.jpg" alt="">
+                        <img src="productos/images/crema-img.jpg" alt="">
                     </div>
                     <div class="info-producto">
                         <h3 class="nombre-producto">Crema Generica</h3>
@@ -57,6 +79,7 @@
                     <button type="button"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </article>
+            -->
             <div class="precio-a-pagar">
                 <div>
                     <p>Descuento/s: </p>
