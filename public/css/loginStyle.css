@@ -1,7 +1,12 @@
-form {
+.form-login {
     /* display: flex; */
     /* justify-content: center; */
-    margin: 50px 30px 90px 30px;
+    margin: auto;
+    margin-bottom: 30px;
+    border: 2px solid #BFD8BD ;
+    border-radius: 5px;
+    padding: 30px 50px;
+    width: 450px;
 }
 h2{
     margin-top: 50px;

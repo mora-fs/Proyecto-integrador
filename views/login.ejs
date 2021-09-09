@@ -7,7 +7,7 @@
     <%- include('./partials/header') %>
     <main>
         <h2>INICIÁ SESIÓN</h2>
-        <form method="POST" action="/">
+        <form method="POST" action="/" class="form-login">
             <div class="form-and-logo">    
                 <div class="image-user">
                     <i class="fas fa-users"></i>
@@ -27,8 +27,8 @@
                 <div class="button"><button type="submit">INGRESAR</button></div>
                 <div class="button"><button type="reset">BORRAR DATOS</button></div>
             </div>
+            <div class="contenedor-link"><a class="link-redireccion" href="/register">¿Aún no tienes cuenta?</a></div>
         </form>
-        <div class="contenedor-link"><a class="link-redireccion" href="/register">¿Aún no tienes cuenta?</a></div>
     </main>
     <%- include('./partials/footer') %>
 </body>
