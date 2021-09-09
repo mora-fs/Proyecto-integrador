@@ -1,0 +1,27 @@
+footer {
+    background-color: #F0E5D8;  
+}
+#footerContainer{
+    position: relative;
+    bottom: 0;
+    padding: 30px 4vw;
+    padding-top: 5px;
+}
+.listContent {
+    list-style-type: none;
+    padding: 0;
+    margin-block: -5px;
+}
+.redesIcon{
+    padding: 3px;
+    color: #055052;
+}
+.redesLink{
+    text-decoration: none;
+    font-weight: 500;
+    color: #055052;
+    transition: 0.3s;
+}
+.redesLink:hover{
+    font-size: 20px;
+}

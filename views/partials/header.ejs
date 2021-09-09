@@ -1,29 +1,36 @@
 <header>
-    <div class="barra-superior">
-       <span class="logo-search">
-       <div class="logo"><a href="/"><img class="logo-img"src='/images/logo/logo-digital-farma.png' alt="Imagen logo"></a></div>
-       <span class="search">
-           <input type="search" value="Search">
-           <button type="submit"><i class="fas fa-search"></i></button>  
-       </span>
-   </span>
-       <span class="barra-icons">
-       <form action="/cart" method="GET">    
-            <button type="submit" class="shopping-cart boton">
-                <span><i class="fas fa-shopping-cart "></i></span>
-            </button>
-        </form>
-        <form action="/login" method="GET">
-            <button type="submit" class="user-profile boton">
-                <span><i class="fas fa-user"></i></span>
-            </button>
-        </form>
-        </span>
-     </div>
-     <div class="barra-inferior">
+    <div id="buttonYmenu">
+        <button id="menuButton"><i class="fas fa-grip-lines menuButtonIcon"></i></button>
+        <div id="dropDownMenu" class="menuOff">
+            <ul id="menuContent">
+                <li class="searchDiv menuItem">
+                    <input type="search" value="Search">
+                            <!--<button type="submit"><i class="fas fa-search searchIcon"></i></button>!-->
+                </li>
+                <li class="menuItem">
+                    <a href="/login"><i class="fas fa-user-nurse profile menuItemButton"></i> MI PERFIL </a>
+                </li>
+                <li class="menuItem">
+                    <a href="/cart"><i class="fas fa-cart-plus cart menuItemButton"></i>MI COMPRA </a>
+                </li>
+                <li class="menuItem">
+                    <a href="/productos"> TODOS LOS PRODUCTOS </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="logo-div">
+        <a href="/">
+            <img id="logo-img" src='/images/logo/logo-digital-farma.png' alt="Imagen logo">
+        </a>
+    </div>
+    <!--
+    <div class="barra-inferior">
          <span class="botonesMenu"><a href="/">Menu</a></span>
          <span class="botonesMenu"><a href="/productos">Productos</a></span>
          <span class="botonesMenu"><a href="/login">Login</a></span>
          <span class="botonesMenu"><a href="/register">Registro</a></span>
-     </div>
-   </header>
+    </div>
+    -->
+</header>
+<script src="./jsFront/headerJsFront.js" type="text/javascript"></script>

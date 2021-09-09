@@ -1,9 +1,17 @@
+/*
+colores: 
+beige: #F0E5D8
+verde turquesa: #75CFB8
+verde oscuro: #055052
+verde claro: #BBDFC8
+*/
+
 .products {
    display: flex;
    justify-content: space-between; 
 }
 .carousel{
-   background-color:  #18e659;
+   background-color: #18e659;
    width: 100%;
    height: 500px;
    margin-top: 30px;
