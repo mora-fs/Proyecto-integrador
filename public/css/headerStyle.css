@@ -12,6 +12,11 @@ header{
     display: flex;
     font-family: 'Forum', cursive;
 }
+#headerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 #buttonYmenu{
     display: flex;
 }

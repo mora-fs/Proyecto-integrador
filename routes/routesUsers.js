@@ -2,8 +2,7 @@ const express= require('express');
 const router = express.Router();
 const controller = require('../controllers/userController');
 
-// router.get('/miCarrito', controller.shoppingCart)
-
-router.get('/register')
+router.get('/cart', controller.cart)
+router.get('/profile', controller.profile)
 
 module.exports = router;

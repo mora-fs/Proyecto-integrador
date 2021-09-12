@@ -13,13 +13,13 @@ module.exports = {
     register: (req, res)=>{
         return res.render('register')
     }, 
+    registerSave: (req, res)=>{
+
+    },
     login: (req, res)=>{
         return res.render('login')
     },
-    cart: (req, res) => {
-        const productos= {
-            productos: parsedProductsDb
-        }
-        return res.render('shoppingCart', productos)
-    }
+    loginSave: (req, res)=>{
+
+    },
 }

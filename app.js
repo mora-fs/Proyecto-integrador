@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const session = require('express-session');
+app.use(session());
+
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
@@ -21,10 +24,10 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // ACA PUSE LA "ESTRUCTURA" DE EL SISTEMA DE RUTEO, ASI VAYA CADA UNO AGREGANDO SU PARTE O CORRIGIENDO"
-const routesMain = require('./routes/routesMain');
+const routesIndex = require('./routes/routesIndex');
 const routesProducts= require('./routes/routesProducts');
 const routesUsers = require('./routes/routesUsers');
 
-app.use('/', routesMain);
+app.use('/', routesIndex);
 app.use('/productos', routesProducts);
-app.use('/:user', routesUsers);
+app.use('/user', routesUsers);
