@@ -27,4 +27,4 @@ const routesUsers = require('./routes/routesUsers');
 
 app.use('/', routesMain);
 app.use('/productos', routesProducts);
-app.use('/:user', routesUsers);
+app.use('/usuario', routesUsers);
