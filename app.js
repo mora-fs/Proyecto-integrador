@@ -2,7 +2,11 @@ const express = require('express');
 const app = express();
 
 const session = require('express-session');
-app.use(session());
+app.use(session({
+    secret: 'secreto', 
+    resave: false, 
+    saveUninitialized: false
+}));
 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
@@ -30,4 +34,4 @@ const routesUsers = require('./routes/routesUsers');
 
 app.use('/', routesIndex);
 app.use('/productos', routesProducts);
-app.use('/user', routesUsers);
+app.use('/usuario', routesUsers);

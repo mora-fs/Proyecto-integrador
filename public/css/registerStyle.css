@@ -1,6 +1,10 @@
 /*  */
 /* MAIN  */
 /*  */
+.validation-error{
+    font-size: 18px;
+    color: red;
+}
 main{
     width: 60%;
     margin: auto;

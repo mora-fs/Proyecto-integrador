@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": 1,
     "avatar": "user_1.jpg",
     "funcion": "user_1.jpg",
@@ -9,7 +10,8 @@
     "password": "6pdORuJJ",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 2,
     "avatar": "user_2.jpg",
     "funcion": "user_2.jpg",
@@ -20,7 +22,8 @@
     "password": "cmuA7sgON",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 3,
     "avatar": "user_3.jpg",
     "funcion": "user_3.jpg",
@@ -31,7 +34,8 @@
     "password": "L65ws89",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 4,
     "avatar": "user_4.jpg",
     "funcion": "user_4.jpg",
@@ -42,7 +46,8 @@
     "password": "Dmbwvjho0",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 5,
     "avatar": "user_5.jpg",
     "funcion": "user_5.jpg",
@@ -53,7 +58,8 @@
     "password": "D0tdzFCr5oc",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 6,
     "avatar": "user_6.jpg",
     "funcion": "user_6.jpg",
@@ -64,7 +70,8 @@
     "password": "s750kYPiP",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 7,
     "avatar": "user_7.jpg",
     "funcion": "user_7.jpg",
@@ -75,7 +82,8 @@
     "password": "uiMgzrF0RG",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 8,
     "avatar": "user_8.jpg",
     "funcion": "user_8.jpg",
@@ -86,7 +94,8 @@
     "password": "JhwO51HUNJb",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 9,
     "avatar": "user_9.jpg",
     "funcion": "user_9.jpg",
@@ -97,7 +106,8 @@
     "password": "2DMxsX",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 10,
     "avatar": "user_10.jpg",
     "funcion": "user_10.jpg",
@@ -108,7 +118,8 @@
     "password": "pKSluHl6bj2",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 11,
     "avatar": "user_11.jpg",
     "funcion": "user_11.jpg",
@@ -119,7 +130,8 @@
     "password": "4p3q9q4Uu",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 12,
     "avatar": "user_12.jpg",
     "funcion": "user_12.jpg",
@@ -130,7 +142,8 @@
     "password": "68Vhx40bw6O",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 13,
     "avatar": "user_13.jpg",
     "funcion": "user_13.jpg",
@@ -141,7 +154,8 @@
     "password": "t0R03q",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 14,
     "avatar": "user_14.jpg",
     "funcion": "user_14.jpg",
@@ -152,7 +166,8 @@
     "password": "2XNDri",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 15,
     "avatar": "user_15.jpg",
     "funcion": "user_15.jpg",
@@ -163,7 +178,8 @@
     "password": "91oeFxWG",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 16,
     "avatar": "user_16.jpg",
     "funcion": "user_16.jpg",
@@ -174,7 +190,8 @@
     "password": "Y9KOmaX7V",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 17,
     "avatar": "user_17.jpg",
     "funcion": "user_17.jpg",
@@ -185,7 +202,8 @@
     "password": "cJ4QTPCL",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 18,
     "avatar": "user_18.jpg",
     "funcion": "user_18.jpg",
@@ -196,7 +214,8 @@
     "password": "UEd5NK",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 19,
     "avatar": "user_19.jpg",
     "funcion": "user_19.jpg",
@@ -207,7 +226,8 @@
     "password": "xUlZrXHCu",
     "destino_envio": "user",
     "tarjetas": "user"
-  }, {
+  },
+  {
     "id": 20,
     "avatar": "user_20.jpg",
     "funcion": "user_20.jpg",
@@ -218,4 +238,14 @@
     "password": "YNCqRaOcU",
     "destino_envio": "user",
     "tarjetas": "user"
-  }]
+  },
+  {
+    "id": 21,
+    "name": "Bautista",
+    "lastName": "Llobeta",
+    "email": "bautillobeta@gmail.com",
+    "password": "123456",
+    "type": "user",
+    "image": "user-1631472242427.png"
+  }
+]
