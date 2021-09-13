@@ -9,6 +9,8 @@ const parsedUsersDb= JSON.parse(fs.readFileSync(usersDbPath, 'utf-8'));
 
 const {validationResult} = require('express-validator');
 
+const bcrypt = require('bcryptjs');
+
 const controller = {
     home: (req, res)=>{
         const productos= {
@@ -30,16 +32,17 @@ const controller = {
                 name: req.body.nombre,
                 lastName: req.body.apellido,
                 email: req.body.email,
-                password: req.body.password,
+                password: bcrypt.hashSync(req.body.password, 10),
                 type: 'user',
                 image: req.file.filename 
             }
             parsedUsersDb.push(newUser)
-            // console.log(finalProduct)
             fs.writeFileSync(usersDbPath, JSON.stringify(parsedUsersDb))
-            // let profilePage = '/user/' + newUser.id
-            // return res.redirect(profilePage)
-            res.send('BIENVENIDO USUARIO NUMERO ' + newUser.id + 'TU NOMBRE COMPLETO ES ' + newUser.name + ' ' + newUser.lastName + 'Y tu foto de perfil es la siguiente: ' + path.join(__dirname, '../public/images/users/' + newUser.image))
+
+            // ACA FALTARIA QUE LUEGO DE REGISTRARSE, ANTES DE REDIRECCIONAR AL HOME, GUARDAR EN SESSION
+            // EL USUARIO, ASI CUANDO ENTRE AL HOME, AL ESTAR EN SESSION GUARDADO, APARECERÁ LOGUEADO
+
+            return res.render('home', {productos: parsedProductsDb})
         }
         else{
             // console.log(errors.mapped())
