@@ -20,6 +20,7 @@ const validations = [
         if(password != confirmPassword){
             throw new Error('Debes escribir la misma contraseña en ambos campos')
         }
+        return true
     }),
     body('userImage').custom((value, {req}) => {
         if(!req.file){

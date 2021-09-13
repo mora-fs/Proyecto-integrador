@@ -35,11 +35,11 @@ const controller = {
                 image: req.file.filename 
             }
             parsedUsersDb.push(newUser)
-        // console.log(finalProduct)
-        fs.writeFileSync(usersDbPath, JSON.stringify(parsedUsersDb))
-        // let profilePage = '/user/' + newUser.id
-        // return res.redirect(profilePage)
-        res.send('BIENVENIDO USUARIO NUMERO ' + newUser.id + 'TU NOMBRE COMPLETO ES ' + newUser.name + ' ' + newUser.lastName + 'Y tu foto de perfil es la siguiente: ' + path.join(__dirname, '../public/images/users/' + newUser.image))
+            // console.log(finalProduct)
+            fs.writeFileSync(usersDbPath, JSON.stringify(parsedUsersDb))
+            // let profilePage = '/user/' + newUser.id
+            // return res.redirect(profilePage)
+            res.send('BIENVENIDO USUARIO NUMERO ' + newUser.id + 'TU NOMBRE COMPLETO ES ' + newUser.name + ' ' + newUser.lastName + 'Y tu foto de perfil es la siguiente: ' + path.join(__dirname, '../public/images/users/' + newUser.image))
         }
         else{
             // console.log(errors.mapped())
