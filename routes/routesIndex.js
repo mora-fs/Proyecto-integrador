@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const controller = require('../controllers/indexController');
 const path= require('path');
+const hideToUserMiddleware= require('../middlewares/hideToUserMiddleware');
 
 const {body} = require('express-validator');
 
@@ -50,12 +51,10 @@ const storage = multer.diskStorage({
 })
 const upload= multer({storage});
 
-
-
 router.get('/', controller.home)
-router.get('/login', /*HideToUserMiddleware,*/ controller.loginForm)
-router.post('/login', /*HideToUserMiddleware,*/ controller.login)
-router.get('/register', /*HideToUserMiddleware,*/ controller.registerForm);
-router.post('/register', /*HideToUserMiddleware,*/ upload.single('userImage'), validations,  controller.register);
+router.get('/login', hideToUserMiddleware, controller.loginForm)
+router.post('/login', controller.login)
+router.get('/register', controller.registerForm);
+router.post('/register', upload.single('userImage'), validations,  controller.register);
 
 module.exports = router;

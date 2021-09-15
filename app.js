@@ -7,6 +7,14 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
+const session= require('express-session');
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+    })
+);
+
 const path = require('path')
 const publicPath = path.resolve(__dirname, './public')
 app.use(express.static(publicPath))
