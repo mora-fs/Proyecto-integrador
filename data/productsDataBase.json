@@ -466,5 +466,16 @@
             "Romeo",
             "Whiskey"
         ]
+    },
+    {
+        "id": 28,
+        "name": "Producto Base",
+        "marca": "marca cualquiera",
+        "price": "123456",
+        "discount": "10",
+        "image": "product-1631672886886.png",
+        "stock": "50",
+        "description": "Este es un producto usado como ejemplo",
+        "category": "capilar"
     }
 ]

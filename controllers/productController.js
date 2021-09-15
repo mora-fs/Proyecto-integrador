@@ -44,11 +44,12 @@ const controller = {
 
             newProduct.id = idNewProduct;
             newProduct.name = req.body.name;
-            newProduct.image = req.file.filename;
+            newProduct.marca = req.body.marca;
             newProduct.price = req.body.price;
             newProduct.discount = req.body.discount;
-            newProduct.marca = req.body.marca;
+            newProduct.image = req.file.filename;
             // newProduct.color = req.body.color;
+            newProduct.stock = req.body.cantidad;
             newProduct.description = req.body.description;
             newProduct.category = req.body.category;
 
@@ -76,6 +77,12 @@ const controller = {
             return res.send("Producto no encontrado...");
         }
     },
+
+    edit: (req,res)=>{
+        // aca va la logica que edita los datos del producto en la base de datos
+        
+    }
+    ,
     delete: (req, res)=>{
         const idDelete= req.params.id;
         const notDeleted= parsedProductsDb.filter(producto=> producto.id != idDelete);

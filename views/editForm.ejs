@@ -9,24 +9,24 @@
         <form action="/products/ID/?_method=PUT" method="POST">
             <div class="campo">
                 <label for="nombre">Nombre del producto:</label>
-                <input type="text" id="name" name="nombre" value= <%- editParam.name %>>
+                <input type="text" id="name" name="nombre" value= <%= editParam.name %>>
             </div>
             
             <div class="campo">
                 <label for="marca">Marca:</label>
-                <input type="text" name="marca" value= <%- editParam.marca %>>
+                <input type="text" name="marca" value= <%= editParam.marca %>>
             </div>
             <div class="campo">
                 <label for="price">Precio:</label>
-                <input type="number" name="price" value= <%- editParam.price %>>
+                <input type="number" name="price" value= <%= editParam.price %>>
             </div>
             <div class="campo">
                 <label for="discount">Descuento:</label>
-                <input type="number" name="discount" value= <%- editParam.descuento %>>
+                <input type="number" name="discount" value= <%= editParam.discount %>>
             </div>
             <div class="campo">
                 <label for="cantidad">Cantidad:</label>
-                <input type="text" name="cantidad">
+                <input type="text" name="cantidad" value= <%= editParam.stock  %>  >
             </div>
             <!-- <div class="campo">
                 <label for="color">Color:</label>
@@ -34,24 +34,29 @@
             </div> -->
             <div class="campo">
                 <label for="category">Categoría:</label>
-                <select name="category" id="categoria" value= <%- editParam.category %>>
-                    <option value="bucal">Cuidado bucal</option>
-                    <option value="corporal">Cuidado corporal</option>
-                    <option value="facial">Cuidado facial</option>
-                    <option value="verano">Verano</option>
-                    <option value="capilar">Capilar</option>
-                    <option value="higiene">Higiene</option>
+                <select name="category" id="categoria">
+                    <option value="bucal" <%= editParam.category == "bucal"?"selected":null%> >Cuidado bucal</option>
+                    <option value="corporal" <%= editParam.category == "corporal"?"selected":null%>>Cuidado corporal</option>
+                    <option value="facial" <%= editParam.category == "facial"?"selected":null%>>Cuidado facial</option>
+                    <option value="verano" <%= editParam.category == "verano"?"selected":null%>>Verano</option>
+                    <option value="capilar" <%= editParam.category == "capilar"?"selected":null%>>Capilar</option>
+                    <option value="higiene" <%= editParam.category == "higiene"?"selected":null%>>Higiene</option>
                 </select>
             </div>
             <div class="campo">
                 <label for="description">Descripción:</label>
-                <textarea name="description" value= <%- editParam.description %>></textarea>
+                <textarea name="description"><%=editParam.description%> </textarea>
             </div>
             <div class="campo">
-                <label for="img-new-prod">Imagen:</label>
-                <input type="file" name="img-new-prod" value= <%- editParam.image %>>
+                <label for="">Imagen:</label>
+                <input type="file" name="img-new-prod" class="input-file">
+                <p>Imagen actual: <%= editParam.image %> </p>
+                
             </div>
-            <button type="submit" class="campo">Crear producto</button>
+            <button type="submit" class="campo">Guardar cambios</button>
+        </form>
+        <form action="/productos/<%= editParam.id %> ">
+            <button type="submit" class="campo">Cancelar</button>
         </form>
     <%- include('./partials/footer') %> 
 </body>

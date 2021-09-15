@@ -55,7 +55,7 @@
                     </form>
                     <div class="buttons-empleado">
                         <div class="button edit">
-                            <a href="/productos/detalle/<%= productParam.id %>/editar"  class="edit-ref">Editar producto</a>
+                            <a href="/productos/<%= productParam.id %>/editar"  class="edit-ref">Editar producto</a>
                         </div>
                         <form action="/productos/<%= productParam.id %>/?_method=" method="POST">
                             <button class="button delete" type="submit">Eliminar producto</button>

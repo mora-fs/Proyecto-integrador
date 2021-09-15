@@ -71,7 +71,10 @@ router.get('/crear', controller.createForm);
 router.post('/crear', uploadFile.single('imgNewProduct'), validations, controller.createProduct);
 
 router.get('/:id', controller.detail);
+
 router.get('/:id/editar', controller.editForm);
+router.put('/:id/editar', controller.edit)
+
 router.delete('/:id', controller.delete);
 
 module.exports = router;
