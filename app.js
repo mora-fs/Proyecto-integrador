@@ -1,13 +1,6 @@
 const express = require('express');
 const app = express();
 
-const session = require('express-session');
-app.use(session({
-    secret: 'secreto', 
-    resave: false, 
-    saveUninitialized: false
-}));
-
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 

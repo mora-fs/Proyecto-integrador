@@ -20,6 +20,7 @@ const validations = [
         if(password != confirmPassword){
             throw new Error('Debes escribir la misma contraseña en ambos campos')
         }
+        return true
     }),
     body('userImage').custom((value, {req}) => {
         if(!req.file){
@@ -52,9 +53,9 @@ const upload= multer({storage});
 
 
 router.get('/', controller.home)
-router.get('/login', controller.loginForm)
-router.post('/login', controller.login)
-router.get('/register', controller.registerForm);
-router.post('/register', upload.single('userImage'), validations,  controller.register);
+router.get('/login', /*HideToUserMiddleware,*/ controller.loginForm)
+router.post('/login', /*HideToUserMiddleware,*/ controller.login)
+router.get('/register', /*HideToUserMiddleware,*/ controller.registerForm);
+router.post('/register', /*HideToUserMiddleware,*/ upload.single('userImage'), validations,  controller.register);
 
 module.exports = router;
