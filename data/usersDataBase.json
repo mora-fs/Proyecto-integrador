@@ -247,5 +247,14 @@
     "password": "123456",
     "type": "user",
     "image": "user-1631472242427.png"
+  },
+  {
+    "id": 22,
+    "name": "Usuario",
+    "lastName": "De Prueba",
+    "email": "usuariocualquiera2@gmail.com",
+    "password": "$2a$10$3P8AwDdKrDvLpw2R4vg8gOhdzOfS5Sl24WxzcWxJrxnN2gGKux3kG",
+    "type": "user",
+    "image": "user-1631492460655.png"
   }
 ]

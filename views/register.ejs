@@ -14,7 +14,7 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.nombre){%>
                     <div><p class="validation-error"><%=  errorMessage.nombre.msg %></p></div> 
                 <% } %>
-                    <input type="text" name="nombre" class="input-tipo-texto">
+                    <input type="text" value="<%=locals&&locals.old&&locals.old.nombre?old.nombre:null%>" name="nombre" class="input-tipo-texto">
             </div>
 
             <div>
@@ -22,7 +22,7 @@
                 <% if(locals.errorMessage && locals.errorMessage.apellido){%>
                     <div><p class="validation-error"><%=  errorMessage.apellido.msg %></p></div> 
                 <% } %>
-                <input type="text" name="apellido" class="input-tipo-texto">
+                <input type="text" value="<%=locals&&locals.old&&locals.old.apellido?old.apellido:null%>" name="apellido" class="input-tipo-texto">
             </div>
             <!-- <div>
                 <input type="text" placeholder="Nombre de Usuario" class="input-tipo-texto" required>
@@ -45,7 +45,7 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.password){%>
                     <div><p class="validation-error"><%=  errorMessage.password.msg %></p></div> 
                 <% } %>
-                <input type="password" name="password" class="input-tipo-texto">
+                <input type="password"  name="password" class="input-tipo-texto">
             </div>
 
             <div>

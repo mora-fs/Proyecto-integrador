@@ -1,3 +1,11 @@
 .campo{
     margin: 10px;
 }
+.validation-error{
+    color: red;
+    font-size: 18px;
+}
+
+textarea{
+    resize: none;
+}
