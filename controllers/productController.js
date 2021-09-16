@@ -30,8 +30,6 @@ const controller = {
         return res.render('detail', productParam);
     },
     createForm: (req,res) => {
-        // console.log(parsedProductsDb)
-
         return res.render('createForm');
     },
     createProduct: (req, res) =>{

@@ -256,5 +256,14 @@
     "password": "$2a$10$3P8AwDdKrDvLpw2R4vg8gOhdzOfS5Sl24WxzcWxJrxnN2gGKux3kG",
     "type": "user",
     "image": "user-1631492460655.png"
+  },
+  {
+    "id": 23,
+    "name": "Empleado",
+    "lastName": "De Prueba",
+    "email": "empleado1@gmail.com",
+    "password": "empleado1",
+    "type": "employee",
+    "image": "user-1631492460655.png"
   }
 ]

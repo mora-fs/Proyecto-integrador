@@ -1,18 +1,19 @@
 const express = require('express');
 const app = express();
 
-const session = require('express-session');
-app.use(session({
-    secret: 'secreto', 
-    resave: false, 
-    saveUninitialized: false
-}));
-
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
+const session= require('express-session');
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+    })
+);
 
 const path = require('path')
 const publicPath = path.resolve(__dirname, './public')

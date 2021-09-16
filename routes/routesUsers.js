@@ -3,6 +3,6 @@ const router = express.Router();
 const controller = require('../controllers/userController');
 
 router.get('/cart', controller.cart)
-router.get('/profile', controller.profile)
+router.get('/profile', /*HideToGuestMiddleware,*/ controller.profile)
 
 module.exports = router;

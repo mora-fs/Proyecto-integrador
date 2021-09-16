@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/productController");
 const path= require('path');
+const onlyEmployeeMiddleware= require('../middlewares/onlyEmployeeMiddleware');
 
 // LOGICA DE MULTER 
 const multer= require('multer');
@@ -67,14 +68,14 @@ const validations = [
 
 router.get('/', controller.productsList);
 
-router.get('/crear', controller.createForm);
-router.post('/crear', uploadFile.single('imgNewProduct'), validations, controller.createProduct);
+router.get('/crear', onlyEmployeeMiddleware, controller.createForm);
+router.post('/crear', onlyEmployeeMiddleware, uploadFile.single('imgNewProduct'), validations, controller.createProduct);
 
 router.get('/:id', controller.detail);
 
-router.get('/:id/editar', controller.editForm);
-router.put('/:id/editar', controller.edit)
+router.get('/:id/editar', onlyEmployeeMiddleware, controller.editForm);
+router.put('/:id/editar', onlyEmployeeMiddleware, controller.edit)
 
-router.delete('/:id', controller.delete);
+router.delete('/:id', onlyEmployeeMiddleware, controller.delete);
 
 module.exports = router;
