@@ -80,7 +80,21 @@ const controller = {
 
     edit: (req,res)=>{
         // aca va la logica que edita los datos del producto en la base de datos
-        
+        let idEdit= req.params.id;
+        let arrayPosition = idEdit -1;
+        parsedProductsDb[arrayPosition].name = req.body.name;
+        parsedProductsDb[arrayPosition].marca = req.body.marca;
+        parsedProductsDb[arrayPosition].price = req.body.price;
+        parsedProductsDb[arrayPosition].discount = req.body.discount;
+        // parsedProductsDb[arrayPosition].image = req.file.filename;
+        parsedProductsDb[arrayPosition].stock = req.body.cantidad;
+        parsedProductsDb[arrayPosition].description = req.body.description;
+        parsedProductsDb[arrayPosition].category = req.body.category;
+
+        fs.writeFileSync(productsDbPath, JSON.stringify(parsedProductsDb))
+        let redirectionRoute = '/productos/' + parsedProductsDb[arrayPosition].id;
+       
+        return res.redirect(redirectionRoute)        
     }
     ,
     delete: (req, res)=>{
