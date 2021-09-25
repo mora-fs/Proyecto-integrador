@@ -6,23 +6,36 @@ const productsDbPath= path.join(__dirname, '../data/productsDataBase.json');
 const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
 
 const {validationResult} = require('express-validator');
+const onlyEmployeeMiddleware= require('../middlewares/onlyEmployeeMiddleware');
 
 const controller = {
     productsList: (req, res) =>{
+        const loggedUser= req.session.loggedUser;
+        let userIsEmployee= false;
+        if (loggedUser && loggedUser.type == 'employee'){
+            userIsEmployee = true;
+        }
         let products= {
-            products: parsedProductsDb
+            products: parsedProductsDb, 
+            userIsEmployee
         };
         return res.render('productsList', products);
     },
     detail: (req, res)=>{
-        idDetail= req.params.id;
-        productDetail= parsedProductsDb.find(product=> product.id == idDetail);
-        const productParam= {
-            productParam: productDetail
-        };
+        const idDetail= req.params.id;
+        const productDetail= parsedProductsDb.find(product=> product.id == idDetail);
         if (!productDetail){
             return res.send('El producto solicitado no se encontró');
         }
+        const loggedUser= req.session.loggedUser;
+        let userIsEmployee= false;
+        if (loggedUser && loggedUser.type == 'employee'){
+            userIsEmployee = true;
+        }
+        const productParam= {
+        productParam: productDetail, 
+        userIsEmployee
+        };
         return res.render('detail', productParam);
     },
     createForm: (req,res) => {
@@ -48,7 +61,6 @@ const controller = {
             newProduct.category = req.body.category;
 
             parsedProductsDb.push(newProduct)
-            // console.log(finalProduct)
             fs.writeFileSync(productsDbPath, JSON.stringify(parsedProductsDb))
 
             let redirectionRoute = '/productos/' + newProduct.id;

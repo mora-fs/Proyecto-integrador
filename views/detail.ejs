@@ -53,7 +53,8 @@
                             </div>
                             <button type="submit" class="button add-carrito">Agregar al carrito</button>
                     </form>
-                    <div class="buttons-empleado soloEmpleado">
+                    <% if (userIsEmployee == true) { %> 
+                    <div class="buttons-empleado">
                         <div class="button edit">
                             <a href="/productos/<%= productParam.id %>/editar"  class="edit-ref">Editar producto</a>
                         </div>
@@ -61,6 +62,7 @@
                             <button class="button delete" type="submit">Eliminar producto</button>
                         </form>
                     </div>
+                    <% } %> 
                 </div>
         </section>
         <section class="relacionados">

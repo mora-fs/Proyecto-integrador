@@ -7,6 +7,11 @@
     <%- include('partials/header') %> 
     <main>
         <h2 class="listadoTitulo">Listado de productos</h2>
+        <% if (userIsEmployee == true) { %> 
+            <div id="button-crear">
+                <a href="/productos/crear">Añadir producto nuevo al inventario</a>
+            </div>
+        <% } %> 
         <div class="productos">
             <% products.forEach(product => { %>
                 <div class="producto">

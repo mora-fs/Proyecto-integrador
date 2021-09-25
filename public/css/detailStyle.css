@@ -72,9 +72,6 @@ label{
     justify-content: space-between;
     margin: 5px;
 }
-.soloEmpleado{
-    display: none;
-}
 .button{
     max-width: 200px;
     font-size: 15px;
