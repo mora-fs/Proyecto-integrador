@@ -64,8 +64,6 @@ const validations = [
     })
 ]
 
-
-
 router.get('/', controller.productsList);
 
 router.get('/crear', onlyEmployeeMiddleware, controller.createForm);

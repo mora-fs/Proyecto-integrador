@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User's profile</title>
+    <%- include('./partials/head', {title:'Tu perfil', stylesheet:'profileStyle.css'}) %>
 </head>
 <body>
-    <h2>Perfil de USUARIO </h2>
-    <form action="/productos">
-        <button type="submit">Productos</button>
-    </form>
+    <%- include ('partials/header') %> 
+    <main id="mainProfile">
+        <h2>Perfil de USUARIO </h2>
+        <form action="/productos">
+            <button type="submit">Productos</button>
+        </form>
+    </main>
+    <%- include ('partials/footer') %> 
 </body>
 </html>
