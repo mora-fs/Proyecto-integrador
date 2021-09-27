@@ -6,29 +6,30 @@
 <body>
     <%- include('./partials/header')%>
     <h2 class="titulo">Tu Carrito</h2>
+    <% if(productos != undefined) {%> 
     <div class="contenedor-carrito">
-        <section class="lista-productos">
-            <% productos.forEach(producto=>{ %>
-                <% if (producto.id < 5) { %> 
-                <article class="producto">
-                    <div class="contenedor-img-info">
-                        <div class="contenedor-img">
-                            <img src="/images/productos/<%= producto.image %>" alt="<%= producto.name %>">
-                        </div>
-                        <div class="info-producto">
-                            <h3 class="nombre-producto"><%= producto.name %></h3>
-                            <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur, adipisicing elit</p>
-                            <h4 class="precio-producto"><%= producto.price %></h4>
-                        </div>
-                    </div>
-                    <div class="contenedor-boton-borrar">
-                        <form action="">
-                            <button type="submit"><i class="fas fa-trash-alt"></i></button>
-                        </form>
-                    </div>
-                </article>
-                <% } %> 
-            <% }) %> 
+            <section class="lista-productos">
+                    <% productos.forEach(producto=>{ %>
+                        <article class="producto">
+                            <div class="contenedor-img-info">
+                                <div class="contenedor-img">
+                                    <img src="/images/productos/<%= producto.image %>" alt="<%= producto.name %>">
+                                </div>
+                                <div class="info-producto">
+                                    <h3 class="nombre-producto"><%= producto.name %></h3>
+                                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur, adipisicing elit</p>
+                                    <h4 class="precio-producto"><%= producto.price %></h4>
+                                </div>
+                            </div>
+                            <div class="contenedor-boton-borrar">
+                                <form action="">
+                                    <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </div>
+                        </article>
+                    <% }) %> 
+
+                
             <!--
             <article class="producto">
                 <div class="contenedor-img-info">
@@ -96,6 +97,11 @@
         <button>Seguir Comprando</button>
         <button>Finalizar Compra</button>
     </section>
+    <% } %> 
+    <% if(!productos){ %>
+        <h2>Aún no añadiste productos a tu carrito</h2>
+        <a href="/productos">Click aquí para ver el catálogo</a>
+    <% } %> 
     <%- include('./partials/footer') %> 
 </body>
 </html>
