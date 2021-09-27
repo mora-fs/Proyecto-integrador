@@ -15,6 +15,7 @@ const controller= {
         else{
             productos = undefined
         }
+        console.log(req.session.productsOnCart)
         return res.render('shoppingCart', productos)
     },
 
@@ -31,12 +32,16 @@ const controller= {
             req.session.productsOnCart.push(productToAdd)
         }
 
-
-
-
         redirectionRoute = '/productos/' + idDetail;
+
         res.redirect(redirectionRoute)
-    
+    },
+
+    deleteFromCart: (req,res) => {
+        // let productToDelete = req.session.productsOnCart.find(product => product.id == req.params.id);
+        req.session.productsOnCart = req.session.productsOnCart.filter(product => product.id != req.params.id)
+        res.redirect('/usuario/cart')
+
     },
 
     profile: (req, res) => {

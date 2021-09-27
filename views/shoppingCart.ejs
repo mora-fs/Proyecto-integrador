@@ -6,7 +6,7 @@
 <body>
     <%- include('./partials/header')%>
     <h2 class="titulo">Tu Carrito</h2>
-    <% if(productos != undefined) {%> 
+    <% if(productos != undefined && productos.length > 0) {%> 
     <div class="contenedor-carrito">
             <section class="lista-productos">
                     <% productos.forEach(producto=>{ %>
@@ -22,7 +22,7 @@
                                 </div>
                             </div>
                             <div class="contenedor-boton-borrar">
-                                <form action="">
+                                <form action="/usuario/cart/<%=producto.id%>/delete" method="POST">
                                     <button type="submit"><i class="fas fa-trash-alt"></i></button>
                                 </form>
                             </div>
@@ -98,7 +98,7 @@
         <button>Finalizar Compra</button>
     </section>
     <% } %> 
-    <% if(!productos){ %>
+    <% if(!productos || productos.length == 0){ %>
         <h2>Aún no añadiste productos a tu carrito</h2>
         <a href="/productos">Click aquí para ver el catálogo</a>
     <% } %> 

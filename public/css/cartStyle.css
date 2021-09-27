@@ -133,6 +133,8 @@ body{
     justify-content: center;
     align-items: center;
 
+
+
     padding: 10px;
 }
 
@@ -144,6 +146,7 @@ body{
 
 .contenedor-boton-borrar button i{
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .descripcion-producto{

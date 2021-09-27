@@ -2,6 +2,9 @@ body{
     box-sizing: border-box;
     margin: 0;
 }
+button{
+    cursor: pointer;
+}
 header{
     background-color: #F0E5D8;
     font-family: 'Roboto', sans-serif;
