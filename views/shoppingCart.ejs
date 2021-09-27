@@ -20,6 +20,9 @@
                                     <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur, adipisicing elit</p>
                                     <h4 class="precio-producto"><%= producto.price %></h4>
                                 </div>
+                                <div>
+                                    <p>Unidades: <%=producto.quantity  %> </p>
+                                </div>
                             </div>
                             <div class="contenedor-boton-borrar">
                                 <form action="/usuario/cart/<%=producto.id%>/delete" method="POST">

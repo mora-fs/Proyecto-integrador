@@ -15,13 +15,14 @@ const controller= {
         else{
             productos = undefined
         }
-        console.log(req.session.productsOnCart)
+        // console.log(req.session.productsOnCart)
         return res.render('shoppingCart', productos)
     },
 
     addToCart: (req,res) => {
         const idDetail= req.params.id;
         const productToAdd= parsedProductsDb.find(product=> product.id == idDetail);
+        productToAdd.quantity = req.body.quantity;
 
         if(req.session.productsOnCart){
             req.session.productsOnCart.push(productToAdd)
@@ -34,12 +35,18 @@ const controller= {
 
         redirectionRoute = '/productos/' + idDetail;
 
-        res.redirect(redirectionRoute)
+        return res.redirect(redirectionRoute)
+        // res.send(productToAdd)
     },
 
     deleteFromCart: (req,res) => {
-        // let productToDelete = req.session.productsOnCart.find(product => product.id == req.params.id);
-        req.session.productsOnCart = req.session.productsOnCart.filter(product => product.id != req.params.id)
+        // req.session.productsOnCart = req.session.productsOnCart.filter(product => product.id != req.params.id)
+
+        // // en el siguiente metodo busco con indexOf el indice del producto a eliminar
+        let index = req.session.productsOnCart.findIndex(product => product.id == req.params.id)
+
+        req.session.productsOnCart.splice(index,1)
+        // console.log(req.session.productsOnCart)
         res.redirect('/usuario/cart')
 
     },

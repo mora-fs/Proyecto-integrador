@@ -45,11 +45,15 @@
                     <form action="/usuario/cart/<%=productParam.id%> " method="POST" class="unidades-carrito">
                             <div class="caja-unidades">
                                 <label for="unidades">Elige las unidades</label>
-                                <select type="text" name="unidades" id="unidades">
+                                <select name="quantity" id="unidades">
+                                <% if(productParam.stock) {%> 
+                                    <% for(i=1; i <= productParam.stock; i++){ %> 
+                                        <option value="<%=i%>"><%=i%></option>
+                                    <% } %> 
+                                <% } %>
+                                <% if(!productParam.stock){%> 
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
+                                <% } %> 
                                 </select>
                             </div>
                             <button type="submit" class="button add-carrito">Agregar al carrito</button>
