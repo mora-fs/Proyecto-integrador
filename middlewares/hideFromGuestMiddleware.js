@@ -1,8 +1,9 @@
-module.exports= function(req, res){
-    if (req.session.loggedUser) {
-        require('../controllers/userController')
+module.exports= function(req, res, next){
+    console.log(req.session.loggedUser);
+    if (!req.session.loggedUser) {
+        res.redirect('/login');
     }
     else{
-        res.redirect('login');
+        next();
     }
 }

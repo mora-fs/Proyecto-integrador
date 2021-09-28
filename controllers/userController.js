@@ -53,7 +53,11 @@ const controller= {
     },
 
     profile: (req, res) => {
-        res.render('profile')
+        const loggedUser= req.session.loggedUser;
+        const user= {
+            user: loggedUser
+        };
+        res.render('profile', user)
     }
 }
 module.exports= controller
