@@ -55,7 +55,7 @@ const controller = {
     login: (req, res) => {
         let userToLogIn= parsedUsersDb.find(user=> user.email==req.body.nombreUsuario);
         req.session.loggedUser= userToLogIn;
-        return res.render('profile');
+        return res.redirect('/cuenta/profile');
     }
 }
 

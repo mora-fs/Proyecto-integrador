@@ -1,8 +1,9 @@
-module.exports= function(req, res){
-    if (req.session.loggedUser){
-        return res.redirect('/usuario/cart'); 
+module.exports= function(req, res, next){
+    console.log(req.session.loggedUser);
+    if (!req.session.loggedUser) {
+        res.redirect('/login');
     }
     else{
-        return res.render('login'); 
+        next();
     }
 }

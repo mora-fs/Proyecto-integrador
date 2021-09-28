@@ -3,6 +3,7 @@ const { parse } = require('path');
 const path= require('path');
 const productsDbPath= path.join(__dirname, '../data/productsDataBase.json');
 const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
+const indexController= require('../controllers/indexController');
 
 
 const session = require('express-session');
@@ -52,7 +53,11 @@ const controller= {
     },
 
     profile: (req, res) => {
-        return res.render('profile')
+        const loggedUser= req.session.loggedUser;
+        const user= {
+            user: loggedUser
+        };
+        res.render('profile', user)
     }
 }
 module.exports= controller
