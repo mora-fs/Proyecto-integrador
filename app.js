@@ -35,4 +35,4 @@ const routesUsers = require('./routes/routesUsers');
 
 app.use('/', routesIndex);
 app.use('/productos', routesProducts);
-app.use('/usuario', routesUsers);
+app.use('/cuenta', routesUsers);

@@ -1,8 +1,8 @@
 module.exports= function(req, res){
-    if (req.session.loggedUser){
-        return res.redirect('/usuario/cart'); 
+    if (req.session.loggedUser) {
+        require('../controllers/userController')
     }
     else{
-        return res.render('login'); 
+        res.redirect('login');
     }
 }

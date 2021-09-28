@@ -6,8 +6,8 @@ const productsDbPath= path.join(__dirname, '../data/productsDataBase.json');
 const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
 
 const {validationResult} = require('express-validator');
-const onlyEmployeeMiddleware= require('../middlewares/onlyEmployeeMiddleware');
-
+/* const onlyEmployeeMiddleware= require('../middlewares/onlyEmployeeMiddleware');
+ */
 const controller = {
     productsList: (req, res) =>{
         const loggedUser= req.session.loggedUser;

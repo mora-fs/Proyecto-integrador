@@ -3,16 +3,17 @@ const { parse } = require('path');
 const path= require('path');
 const productsDbPath= path.join(__dirname, '../data/productsDataBase.json');
 const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
+const indexController= require('../controllers/indexController');
 
 const controller= {
     cart: (req, res) => {
         const productos= {
             productos: parsedProductsDb
         }
-        return res.render('shoppingCart', productos)
+        res.render('shoppingCart', productos)
     },
     profile: (req, res) => {
-        return res.render('profile')
+        res.render('profile')
     }
 }
 module.exports= controller
