@@ -2,12 +2,15 @@ body{
     box-sizing: border-box;
     margin: 0;
 }
+button{
+    cursor: pointer;
+}
 header{
     background-color: #F0E5D8;
     font-family: 'Roboto', sans-serif;
     width: 100%;
     position: relative;
-    height: 115px;
+    height: 125px;
     align-items: center;
     display: flex;
     font-family: 'Forum', cursive;
@@ -49,17 +52,22 @@ header{
     display: none;
 }
 #logo-div{
-    width: 110px;
+    width: 100px;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -55px;
-    margin-left: -55px;
+    left: 45%;
+    top: 10%;
+    /* margin-top: -55px; */
+    /* bottom: 50px; */
+    /* margin-left: -55px; */
+
 }
 #logo-img{
     border-radius: 100%;
-    background-color: transparent;
-    width: 100%;
+    /* background-color: transparent; */
+    width: 110px;
+}
+.logo-nuevo-1{
+    padding-top: 30%;
 }
 .searchDiv{
     display: flex;
