@@ -42,7 +42,7 @@
                             </p>
                         </div>
                     </div>
-                    <form action="/usuario/cart/<%=productParam.id%> " method="POST" class="unidades-carrito">
+                    <form action="/cuenta/cart/<%=productParam.id%> " method="POST" class="unidades-carrito">
                             <div class="caja-unidades">
                                 <label for="unidades">Elige las unidades</label>
                                 <select name="quantity" id="unidades">
@@ -73,10 +73,11 @@
         <section class="relacionados">
             <h3>Poductos relacionados</h3>
             <div class="imagenes-relacionados">
-                <img src="#" alt="Foto 1" class="img-relacionado">
-                <img src="#" alt="Foto 2" class="img-relacionado">
-                <img src="#" alt="Foto 3" class="img-relacionado">
+                <% for (i=0; i<3; i++) { %>
+                    <img src="/images/productos/<%= relacionado[i].image %>" alt="<%= relacionado[i].name %> " class="img-relacionado">
+                <% } %>
             </div>
+            <% console.log(relacionado[0]) %> 
         </section>
     </main>
     <%- include('partials/footer') %> 

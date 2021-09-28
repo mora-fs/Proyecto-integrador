@@ -48,7 +48,7 @@ const controller= {
 
         req.session.productsOnCart.splice(index,1)
         // console.log(req.session.productsOnCart)
-        res.redirect('/usuario/cart')
+        res.redirect('/cuenta/cart')
 
     },
 

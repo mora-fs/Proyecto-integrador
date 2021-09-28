@@ -31,12 +31,19 @@ const controller = {
         let userIsEmployee= false;
         if (loggedUser && loggedUser.type == 'employee'){
             userIsEmployee = true;
+        };
+        let productsRelacionados= [];
+        for (i=0; i<3; i++){
+            let randomId= Math.round(Math.random() * parsedProductsDb.length);
+            let randomProduct= parsedProductsDb.find((product)=> product.id == randomId);
+            productsRelacionados.push(randomProduct)
         }
-        const productParam= {
+        const data= {
         productParam: productDetail, 
+        relacionado: productsRelacionados,
         userIsEmployee
         };
-        return res.render('detail', productParam);
+        return res.render('detail', data);
     },
     createForm: (req,res) => {
         return res.render('createForm');
