@@ -74,10 +74,11 @@
             <h3>Poductos relacionados</h3>
             <div class="imagenes-relacionados">
                 <% for (i=0; i<3; i++) { %>
-                    <img src="/images/productos/<%= relacionado[i].image %>" alt="<%= relacionado[i].name %> " class="img-relacionado">
+                    <a href="/productos/<%= recommended[i].id%>" class="recommendedLink">
+                        <img src="/images/productos/<%= recommended[i].image %>" alt="<%= recommended[i].name %> " class="img-relacionado">
+                    </a>
                 <% } %>
             </div>
-            <% console.log(relacionado[0]) %> 
         </section>
     </main>
     <%- include('partials/footer') %> 

@@ -16,8 +16,17 @@ const controller= {
         else{
             productos = undefined
         }
-        // console.log(req.session.productsOnCart)
-        return res.render('shoppingCart', productos)
+        let productsRelacionados= [];
+        for (i=0; i<3; i++){
+            let randomId= Math.round(Math.random() * parsedProductsDb.length);
+            let randomProduct= parsedProductsDb.find((product)=> product.id == randomId);
+            productsRelacionados.push(randomProduct)
+        }
+        let products= {
+            productsInCart: productos, 
+            productsRecommend: productsRelacionados
+        };
+        return res.render('shoppingCart', products)
     },
 
     addToCart: (req,res) => {

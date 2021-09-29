@@ -94,8 +94,12 @@ label{
 .edit-ref:hover{
     color: #FFFFFF;
 }
+.recommendedLink{
+    padding: 0;
+}
 .img-relacionado{
     width: 70%;
+    padding: 0;
     border: 1px #000 solid;
     margin: auto;
     margin-bottom: 20px;
@@ -118,7 +122,7 @@ label{
         justify-content: space-around;
     }
     .img-relacionado{
-        width: 30%;
+        width: 25%;
     }
     .edit, .delete{
         width: 300px;

@@ -228,6 +228,14 @@ body{
     color: red;
 }
 
+#recommendedSection{
+    width: 90vw;
+    margin: auto;
+}
+.recommendedProductImg{
+    width: 80%;
+}
+
 @media(min-width:760px){
     .descripcion-producto{
         margin: 0px;
@@ -271,5 +279,11 @@ body{
     }
     .total-a-pagar h3{
         font-size: 22px;
+    }
+    #recommendedSection{
+        display: flex;
+    }
+    .recommendedProductImg{
+        width: 30%;
     }
 }

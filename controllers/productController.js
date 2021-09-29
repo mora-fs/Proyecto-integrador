@@ -32,15 +32,15 @@ const controller = {
         if (loggedUser && loggedUser.type == 'employee'){
             userIsEmployee = true;
         };
-        let productsRelacionados= [];
+        let similarProducts= [];
         for (i=0; i<3; i++){
             let randomId= Math.round(Math.random() * parsedProductsDb.length);
             let randomProduct= parsedProductsDb.find((product)=> product.id == randomId);
-            productsRelacionados.push(randomProduct)
+            similarProducts.push(randomProduct)
         }
         const data= {
         productParam: productDetail, 
-        relacionado: productsRelacionados,
+        recommended: similarProducts,
         userIsEmployee
         };
         return res.render('detail', data);

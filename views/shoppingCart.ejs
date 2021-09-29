@@ -6,10 +6,10 @@
 <body>
     <%- include('./partials/header')%>
     <h2 class="titulo">Tu Carrito</h2>
-    <% if(productos != undefined && productos.length > 0) {%> 
+    <% if(productsInCart != undefined && productsInCart.length > 0) {%> 
     <div class="contenedor-carrito">
             <section class="lista-productos">
-                    <% productos.forEach(producto=>{ %>
+                    <% productsInCart.forEach(producto=>{ %>
                         <article class="producto">
                             <div class="contenedor-img-info">
                                 <div class="contenedor-img">
@@ -101,9 +101,16 @@
         <button>Finalizar Compra</button>
     </section>
     <% } %> 
-    <% if(!productos || productos.length == 0){ %>
+    <% if(!productsInCart || productsInCart.length == 0){ %>
         <h2>Aún no añadiste productos a tu carrito</h2>
-        <a href="/productos">Click aquí para ver el catálogo</a>
+        <section id="recommendedSection">
+            <% for (i=0; i<3; i++) { %> 
+                <a href="/productos/<%= productsRecommend[i].id%>" class="recommendedProduct">
+                    <img src="/images/productos/<%= productsRecommend[i].image %>" alt="Producto recomendado para vos" class="recommendedProductImg">
+                </a>
+            <% } %> 
+        </section>
+        <a href="/productos">Ver más</a>
     <% } %> 
     <%- include('./partials/footer') %> 
 </body>
