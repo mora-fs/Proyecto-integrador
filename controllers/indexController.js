@@ -41,8 +41,9 @@ const controller = {
 
             // ACA FALTARIA QUE LUEGO DE REGISTRARSE, ANTES DE REDIRECCIONAR AL HOME, GUARDAR EN SESSION
             // EL USUARIO, ASI CUANDO ENTRE AL HOME, AL ESTAR EN SESSION GUARDADO, APARECERÁ LOGUEADO
-
-            return res.render('home', {productos: parsedProductsDb})
+            req.session.loggedUser = newUser
+            res.redirect('/cuenta/profile')
+            // return res.render('home', {productos: parsedProductsDb})
         }
         else{
             // console.log(errors.mapped())
@@ -53,6 +54,7 @@ const controller = {
         return res.render('login')
     }, 
     login: (req, res) => {
+        // Esta logica es de un login "provisorio", solo esta para ir probando los ruteos, para el login habria que hacer una verificacion completa 
         let userToLogIn= parsedUsersDb.find(user=> user.email==req.body.nombreUsuario);
         req.session.loggedUser= userToLogIn;
         return res.redirect('/cuenta/profile');
