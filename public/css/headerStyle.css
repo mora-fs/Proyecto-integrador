@@ -134,3 +134,18 @@ header{
     /* align-self: center; 
 }
 */
+
+
+
+.cart-image{
+    font-size: 24px;
+    color: black;
+}
+
+.logo-digital{
+    min-width: 80px
+}
+
+.navbar{
+    justify-content: center;
+}
