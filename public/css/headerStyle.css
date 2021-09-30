@@ -8,7 +8,7 @@ button{
 header{
     background-color: #F0E5D8;
     font-family: 'Roboto', sans-serif;
-    width: 100%;
+    width: 100vw;
     position: relative;
     height: 125px;
     align-items: center;
@@ -18,17 +18,31 @@ header{
 #headerContainer{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+/*
 #buttonYmenu{
     display: flex;
+}
+*/
+#logoDiv{
+    width: 100px;
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    /* margin-top: -55px; 
+    bottom: 50px;
+    margin-left: -55px; */
+}
+#logoImg{
+    padding-top: 30%;
 }
 #menuButton{
     padding: 10px;
     background-color: transparent;
     border: none;
     position: absolute;
-    left: 20px;
+    right: 20px;
     top: 55px;
     margin-top: -21px;
 }
@@ -38,9 +52,10 @@ header{
 }
 #dropDownMenu{
     position: absolute;
+    width: 78%;
     z-index: 10;
     top: 20px;
-    left: 80px;
+    left: 10px;
     border-radius: 10px;
     background-color: #055052;
 }
@@ -51,29 +66,7 @@ header{
 .menuOff{
     display: none;
 }
-#logo-div{
-    width: 100px;
-    position: absolute;
-    left: 45%;
-    top: 10%;
-    /* margin-top: -55px; */
-    /* bottom: 50px; */
-    /* margin-left: -55px; */
-
-}
-#logo-img{
-    border-radius: 100%;
-    /* background-color: transparent; */
-    width: 110px;
-}
-.logo-nuevo-1{
-    padding-top: 30%;
-}
-.searchDiv{
-    display: flex;
-    flex-wrap: wrap;
-}
-.searchDiv input {
+.searchSmallScreen input {
     padding: 15px;
     width: 90%;
     height: 30px;
@@ -85,16 +78,6 @@ header{
     font-family: 'Forum', cursive;
     color: #055052;
 }
-/*
-#searchDiv button{
-    background-color: transparent;
-    border: none;
-}
-.searchIcon{
-    color: #BBDFC8;
-    font-size: 20px;
-}
-*/
 .menuItemButton{
     font-size: 20px;
     color: #F0E5D8;
@@ -108,7 +91,22 @@ header{
     text-decoration: none;
     color: #ededed;
 }
+#searchLargeScreen{
+    display: none;
+}
+#cartLargeScreen{
+    display: none;
+}
 /*
+#searchDiv button{
+    background-color: transparent;
+    border: none;
+}
+.searchIcon{
+    color: #BBDFC8;
+    font-size: 20px;
+}
+---
 .cart-user {
     display: flex;
     justify-content: space-around;
@@ -134,3 +132,17 @@ header{
     /* align-self: center; 
 }
 */
+@media (min-width: 460px) {
+    #buttonYmenu{
+        display: none;
+    }
+    #searchLargeScreen{
+        display: inline-block;
+    }
+    #cartLargeScreen{
+        display: inline-block;
+    }
+    .largeScreenTopHeader{
+        display: flex;
+    }
+}
