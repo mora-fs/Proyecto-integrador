@@ -105,8 +105,9 @@
         <h2>Aún no añadiste productos a tu carrito</h2>
         <section id="recommendedSection">
             <% for (i=0; i<3; i++) { %> 
-                <a href="/productos/<%= productsRecommend[i].id%>" class="recommendedProduct">
+                <a href="/productos/<%=productsRecommend[i].id%>" class="recommendedProduct">
                     <img src="/images/productos/<%= productsRecommend[i].image %>" alt="Producto recomendado para vos" class="recommendedProductImg">
+                    <p><%= productsRecommend[i].name %> </p>
                 </a>
             <% } %> 
         </section>

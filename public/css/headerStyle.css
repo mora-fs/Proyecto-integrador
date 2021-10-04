@@ -25,14 +25,12 @@ header{
     display: flex;
 }
 */
-#logoDiv{
+.logoDiv{
     width: 100px;
+    min-width: 80px;
     position: absolute;
     left: 5%;
     top: 10%;
-    /* margin-top: -55px; 
-    bottom: 50px;
-    margin-left: -55px; */
 }
 #logoImg{
     padding-top: 30%;
@@ -66,6 +64,7 @@ header{
 .menuOff{
     display: none;
 }
+/*
 .searchSmallScreen input {
     padding: 15px;
     width: 90%;
@@ -78,6 +77,7 @@ header{
     font-family: 'Forum', cursive;
     color: #055052;
 }
+*/
 .menuItemButton{
     font-size: 20px;
     color: #F0E5D8;
@@ -91,55 +91,26 @@ header{
     text-decoration: none;
     color: #ededed;
 }
-#searchLargeScreen{
+.dontShowCart{
     display: none;
 }
-#cartLargeScreen{
-    display: none;
+
+.cart-image{
+    font-size: 24px;
+    color: black;
 }
-/*
-#searchDiv button{
-    background-color: transparent;
-    border: none;
+
+.navbar{
+    justify-content: center;
 }
-.searchIcon{
-    color: #BBDFC8;
-    font-size: 20px;
-}
----
-.cart-user {
-    display: flex;
-    justify-content: space-around;
-    width: 20%;
-    /* padding-top: 25px; */
-    /* align-content: center; 
-    margin: auto;
-}
-.boton{
-    width: 48%;
-    background: none;
-    border: none;
-}
-.boton i{
-    cursor: pointer;
-}
-.barra-icons form {
-    width: 48%;
-    /* align-self: center; 
-}
-.barra-icons i {
-    font-size: 2em;
-    /* align-self: center; 
-}
-*/
 @media (min-width: 460px) {
-    #buttonYmenu{
+    /* #buttonYmenu{
         display: none;
-    }
-    #searchLargeScreen{
+    } */
+    .notShowSearchbar{
         display: inline-block;
     }
-    #cartLargeScreen{
+    .dontShowCart{
         display: inline-block;
     }
     .largeScreenTopHeader{
