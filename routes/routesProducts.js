@@ -69,7 +69,7 @@ router.get('/', /*onlyEmployeeMiddleware, */controller.productsList);
 router.get('/crear', /*onlyEmployeeMiddleware, */controller.createForm);
 router.post('/crear', /*onlyEmployeeMiddleware, */uploadFile.single('imgNewProduct'), validations, controller.createProduct);
 
-router.get('/:id', /*onlyEmployeeMiddleware, */controller.detail);
+router.get('/:id', onlyEmployeeMiddleware, controller.detail);
 
 router.get('/:id/editar', /*onlyEmployeeMiddleware, */controller.editForm);
 router.put('/:id/editar', /*onlyEmployeeMiddleware, */controller.edit)
