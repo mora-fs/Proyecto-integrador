@@ -2,12 +2,11 @@ const { equal } = require('assert');
 const fs= require('fs');
 const { parse } = require('path');
 const path= require('path');
+const {validationResult} = require('express-validator');
+const db= require('../database/models');
 const productsDbPath= path.join(__dirname, '../data/productsDataBase.json');
 const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
 
-const {validationResult} = require('express-validator');
-/* const onlyEmployeeMiddleware= require('../middlewares/onlyEmployeeMiddleware');
- */
 const controller = {
     productsList: (req, res) =>{
         const loggedUser= req.session.loggedUser;
@@ -15,11 +14,14 @@ const controller = {
         if (loggedUser && loggedUser.type == 'employee'){
             userIsEmployee = true;
         }
-        let products= {
-            products: parsedProductsDb, 
-            userIsEmployee
-        };
-        return res.render('productsList', products);
+        db.Product.findAll()
+            .then (function (products) {
+                let exportData= {
+                    products: {products}, 
+                    userIsEmployee
+                };
+                return res.render('productsList', exportData);
+            });
     },
     detail: (req, res)=>{
         const idDetail= req.params.id;
