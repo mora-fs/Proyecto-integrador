@@ -5,78 +5,104 @@ const path= require('path');
 const productsDbPath= path.join(__dirname, '../data/productsDataBase.json');
 const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
 
+const db = require('../database/models');
+const Op = db.Sequelize.Op
+
 const {validationResult} = require('express-validator');
+const Product = require('../database/models/Product');
+const { createBrotliCompress } = require('zlib');
 /* const onlyEmployeeMiddleware= require('../middlewares/onlyEmployeeMiddleware');
  */
 const controller = {
+    findRandomProducts: () => {
+    // ACA DEBERIA IR LA LOGICA QUE RETORNE 3 PRODUCTOS RANDOM
+    },
+
+
     productsList: (req, res) =>{
         const loggedUser= req.session.loggedUser;
         let userIsEmployee= false;
         if (loggedUser && loggedUser.type == 'employee'){
             userIsEmployee = true;
         }
-        let products= {
-            products: parsedProductsDb, 
-            userIsEmployee
-        };
-        return res.render('productsList', products);
+        
+        db.Product.findAll()
+        .then(allProducts => {
+            let products= {
+                products: allProducts, 
+                userIsEmployee
+            };
+            return res.render('productsList', products);
+
+        })
     },
+
+
+
     detail: (req, res)=>{
-        const idDetail= req.params.id;
-        const productDetail= parsedProductsDb.find(product=> product.id == idDetail);
-        if (!productDetail){
-            return res.send('El producto solicitado no se encontró');
-        }
         const loggedUser= req.session.loggedUser;
         let userIsEmployee= false;
         if (loggedUser && loggedUser.type == 'employee'){
             userIsEmployee = true;
         };
-        let similarProducts= [];
-        for (i=0; i<3; i++){
-            let randomId= Math.round(Math.random() * parsedProductsDb.length);
-            let randomProduct= parsedProductsDb.find((product)=> product.id == randomId);
-            similarProducts.push(randomProduct)
-        }
-        const data= {
-        productParam: productDetail, 
-        recommended: similarProducts,
-        userIsEmployee
-        };
-        return res.render('detail', data);
+
+        // ESTA LOGICA DE MOSTRAR PRODUCTOS RELACIONADOS NO LA PUDE HACER DENTRO DE ESTE MISMO METODO, PORQUE HABIAN ERRORES 
+        // CON EL TEMA DEL .then     
+        // ESTO CREO QUE ES MEJOR HACERLO EN EL METODO AL PRINCIPIO DEL CONTROLADOR UQE SE LLAMA findRandomProduct, Y LLAMAR
+// ESE METODO ACÁ, DE MOMENTO DEJO LA LOGICA DE JSON PARA ENCONTRAR PRODUCTOS RELACIONADOS
+    let similarProducts= [];
+    for (i=0; i<3; i++){
+        let randomId= Math.round(Math.random() * parsedProductsDb.length);
+        let randomProduct= parsedProductsDb.find((product)=> product.id == randomId);
+        similarProducts.push(randomProduct)
+    }
+
+
+// 
+// 
+// 
+
+    let data = {}
+        db.Product.findByPk(req.params.id)
+        .then(productDetail => {
+            return data= {
+                productParam: productDetail, 
+                recommended: similarProducts,
+                userIsEmployee
+            }
+        })
+        .then(data => {
+            return res.render('detail', data)
+        })
+        .catch(error => { res.send(error)})
     },
+
+
     createForm: (req,res) => {
         return res.render('createForm');
     },
     createProduct: (req, res) =>{
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            let idLastProduct = (parsedProductsDb.length)-1;
-            let idNewProduct = parsedProductsDb[idLastProduct].id + 1;
-
-            let newProduct = {};
-
-            newProduct.id = idNewProduct;
-            newProduct.name = req.body.name;
-            newProduct.marca = req.body.marca;
-            newProduct.price = req.body.price;
-            newProduct.discount = req.body.discount;
-            newProduct.image = req.file.filename;
-            // newProduct.color = req.body.color;
-            newProduct.stock = req.body.cantidad;
-            newProduct.description = req.body.description;
-            newProduct.category = req.body.category;
-
-            parsedProductsDb.push(newProduct)
-            fs.writeFileSync(productsDbPath, JSON.stringify(parsedProductsDb))
-
-            let redirectionRoute = '/productos/' + newProduct.id;
-            return res.redirect(redirectionRoute)
+            console.log(req.file.filename)
+            db.Product.create({
+                name: req.body.name,
+                price: req.body.price,
+                description: req.body.description,
+                discount: req.body.discount,
+                capacity: req.body.cantidad,
+                image: req.file.filename,
+                category: req.body.category
+            })
+            .then(data => {
+            return res.redirect('/productos')})
         }
         else{
             return res.render('createForm', {errorMessage: errors.mapped(), old: req.body})
         }
     },
+
+    
     editForm: (req, res)=>{
         let idEdit= req.params.id;
         let productEdit= parsedProductsDb.find(producto=>producto.id == idEdit);
