@@ -1,9 +1,12 @@
 let employeeVerification= function (req, res, next) {
     const loggedUser= req.session.loggedUser;
     let userIsEmployee= false;
-    if (loggedUser && loggedUser.type == 'employee'){
+    if (loggedUser && loggedUser[0].employee == 1){
         userIsEmployee = true;
-    }; 
-    next();
+        next();
+    } 
+    else{
+        res.redirect('/productos')
+    }
 }
 module.exports= employeeVerification; 
