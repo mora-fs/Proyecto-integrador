@@ -8,7 +8,7 @@
     <main id="mainProfile">
         <h2>Bienvenido <%= user.name %> <%= user.lastName %></h2>
         <div>
-            <img src="/images/users/<%= user.image %>" alt="foto de perfil de <%= user.name %>" id='profilePic'>
+            <img src="/images/users/<%=user.profileImage%>" alt="foto de perfil de <%= user.name %>" id='profilePic'>
         </div>
         <form action="/productos">
             <button type="submit">Explorar productos</button>
