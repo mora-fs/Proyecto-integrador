@@ -1,28 +1,55 @@
-footer {
-    background-color: #F0E5D8;  
-    font-family: 'Roboto', sans-serif;
-}
+/* 33189b - violeta
+9fc9f1 - celeste
+eef3f8 - celeste claro
+f03e36 - rojo 
+fdf3e6 - crema */
 #footerContainer{
+    background-color: #f03e36;
+    color: #eef3f8;
     position: relative;
     bottom: 0;
-    padding: 30px 4vw;
-    padding-top: 5px;
+    padding: 20px 30px 0px;
+}
+.footerDiv{
+    margin-bottom: 15px;
 }
 .listContent {
     list-style-type: none;
-    padding: 0;
-    margin-block: -5px;
+    padding-left: 0;
+}
+h3{
+    color: #9fc9f1;
+}
+li{
+    padding: 5px 0;
+}
+.redSocial{
+    width: fit-content;
 }
 .redesIcon{
-    padding: 3px;
-    color: #055052;
+    padding-right: 10px;
+    font-size: 18px;
+    color: #9fc9f1;
+    transition: 0.6s;
 }
 .redesLink{
+    color: #eef3f8;
     text-decoration: none;
     font-weight: 500;
-    color: #055052;
-    transition: 0.3s;
+    transition: 0.6s;
 }
-.redesLink:hover{
-    font-size: 20px;
+.redSocial:hover .redesIcon{
+    color: #33189b;
+}
+.redSocial:hover .redesLink{
+    color: #33189b;
+}
+@media (min-width: 760px){
+    #footerContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+    .footerDiv{
+        width: 30%;
+    }
 }
