@@ -25,7 +25,7 @@ button{
     width: 100px;
     min-width: 80px;
     position: absolute;
-    left: 5%;
+    left: 7%;
     top: 35px;
 }
 #containerFluid{
@@ -44,6 +44,9 @@ button{
     color: #9fc9f1;
     font-size: 20px;
 }
+.menuOff{
+    display: none;
+}
 #dropDownMenu{
     position: absolute;
     width: 78%;
@@ -54,11 +57,8 @@ button{
     background-color: #9fc9f1;
 }
 #menuContent{
-    padding-left: 10px;
+    padding: 0 10px;
     list-style-type: none;
-}
-.menuOff{
-    display: none;
 }
 .menuItemButton{
     font-size: 20px;
@@ -115,14 +115,26 @@ button{
     justify-content: center;
 } */
 @media (min-width: 460px) {
-    #menuButton{
+    #dropDownItemsMobile{
         display: none;
+    }
+    #menuButton{
+        padding: 10px;
+        right: 20px;
+        top: 50px;
     }
     #containerFluid{
         position: absolute;
-        right: 10%;
+        top: 35px;
+        right: 90px;
         display: flex;
         justify-content: space-between;
+    }
+    #dropDownMenu{
+        width: fit-content;
+        right: 2%;
+        left: auto;
+        top: 85px;
     }
     #searchBar input{
         background-color: #9fc9f1;
