@@ -5,6 +5,7 @@ const productsDbPath= path.join(__dirname, '../data/productsDataBase.json');
 const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
 const indexController= require('../controllers/indexController');
 
+const db = require('../database/models')
 
 const session = require('express-session');
 

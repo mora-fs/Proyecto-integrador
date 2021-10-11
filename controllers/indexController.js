@@ -11,6 +11,8 @@ const {validationResult} = require('express-validator');
 
 const bcrypt = require('bcryptjs');
 
+const db = require('../database/models')
+
 const controller = {
     home: (req, res)=>{
         const productos= {
@@ -23,27 +25,24 @@ const controller = {
         return res.render('register')
     }, 
     register: (req, res) => {
-        console.log(validationResult(req))
         let errors = validationResult(req);
         if(errors.isEmpty()){
             let idLastUser = (parsedUsersDb.length) -1;
             let newUser = {
-                id: parsedUsersDb[idLastUser].id + 1,
                 name: req.body.nombre,
                 lastName: req.body.apellido,
-                email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                type: 'user',
-                image: req.file.filename 
-            }
-            parsedUsersDb.push(newUser)
-            fs.writeFileSync(usersDbPath, JSON.stringify(parsedUsersDb))
+                email: req.body.email,
+                employee: 'user',
+                profileImage: req.file.filename 
+            };
 
-            // ACA FALTARIA QUE LUEGO DE REGISTRARSE, ANTES DE REDIRECCIONAR AL HOME, GUARDAR EN SESSION
-            // EL USUARIO, ASI CUANDO ENTRE AL HOME, AL ESTAR EN SESSION GUARDADO, APARECERÁ LOGUEADO
-            req.session.loggedUser = newUser
-            res.redirect('/cuenta/profile')
-            // return res.render('home', {productos: parsedProductsDb})
+            db.User.create(newUser)
+            .then(data => {
+                req.session.loggedUser = newUser
+                res.redirect('/cuenta/profile')
+            })
+
         }
         else{
             // console.log(errors.mapped())

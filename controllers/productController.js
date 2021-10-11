@@ -85,6 +85,7 @@ const controller = {
         let errors = validationResult(req);
         if(errors.isEmpty()){
             console.log(req.file.filename)
+            categoryValue =  parseInt(req.body.category)
             db.Product.create({
                 name: req.body.name,
                 price: req.body.price,
@@ -92,7 +93,7 @@ const controller = {
                 discount: req.body.discount,
                 capacity: req.body.cantidad,
                 image: req.file.filename,
-                category: req.body.category
+                category_id: categoryValue
             })
             .then(data => {
             return res.redirect('/productos')})
