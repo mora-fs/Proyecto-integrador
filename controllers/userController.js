@@ -68,6 +68,11 @@ const controller= {
             user: loggedUser
         };
         res.render('profile', user)
+    },
+
+    logOut: (req, res) => {
+        res.session.destroy()
+        return res.redirect('/')
     }
 }
 module.exports= controller

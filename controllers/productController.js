@@ -142,6 +142,11 @@ const controller = {
         const notDeleted= parsedProductsDb.filter(producto=> producto.id != idDelete);
         fs.writeFileSync(productosDbPath, JSON.stringify(notDeleted, null, 2));
         res.render('productsList')
+    },
+
+    logOut: (req, res) => {
+        res.session.destroy()
+        return res.redirect('/')
     }
 };
 

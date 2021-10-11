@@ -54,9 +54,29 @@ const controller = {
     }, 
     login: (req, res) => {
         // Esta logica es de un login "provisorio", solo esta para ir probando los ruteos, para el login habria que hacer una verificacion completa 
-        let userToLogIn= parsedUsersDb.find(user=> user.email==req.body.nombreUsuario);
-        req.session.loggedUser= userToLogIn;
-        return res.redirect('/cuenta/profile');
+        // let userToLogIn= parsedUsersDb.find(user=> user.email==req.body.nombreUsuario);
+        // req.session.loggedUser= userToLogIn;
+        // return res.redirect('/cuenta/profile');
+
+        db.User.findAll({
+            where: {email: req.body.username}
+        })
+        .then(user => {
+            console.log(user);
+            // console.log(user.password)
+            if(user){
+                console.log(req.body.password)
+                console.log(user[0].password)
+                let passwordCheck = bcrypt.compareSync(req.body.password, user[0].password)
+                console.log(passwordCheck)
+                if(passwordCheck){
+                    req.session.loggedUser = user;
+                    res.redirect('/cuenta/profile')
+                }else{res.send('aaa')}
+            }else{
+                res.send('error')
+            }
+        })
     }
 }
 
