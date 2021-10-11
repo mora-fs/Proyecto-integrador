@@ -1,10 +1,51 @@
+#createFormBody{
+    margin-bottom: 30px;
+}
+#titulo{
+    color: #33189b;
+    font-size: 16px;
+    margin: 30px;
+    margin-bottom: 10px;
+}
 .campo{
-    margin: 10px;
+    max-width: 600px;
+    margin: auto;
+    padding: 15px 30px;
+    font-size: 14px;
+    transition: 0.5s;
+}
+.dataInput{
+    background-color: #eef3f8; 
+    border: 10px;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+}
+#uploadImage{
+    margin-top: 7px;
+}
+#submitButton{
+    background-color: #eef3f8;
+    border: 1px solid #33189b;
+    border-radius: 100px;
+    margin-top: 5px;
+    padding: 10px 25px;
+    transition: 1s;
+}
+#submitDiv{
+    display: flex;
+    justify-content: center;
+}
+#submitButton:hover{
+    background-color: #33189b;
+    color: rgb(253, 243, 230);
 }
 .validation-error{
     color: red;
     font-size: 18px;
 }
-textarea{
-    resize: none;
+@media (min-width: 760px){
+    #titulo{
+        font-size: 18px;
+    }
 }

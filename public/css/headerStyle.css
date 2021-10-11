@@ -1,3 +1,11 @@
+/* 33189b - violeta
+9fc9f1 - celeste
+eef3f8 - celeste claro
+f03e36 - rojo 
+fdf3e6 - crema */
+*{
+    font-family: 'Lato', sans-serif;
+}
 body{
     box-sizing: border-box;
     margin: 0;
@@ -5,35 +13,25 @@ body{
 button{
     cursor: pointer;
 }
-header{
-    background-color: #F0E5D8;
+#headerContainer{
+    background-color: #f03e36;
     font-family: 'Roboto', sans-serif;
     width: 100vw;
     position: relative;
-    height: 125px;
-    align-items: center;
-    display: flex;
-    font-family: 'Forum', cursive;
-}
-#headerContainer{
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-/*
-#buttonYmenu{
-    display: flex;
-}
-*/
-.logoDiv{
+.brandLogoDiv{
     width: 100px;
     min-width: 80px;
     position: absolute;
     left: 5%;
-    top: 10%;
+    top: 35px;
 }
-#logoImg{
-    padding-top: 30%;
+#containerFluid{
+    display: none;
 }
 #menuButton{
     padding: 10px;
@@ -41,11 +39,11 @@ header{
     border: none;
     position: absolute;
     right: 20px;
-    top: 55px;
+    top: 50px;
     margin-top: -21px;
 }
 .menuButtonIcon{
-    color: #055052;
+    color: #33189b;
     font-size: 20px;
 }
 #dropDownMenu{
@@ -55,7 +53,7 @@ header{
     top: 20px;
     left: 10px;
     border-radius: 10px;
-    background-color: #055052;
+    background-color: #9fc9f1;
 }
 #menuContent{
     padding-left: 10px;
@@ -80,26 +78,24 @@ header{
 */
 .menuItemButton{
     font-size: 20px;
-    color: #F0E5D8;
+    color: #33189b;
     padding-right: 10px;
 }
 .menuItem{
     margin: 8px;
-    padding: 2px 0;
+    padding: 5px 0;
 }
 .menuItem a{
     text-decoration: none;
-    color: #ededed;
+    color: #33189b;
 }
 .dontShowCart{
     display: none;
 }
-
 .cart-image{
     font-size: 24px;
     color: black;
 }
-
 .navbar{
     justify-content: center;
 }

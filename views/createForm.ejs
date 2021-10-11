@@ -6,80 +6,78 @@
 </head>
 <body>
     <%- include('partials/header') %> 
-    <main>
+    <main id="createFormBody">
+        <h5 id="titulo">Ingresa los datos correspondientes para añadir el nuevo producto al inventario:</h5>
         <form action="/productos/crear" enctype="multipart/form-data" method="POST">
             <div class="campo">
-                <label for="nombre">Nombre del producto:</label>
+                <label for="name"></label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.name){%>
                     <div><p class="validation-error"><%=  errorMessage.name.msg %></p></div> 
                 <% } %>
-                <input type="text" value="<%=locals&&locals.old&&locals.old.name?old.name:null%>" id="name" name="name">
-            </div>
-            
-            <div class="campo">
-                <label for="marca">Marca:</label>
-                <% if(locals && locals.errorMessage && locals.errorMessage.marca){%>
-                    <div><p class="validation-error"><%=  errorMessage.marca.msg %></p></div> 
-                <% } %>
-                <input type="text" value="<%=locals&&locals.old&&locals.old.marca?old.marca:null%>" name="marca">
+                <input type="text" value="<%=locals&&locals.old&&locals.old.name?old.name:null%>" class="dataInput" id="name" name="name" placeholder="Nombre del producto">
             </div>
             <div class="campo">
-                <label for="price">Precio:</label>
+                <label for="price"></label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.price){%>
                     <div><p class="validation-error"><%=  errorMessage.price.msg %></p></div> 
                 <% } %>
-                <input type="number" value="<%=locals&&locals.old&&locals.old.price?old.price:null%>" name="price">
+                <input type="number" value="<%=locals&&locals.old&&locals.old.price?old.price:null%>" class="dataInput" name="price" id="price" placeholder="Precio">
             </div>
             <div class="campo">
-                <label for="discount">Descuento:</label>
+                <label for="discount"></label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.discount){%>
                     <div><p class="validation-error"><%=  errorMessage.discount.msg %></p></div> 
                 <% } %>
-                <input type="number" value="<%=locals&&locals.old&&locals.old.discount?old.discount:null%>" name="discount">
+                <input type="number" value="<%=locals&&locals.old&&locals.old.discount?old.discount:null%>" class="dataInput" name="discount" id="discount" placeholder="Descuento">
             </div>
             <div class="campo">
-                <label for="cantidad">Cantidad:</label>
+                <label for="capacity"></label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.cantidad){%>
                     <div><p class="validation-error"><%=  errorMessage.cantidad.msg %></p></div> 
                 <% } %>
-                <input type="text" value="<%=locals&&locals.old&&locals.old.cantidad?old.cantidad:null%>" name="cantidad">
+                <input type="text" value="<%=locals&&locals.old&&locals.old.cantidad?old.cantidad:null%>" name="cantidad" class="dataInput" id="capacity"  placeholder="Capacidad">
             </div>
-            <!-- <div class="campo">
-                <label for="color">Color:</label>
-                <input type="text" name="color">
-            </div> -->
             <div class="campo">
-                <label for="category">Categoría:</label>
+                <label for="brand"></label>
+                <% if(locals && locals.errorMessage && locals.errorMessage.marca){%>
+                    <div><p class="validation-error"><%=  errorMessage.marca.msg %></p></div> 
+                <% } %>
+                <input type="text" value="<%=locals&&locals.old&&locals.old.marca?old.marca:null%>" class="dataInput" name="marca" id="brand" placeholder="Marca:">
+            </div>
+            <div class="campo">
+                <label for="category"></label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.category){%>
                     <div><p class="validation-error"><%=  errorMessage.category.msg %></p></div> 
                 <% } %>
-                <select name="category" id="categoria">
-                    <option value="">-</option>
-                    <option value="bucal" <%=locals&&locals.old&&locals.old.category=="bucal"?'selected':null%>>Cuidado bucal</option>
-                    <option value="corporal" <%=locals&&locals.old&&locals.old.category=="corporal"?'selected':null%>>Cuidado corporal</option>
-                    <option value="facial" <%=locals&&locals.old&&locals.old.category=="facial"?'selected':null%>>Cuidado facial</option>
-                    <option value="verano" <%=locals&&locals.old&&locals.old.category=="verano"?'selected':null%>>Verano</option>
-                    <option value="capilar" <%=locals&&locals.old&&locals.old.category=="capilar"?'selected':null%>>Capilar</option>
-                    <option value="higiene" <%=locals&&locals.old&&locals.old.category=="higiene"?'selected':null%>>Higiene</option>
+                <select name="category" id="category" class="dataInput">
+                    <!--Habria que hacer una validación para que no se pueda seleccionar la opción Categoría-->
+                    <option value="" selected>Categoría</option>
+                    <option value="Cuidado Bucal" <%=locals&&locals.old&&locals.old.category=="Cuidado Bucal"?'selected':null%>>Cuidado bucal</option>
+                    <option value="Cuidado Corporal" <%=locals&&locals.old&&locals.old.category=="Cuidado Corporal"?'selected':null%>>Cuidado corporal</option>
+                    <option value="Cuidado Facial" <%=locals&&locals.old&&locals.old.category=="Cuidado Facial"?'selected':null%>>Cuidado facial</option>
+                    <option value="Verano" <%=locals&&locals.old&&locals.old.category=="Verano"?'selected':null%>>Verano</option>
+                    <option value="Capilar" <%=locals&&locals.old&&locals.old.category=="Capilar"?'selected':null%>>Capilar</option>
+                    <option value="Higiene" <%=locals&&locals.old&&locals.old.category=="Higiene"?'selected':null%>>Higiene</option>
                 </select>
             </div>
             <div class="campo">
-                <label for="">Descripción:</label>
+                <label for="description"></label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.description){%>
                     <div><p class="validation-error"><%=  errorMessage.description.msg %></p></div> 
                 <% } %>
-                <textarea name="description" placeholder="Caracteristicas, detalles, etc..." rows="4" cols="50" ><%=locals&&locals.old&&locals.old.description?old.description:null%></textarea>
+                <textarea name="description" id="description" placeholder="Descripción del producto" class="dataInput" rows="4" cols="50" ><%=locals&&locals.old&&locals.old.description?old.description:null%></textarea>
             </div>
             <div class="campo">
-                <label for="">Imagen:</label>
+                <label for="uploadImage" id="labelImgInput">Imagen:</label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.imgNewProduct){%>
                     <div><p class="validation-error"><%=  errorMessage.imgNewProduct.msg %></p></div> 
                 <% } %>
-                <input type="file" name="imgNewProduct">
+                <input type="file" name="imgNewProduct" id="uploadImage" class="dataInput">
             </div>
-            <button type="submit" class="campo">Crear producto</button>
+            <div id="submitDiv">
+                <button type="submit" class="campo" id="submitButton">Crear producto</button>
+            </div>
         </form>
-            
         </main>
         <%- include('partials/footer') %> 
 </body>

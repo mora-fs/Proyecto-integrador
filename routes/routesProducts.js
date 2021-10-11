@@ -67,7 +67,7 @@ const validations = [
 router.get('/', /*onlyEmployeeMiddleware, */controller.productsList);
 
 router.get('/crear', /*onlyEmployeeMiddleware, */controller.createForm);
-router.post('/crear', /*onlyEmployeeMiddleware, */uploadFile.single('imgNewProduct'), validations, controller.createProduct);
+router.post('/crear', uploadFile.single('imgNewProduct')/* ,onlyEmployeeMiddleware, */, validations, controller.createProduct);
 
 router.get('/:id', onlyEmployeeMiddleware, controller.detail);
 
