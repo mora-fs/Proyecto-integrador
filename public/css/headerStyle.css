@@ -5,8 +5,6 @@ f03e36 - rojo
 fdf3e6 - crema */
 *{
     font-family: 'Lato', sans-serif;
-}
-body{
     box-sizing: border-box;
     margin: 0;
 }
@@ -43,7 +41,7 @@ button{
     margin-top: -21px;
 }
 .menuButtonIcon{
-    color: #33189b;
+    color: #9fc9f1;
     font-size: 20px;
 }
 #dropDownMenu{
@@ -62,20 +60,6 @@ button{
 .menuOff{
     display: none;
 }
-/*
-.searchSmallScreen input {
-    padding: 15px;
-    width: 90%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #F0E5D8;
-    color: #fff;
-    border: none;
-    font-size: 18px;
-    font-family: 'Forum', cursive;
-    color: #055052;
-}
-*/
 .menuItemButton{
     font-size: 20px;
     color: #33189b;
@@ -88,8 +72,39 @@ button{
 .menuItem a{
     text-decoration: none;
     color: #33189b;
+    font-size: 14px;
 }
-.dontShowCart{
+#searchBar{
+    display: flex;
+}
+#searchBar input{
+    background-color: #33189b;
+    color: #fdf3e6;
+    font-size: 14px;
+    padding: 0 15px;
+    width: 230px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+#searchBar input::placeholder{
+    color: #fdf3e6;
+    font-weight: 400;
+    font-size: 14px;
+}/* 
+#searchBar button{
+    background-color: transparent;
+    color: #33189b;
+    border: none;
+    font-size: 20px;
+} */
+.linkLogo{
+    text-decoration: none;
+    color: #9fc9f1;
+    font-size: 25px;
+    padding-left: 40px;
+}
+/* .dontShowCart{
     display: none;
 }
 .cart-image{
@@ -98,18 +113,22 @@ button{
 }
 .navbar{
     justify-content: center;
-}
+} */
 @media (min-width: 460px) {
-    /* #buttonYmenu{
+    #menuButton{
         display: none;
-    } */
-    .notShowSearchbar{
-        display: inline-block;
     }
-    .dontShowCart{
-        display: inline-block;
-    }
-    .largeScreenTopHeader{
+    #containerFluid{
+        position: absolute;
+        right: 10%;
         display: flex;
+        justify-content: space-between;
+    }
+    #searchBar input{
+        background-color: #9fc9f1;
+        color: #33189b;
+    }
+    #searchBar input::placeholder{
+        color: #33189b;
     }
 }
