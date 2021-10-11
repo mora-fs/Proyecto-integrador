@@ -5,7 +5,7 @@ f03e36 - rojo
 fdf3e6 - crema */
 #footerContainer{
     background-color: #f03e36;
-    color: #eef3f8;
+    color: #000;
     position: relative;
     bottom: 0;
     padding: 20px 30px 0px;
@@ -18,7 +18,7 @@ fdf3e6 - crema */
     padding-left: 0;
 }
 h3{
-    color: #9fc9f1;
+    color: #33189b;
 }
 li{
     padding: 5px 0;
@@ -29,20 +29,20 @@ li{
 .redesIcon{
     padding-right: 10px;
     font-size: 18px;
-    color: #9fc9f1;
+    color: #33189b;
     transition: 0.6s;
 }
 .redesLink{
-    color: #eef3f8;
+    color: #000;
     text-decoration: none;
     font-weight: 500;
     transition: 0.6s;
 }
 .redSocial:hover .redesIcon{
-    color: #33189b;
+    color: #9fc9f1;
 }
 .redSocial:hover .redesLink{
-    color: #33189b;
+    color: #9fc9f1;
 }
 @media (min-width: 760px){
     #footerContainer{

@@ -3,37 +3,47 @@
         <a class="navbar-brand col-md-2 brandLogoDiv" href="/">
             <img id="logoImg" src='/images/logo/logo-nuevo-1.svg' alt="Imagen logo">
         </a>
-        <div id="containerFluid">
-            <form id="searchBar">
-                <input class="form-control me-2 col-11" type="search" placeholder="Busca tu producto" aria-label="Search">
-                <!-- <button class="btn btn-outline-success col-1" type="submit"><i class="fas fa-search"></i></button> -->
-            </form>
-            <a href="/cuenta/cart" class="col-md-1 linkLogo"><i class="fas fa-cart-plus cart-image dontShowCart"></i></a>
-            <a href="/cuenta" class="col-md-1 linkLogo"><i class="fas fa-user"></i></a>
-        </div>
-        <div id="buttonYmenu">
-            <button id="menuButton"><i class="fas fa-grip-lines menuButtonIcon"></i></button>
-            <div id="dropDownMenu" class="menuOff">
-                <ul id="menuContent">
-                    <li class="menuItem"></li>
-                        <form id="searchBar">
-                            <input class="form-control me-2 col-11" type="search" placeholder="Busca tu producto" aria-label="Search">
-                            <!-- <button class="btn btn-outline-success col-1" type="submit"><i class="fas fa-search"></i></button> -->
-                        </form>
-                    </li>
-                    <li class="menuItem">
-                        <a href="/cuenta/profile"><i class="fas fa-user-nurse profile menuItemButton"></i> MI PERFIL
-                        </a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="/cuenta/cart"><i class="fas fa-cart-plus cart menuItemButton"></i> MI COMPRA </a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="/productos"> TODOS LOS PRODUCTOS </a>
-                    </li>
-                </ul>
+        <section id="headerItems">
+            <div id="containerFluid">
+                <form id="searchBar">
+                    <input class="form-control me-2 col-11" type="search" placeholder="Busca tu producto" aria-label="Search">
+                    <!-- <button class="btn btn-outline-success col-1" type="submit"><i class="fas fa-search"></i></button> -->
+                </form>
+                <a href="/cuenta/cart" class="col-md-1 linkLogo"><i class="fas fa-cart-plus cart-image dontShowCart"></i></a>
+                <a href="/cuenta" class="col-md-1 linkLogo"><i class="fas fa-user"></i></a>
             </div>
-        </div>
+            <div id="buttonYmenu">
+                <button id="menuButton"><i class="fas fa-grip-lines menuButtonIcon"></i></button>
+                <div id="dropDownMenu" class="menuOff">
+                    <ul id="menuContent">
+                        <div id="dropDownItemsMobile">
+                            <li class="menuItem"></li>
+                            <form id="searchBar">
+                                <input class="form-control me-2 col-11" type="search" placeholder="Busca tu producto"
+                                    aria-label="Search">
+                                <!-- <button class="btn btn-outline-success col-1" type="submit"><i class="fas fa-search"></i></button> -->
+                            </form>
+                            </li>
+                            <li class="menuItem">
+                                <a href="/cuenta/profile"><i class="fas fa-user-nurse profile menuItemButton"></i> MI
+                                    PERFIL
+                                </a>
+                            </li>
+                            <li class="menuItem">
+                                <a href="/cuenta/cart"><i class="fas fa-cart-plus cart menuItemButton"></i> MI COMPRA
+                                </a>
+                            </li>
+                        </div>
+                        <li class="menuItem">
+                            <a href="/productos"> TODOS LOS PRODUCTOS </a>
+                        </li>
+                        <li class="menuItem">
+                            <a href=""> CATEGORÍAS </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </section>
     <!-- <section class="headerContainer">
         <nav class="navbar navbar-light bg-light">
