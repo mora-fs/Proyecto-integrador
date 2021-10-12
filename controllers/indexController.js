@@ -76,6 +76,7 @@ const controller = {
                 res.render('login', {errorMessage: 'Usuario no encontrado', old})
             }
         })
+        .catch(error => { res.send(error)})
     }
 }
 

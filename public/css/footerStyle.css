@@ -1,11 +1,12 @@
 /* 33189b - violeta
+372770 - violeta más tranqui
 9fc9f1 - celeste
 eef3f8 - celeste claro
 f03e36 - rojo 
 fdf3e6 - crema */
 #footerContainer{
-    background-color: #f03e36;
-    color: #000;
+    background-color: #372770;
+    color: #eef3f8;
     position: relative;
     bottom: 0;
     padding: 20px 30px 0px;
@@ -18,7 +19,7 @@ fdf3e6 - crema */
     padding-left: 0;
 }
 h3{
-    color: #33189b;
+    color: #9fc9f1;
 }
 li{
     padding: 5px 0;
@@ -29,14 +30,14 @@ li{
 .redesIcon{
     padding-right: 10px;
     font-size: 18px;
-    color: #33189b;
+    color: #eef3f8;
     transition: 0.6s;
 }
 .redesLink{
-    color: #000;
+    color: #eef3f8;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.6s;
+    transition: 0.25s;
 }
 .redSocial:hover .redesIcon{
     color: #9fc9f1;
