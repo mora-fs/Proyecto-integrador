@@ -13,11 +13,19 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="user-pass">
+
                     <div class="username">
+                        <% if(locals && locals.errorMessage && locals.errorMessage == 'Usuario no encontrado'){ %> 
+                        <h3><%= errorMessage  %> </h3>
+                        <% } %> 
                         <label for="nombre-usuario">USUARIO</label>
-                        <input id="nombre-usuario" name="username" required>
+                        
+                        <input id="nombre-usuario" name="username"  value="<%=locals&&locals.old&&locals.old.username?old.username:null%>" required>
                     </div>
                     <div class="password">    
+                        <% if(locals && locals.errorMessage && locals.errorMessage == 'Contraseña incorrecta'){ %> 
+                            <h3><%= errorMessage  %> </h3>
+                            <% } %> 
                         <label for="contraseña">CONTRASEÑA</label>
                         <input type="password" id="password"  name="password" required>
                     </div>

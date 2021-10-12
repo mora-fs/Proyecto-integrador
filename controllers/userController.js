@@ -71,7 +71,7 @@ const controller= {
     },
 
     logOut: (req, res) => {
-        res.session.destroy()
+        req.session.destroy()
         return res.redirect('/')
     }
 }
