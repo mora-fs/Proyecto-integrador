@@ -77,6 +77,7 @@ const controller = {
                 res.send('error')
             }
         })
+        .catch(error => { res.send(error)})
     }
 }
 

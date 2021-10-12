@@ -77,7 +77,6 @@ const controller = {
         .catch(error => { res.send(error)})
     },
 
-
     createForm: (req,res) => {
         return res.render('createForm');
     },
@@ -97,6 +96,7 @@ const controller = {
             })
             .then(data => {
             return res.redirect('/productos')})
+            .catch(error => { res.send(error)})
         }
         else{
             return res.render('createForm', {errorMessage: errors.mapped(), old: req.body})
