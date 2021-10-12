@@ -18,7 +18,6 @@ const controller = {
     // ACA DEBERIA IR LA LOGICA QUE RETORNE 3 PRODUCTOS RANDOM
     },
 
-
     productsList: (req, res) =>{
         const loggedUser= req.session.loggedUser;
         let userIsEmployee= false;
@@ -35,9 +34,16 @@ const controller = {
             return res.render('productsList', products);
 
         })
+        .catch(error => { res.send(error)});
     },
 
+    searchProduct: (req, res)=>{
+        
+    }, 
 
+    categories: (req, res)=>{
+
+    },
 
     detail: (req, res)=>{
         const loggedUser= req.session.loggedUser;

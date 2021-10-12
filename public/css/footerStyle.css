@@ -10,9 +10,10 @@ fdf3e6 - crema */
     position: relative;
     bottom: 0;
     padding: 20px 30px 0px;
+    margin-top: 20px;
 }
 .footerDiv{
-    margin-bottom: 15px;
+    padding-bottom: 15px;
 }
 .listContent {
     list-style-type: none;

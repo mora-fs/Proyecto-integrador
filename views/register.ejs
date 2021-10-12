@@ -5,72 +5,64 @@
 </head>
 <body>
     <%- include('./partials/header')  %> 
-    <main>
-        <h3 class="texto-centrado">Creá tu cuenta</h3>
-
-        <form action="/register" method="POST" enctype="multipart/form-data" class="formulario-registro">
+    <main id="mainRegister">
+        <h3 id="titulo">Creá tu cuenta</h3>
+        <form action="/register" method="POST" enctype="multipart/form-data" id="formularioRegistro">
             <div>
-                <label for="">Nombre</label>
+                <label for="nombre">Nombre</label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.nombre){%>
                     <div><p class="validation-error"><%=  errorMessage.nombre.msg %></p></div> 
                 <% } %>
-                    <input type="text" value="<%=locals&&locals.old&&locals.old.nombre?old.nombre:null%>" name="nombre" class="input-tipo-texto">
+                <input type="text" value="<%=locals&&locals.old&&locals.old.nombre?old.nombre:null%>" name="nombre" id="nombre">
             </div>
 
             <div>
-                <label for="">Apellido</label>
+                <label for="apellido">Apellido</label>
                 <% if(locals.errorMessage && locals.errorMessage.apellido){%>
                     <div><p class="validation-error"><%=  errorMessage.apellido.msg %></p></div> 
                 <% } %>
-                <input type="text" value="<%=locals&&locals.old&&locals.old.apellido?old.apellido:null%>" name="apellido" class="input-tipo-texto">
+                <input type="text" value="<%=locals&&locals.old&&locals.old.apellido?old.apellido:null%>" name="apellido" id="apellido">
             </div>
-            <!-- <div>
-                <input type="text" placeholder="Nombre de Usuario" class="input-tipo-texto" required>
-            </div> -->
-            <!-- <div>
-                <label for="">Fecha de Nacimiento:</label>
-                <input type="date" name="birthDate" class="input-tipo-texto">
-            </div> -->
 
             <div>
-                <label for="">Correo Electrónico</label>
+                <label for="email">Correo Electrónico</label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.email){%>
                     <div><p class="validation-error"><%=  errorMessage.email.msg %></p></div> 
                 <% } %>
-                <input type="text" value="<%=locals&&locals.old&&locals.old.email?old.email:null%>" name="email" class="input-tipo-texto" >
+                <input type="text" value="<%=locals&&locals.old&&locals.old.email?old.email:null%>" name="email" id="email">
             </div>
             
             <div>
-                <label for="">Contraseña</label>
+                <label for="contraseña">Contraseña</label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.password){%>
                     <div><p class="validation-error"><%=  errorMessage.password.msg %></p></div> 
                 <% } %>
-                <input type="password"  name="password" class="input-tipo-texto">
+                <input type="password" name="password" id="contraseña">
             </div>
 
             <div>
-                <label for="">Confirmar contraseña</label>
+                <label for="confirmarContraseña">Confirmar contraseña</label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.confirmPassword){%>
                     <div><p class="validation-error"><%=  errorMessage.confirmPassword.msg %></p></div> 
                 <% } %>
-                <input type="password" name="confirmPassword" class="input-tipo-texto">
+                <input type="password" name="confirmPassword" id="confirmarContraseña">
             </div>
 
             <div>
-                <label for="profileImage">Foto de Perfil</label>
+                <label for="fotoPerfil">Foto de Perfil</label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.userImage){%>
                     <div><p class="validation-error"><%=  errorMessage.userImage.msg %></p></div> 
                 <% } %>
-                <input type="file" name="userImage" accept=".jpg , .png" class="input-tipo-archivo">
+                <input type="file" name="userImage" id="inputFotoPerfil" accept=".jpg , .png">
             </div>
 
             <div>
-                <button type="submit" class="boton-formulario">Guardar</button>
+                <button type="submit" class="botonFormulario">Guardar</button>
             </div>
-
+<!-- 
             <div>
-                <button type="reset" class="boton-formulario">Borrar</button>
-            </div>
+                <button type="reset" class="botonFormulario">Borrar</button>
+            </div> -->
 
         </form>
     </main>

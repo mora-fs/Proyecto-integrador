@@ -1,46 +1,34 @@
-/*  */
-/* MAIN  */
-/*  */
 .validation-error{
     font-size: 18px;
     color: red;
 }
-main{
-    width: 60%;
-    margin: auto;
-}
-.texto-centrado{
+#titulo{
+    margin: 40px;
+    color: #372770;
     text-align: center;
     font-size: 30px;
 }
-.formulario-registro{
-    color: #666;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+#formularioRegistro{
+    color: #000;
+    width: 90vw;
     margin: auto;
+    text-align: center;
 }
-form div label{
+label{
+    margin: 10px;
     font-size: 16px;
-    /* font-style: italic; */
-    color: black;
+    color: #de2f48;
     display: block;
 }
-.formulario-registro div, .formulario-login div{
-    width: 100%;
-    text-align: center;
-    margin: 15px 0px 25px 0px;
-}
-.input-tipo-texto{
-    height: 18px;
-    width: 65%;
-    background-color: white;
-    border: solid 1px black;
+input{
+    margin: auto;
+    background-color: transparent;
+    border: solid 1px #de2f48;
     border-radius: 6px;
-    padding: 17px;
-    margin-top: 5px;
+    padding: 5px;
+}
+#inputFotoPerfil{
+    max-width: 280px;
 }
 /* .input-tipo-archivo{
     margin: 20px 0px;
@@ -52,53 +40,17 @@ form div label{
     margin: 300px 0px;
 } */
 
-.contenedor-categorias{
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: center;
+.botonFormulario{
+    border-radius: 100px;
+    border: 1px solid #372770;
+    color: #372770;
+    font-size: 16px;
+    width: 150px;
+    margin-top: 20px;
+    padding: 10px;
+    transition: 0.5s;
 }
-
-.contenedor-categorias label{
-    width: 100%;
-}
-
-.formulario-registro div .opciones-izq{
-    width: 50%;
-    width: fit-content;
-    margin-right: 30px;
-}
-
-.formulario-registro div .opciones-izq div{
-    text-align: left;
-}
-
-.formulario-registro div .opciones-der{
-    width: 50%;
-    width: fit-content;
-    margin-left: 30px;
-}
-
-.formulario-registro div .opciones-der div{
-    text-align: left;
-}
-
-.perfil-usuario input{
-    margin: 20px 15px;
-}
-
-.boton-formulario{
-    font-size: 19px;
+.botonFormulario:hover{
+    background-color: #9fc9f1;
     font-weight: bold;
-    margin: 0px 0px;
-    width: 65%;
-    height: 50px;
-    color: #18e659;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid #18e659;
-}
-.boton-formulario:hover{
-    background-color: #18e659;
-    color: black;
 }

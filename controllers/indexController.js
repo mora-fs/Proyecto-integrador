@@ -42,6 +42,7 @@ const controller = {
                 req.session.loggedUser = newUser
                 res.redirect('/cuenta/profile')
             })
+            .catch(error => { res.send(error)})
 
         }
         else{
