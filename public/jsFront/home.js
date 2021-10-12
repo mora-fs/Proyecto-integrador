@@ -1,8 +1,8 @@
 window.onload = () => {
     const images = [
-        '../images/carousel-slider/carousel-1.png',
-        '../images/carousel-slider/carousel-2.png',
-        '../images/carousel-slider/carousel-3.png'
+        '../images/carousel/carouselMedicamentos.png',
+        '../images/carousel/carouselDermaglos.png',
+        '../images/carousel/carouselCovid.png'
     ];
 
     let carousel = document.querySelector('.carousel')
@@ -53,7 +53,7 @@ window.onload = () => {
     // showImage()
     // carousel.style.display = 'block'
 
-    setInterval(goRight, 4000)
+    setInterval(goRight, 10000)
 
     
 }

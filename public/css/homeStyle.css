@@ -5,6 +5,9 @@ verde turquesa: #75CFB8
 verde oscuro: #055052
 verde claro: #BBDFC8
 */
+*{
+   margin: 0;
+}
 main{
    margin: 0px;
 }
@@ -23,8 +26,8 @@ main{
    /* height: 100%; */
 
    margin: auto;
-   margin-top: 40px;
-   /* padding-top: 20px ; */
+/*    margin-top: 40px;
+   padding-top: 20px ; */
    /* margin-bottom: 90px; */
    /* position: absolute; */
    /* overflow: hidden; */
