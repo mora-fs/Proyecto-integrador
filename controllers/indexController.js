@@ -58,23 +58,22 @@ const controller = {
         // req.session.loggedUser= userToLogIn;
         // return res.redirect('/cuenta/profile');
 
-        db.User.findAll({
+        db.User.findOne({
             where: {email: req.body.username}
         })
         .then(user => {
-            console.log(user);
+            let old = req.body
             // console.log(user.password)
             if(user){
-                console.log(req.body.password)
-                console.log(user[0].password)
-                let passwordCheck = bcrypt.compareSync(req.body.password, user[0].password)
-                console.log(passwordCheck)
+                let passwordCheck = bcrypt.compareSync(req.body.password, user.password)
                 if(passwordCheck){
                     req.session.loggedUser = user;
                     res.redirect('/cuenta/profile')
-                }else{res.send('aaa')}
+                }else{
+                    res.render('login', {errorMessage: 'Contraseña incorrecta', old})
+                }
             }else{
-                res.send('error')
+                res.render('login', {errorMessage: 'Usuario no encontrado', old})
             }
         })
     }

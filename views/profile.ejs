@@ -6,9 +6,9 @@
 <body>
     <%- include ('partials/header') %> 
     <main id="mainProfile">
-        <h2>Bienvenido <%= user[0].name %> <%= user[0].lastName %></h2>
+        <h2>Bienvenido <%= user.name %> <%= user.lastName %></h2>
         <div>
-            <img src="/images/users/<%=user[0].profileImage%>" alt="foto de perfil de <%= user[0].name %>" id='profilePic'>
+            <img src="/images/users/<%=user.profileImage%>" alt="foto de perfil de <%= user.name %>" id='profilePic'>
         </div>
         <form action="/productos">
             <button type="submit">Explorar productos</button>
