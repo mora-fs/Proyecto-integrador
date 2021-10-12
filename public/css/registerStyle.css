@@ -22,13 +22,12 @@ label{
 }
 input{
     margin: auto;
+    text-align: center;
     background-color: transparent;
-    border: solid 1px #de2f48;
+    border: solid 1px #372770;
     border-radius: 6px;
     padding: 5px;
-}
-#inputFotoPerfil{
-    max-width: 280px;
+    width: 80%;
 }
 /* .input-tipo-archivo{
     margin: 20px 0px;
@@ -53,4 +52,9 @@ input{
 .botonFormulario:hover{
     background-color: #9fc9f1;
     font-weight: bold;
+}
+@media (min-width: 740px){
+    input{
+        width: 65%;
+    }
 }
