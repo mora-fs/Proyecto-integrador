@@ -5,11 +5,13 @@ eef3f8 - celeste claro
 f03e36 - rojo 
 fdf3e6 - crema */
 #footerContainer{
+    width: 100vw;
     background-color: #372770;
     color: #eef3f8;
     position: relative;
     bottom: 0;
     padding: 20px 30px 0px;
+    margin: 0;
     margin-top: 20px;
 }
 .footerDiv{
