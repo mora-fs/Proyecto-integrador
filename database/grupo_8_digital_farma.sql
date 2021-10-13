@@ -1,5 +1,13 @@
 CREATE DATABASE grupo_8_digital_farma;
-
+CREATE TABLE Products (
+	id_product INT UNIQUE AUTO_INCREMENT PRIMARY KEY, 
+    name VARCHAR(20), 
+    price SMALLINT, 
+    description TEXT, 
+    discount TINYINT, 
+    capacity TINYINT, 
+    image VARCHAR(20)
+);
 CREATE TABLE Brands (
 	id_brand INT UNIQUE AUTO_INCREMENT PRIMARY KEY, 
     name VARCHAR(20)
