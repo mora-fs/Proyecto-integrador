@@ -69,6 +69,13 @@ const controller= {
         };
         res.render('profile', user)
     },
+    editProfileForm: (req,res) => {
+        res.send('hola')
+    },
+
+    editProfile: (req,res)=>{
+        res.send('aa')
+    } ,
 
     logOut: (req, res) => {
         req.session.destroy()

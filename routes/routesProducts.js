@@ -63,13 +63,12 @@ const validations = [
         return true;
     })
 ]
-
 router.get('/', /*onlyEmployeeMiddleware,*/ controller.productsList);
-router.get('/:queryBusqueda', controller.searchProduct);
-router.get('/:categoria', controller.categories);
 
-router.get('/crear', onlyEmployeeMiddleware, controller.createForm);
+router.get('/crear', onlyEmployeeMiddleware,  controller.createForm);
 router.post('/crear', uploadFile.single('imgNewProduct') ,onlyEmployeeMiddleware, validations, controller.createProduct);
+
+
 
 router.get('/:id', onlyEmployeeMiddleware, controller.detail);
 
@@ -77,5 +76,8 @@ router.get('/:id/editar', onlyEmployeeMiddleware, controller.editForm);
 router.put('/:id/editar', onlyEmployeeMiddleware, controller.edit)
 
 router.delete('/:id', onlyEmployeeMiddleware, controller.delete);
+
+router.get('/:queryBusqueda', controller.searchProduct);
+router.get('/:categoria', controller.categories);
 
 module.exports = router;

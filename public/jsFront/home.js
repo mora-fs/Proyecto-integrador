@@ -1,7 +1,7 @@
 window.onload = () => {
     const images = [
-        '../images/carousel/carouselMedicamentos.png',
         '../images/carousel/carouselDermaglos.png',
+        '../images/carousel/carouselMedicamentos.png',
         '../images/carousel/carouselCovid.png'
     ];
 
@@ -18,8 +18,8 @@ window.onload = () => {
 
 
 
-    function showImage () {
-        image.src = images[positionIndex];
+    function showImage (pos) {
+        image.src = images[pos];
         // let route = images[positionIndex].toString()
         // image.innerHTML = "<img class='carousel-img' src=" + route + ">";
         // image.style.backgroundImage = `url(${route})`;
@@ -30,7 +30,7 @@ window.onload = () => {
         } else {
             positionIndex++;
         }
-        showImage();
+        showImage(positionIndex);
     }
 
     /**
@@ -42,7 +42,7 @@ window.onload = () => {
         } else {
             positionIndex--;
         }
-        showImage();
+        showImage(positionIndex);
     }
     /**
      * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
@@ -53,7 +53,7 @@ window.onload = () => {
     // showImage()
     // carousel.style.display = 'block'
 
-    setInterval(goRight, 10000)
+    setInterval(goRight, 7500)
 
     
 }

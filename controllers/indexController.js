@@ -12,13 +12,23 @@ const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 
 const db = require('../database/models')
+const Op = db.Sequelize.Op;
 
 const controller = {
     home: (req, res)=>{
-        const productos= {
-            productos: parsedProductsDb
-        }
-        return res.render('home', productos)
+        // const productos= {
+        //     productos: parsedProductsDb
+        // }
+        // return res.render('home', productos)
+
+        db.Product.findAll({
+            where: {discount: {[Op.gte]: 20}},
+            limit: 8
+        })
+        .then(products => {
+            console.log(products)
+            return res.render('home', {products})
+        })
     }, 
 
     registerForm: (req, res)=>{

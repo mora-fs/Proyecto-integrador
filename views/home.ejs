@@ -14,83 +14,43 @@
                 <button id="right" class="carousel-button right"><i class="fas fa-chevron-right"></i></button>
               
               <div class="carousel-img-container">
-                <a href="/productos"><img id="image-carousel" src="/images/carousel/carouselMedicamentos.png" alt=""></a></div>
+                <a href="/productos"><img id="image-carousel" src="/images/carousel/carouselCovid.png" alt=""></a></div>
               </div>
             </div>
       </div>
 
-      <!-- <div class="caaa">
-        <div class="carousel"></div>
-          <button class="carousel-button">a</button>
-          <div class="carousel-img-container"><img src="/images/carousel-slider/carousel-1.png" alt=""></div>
-          <button class="carousel-button"></button>
-      </div> -->
+      <h2> <i class="fas fa-tags"></i>  OFERTAS </h2>
+      <section class="products-container">
+    
 
-      <!--
-      <div class="carousel"><h1>ACA IRIA EL CAROUSEL SLIDER</h1></div>
-        <div class="products">
-         <div class="product1">      
-      <div class="image-product"><img src="" alt="Imagen producto"></div>
-        <div class="nombre-producto">Producto</div>
-        <label for="selector">Select</label>
-         <select name="producto" id="producto">
-                <option value="producto1">Producto1</option>
-                <option value="producto2">Producto2</option>
-                <option value="producto3">Producto3</option>
-                <option value="producto4">Producto4</option>
-         </select>
-       </div>
-       <h2 id="ofertas">OFERTAS</h2>
-         <div class="product2"> 
-         <div class="image-product"><img src='' alt="Imagen producto"></div>
-        <div class="nombre-producto">Producto</div>
-        <label for="selector">Select</label>
-         <select name="producto" id="producto">
-                <option value="producto1">Producto1</option>
-                <option value="producto2">Producto2</option>
-                <option value="producto3">Producto3</option>
-                <option value="producto4">Producto4</option>
-         </select>
-       </div>
+      <div class="productos">
+        
+        <% locals.products.forEach(product => { %>
 
-         <div class="product3">
-       <div class="image-product"><img src='' alt="Imagen producto"></div>
-        <div class="nombre-producto">Producto</div>
-        <label for="selector">Select</label>
-         <select name="producto" id="producto">
-                <option value="producto1">Producto1</option>
-                <option value="producto2">Producto2</option>
-                <option value="producto3">Producto3</option>
-                <option value="producto4">Producto4</option>
-         </select>
-       </div>
+            <div class="producto">
+                <a href="/productos/<%=product.id%> ">
+                    <img src="/images/productos/<%=product.image%>"  alt="Imágen del producto" class="productImg">
+                <div class="productInfo">
+                    <h3 class="productName"><%=product.name%></h3>
+                    <div class="productPricing">
+                        <p class="price">$<%=product.price%></p>
+                         
+                        <p class="discount">%<%=product.discount%></p>
+                    </div>
+                    <div class="productDescription">
+                        <p><%=product.description.slice(0,60)%>...</p>
+                    </div>
+                </div>
+                </a>
+            </div>
 
-         <div class="product4">
-       <div class="image-product"><img src='' alt="Imagen producto"></div>
-        <div class="nombre-producto">Producto</div>
-        <label for="selector">Select</label>
-         <select name="producto" id="producto">
-                <option value="producto1">Producto1</option>
-                <option value="producto2">Producto2</option>
-                <option value="producto3">Producto3</option>
-                <option value="producto4">Producto4</option>
-         </select>
-       </div>
+            
+        <%  }) %> 
 
-        <div class="product5"> 
-       <div class="image-product"><img src='' alt="Imagen producto"></div>
-        <div class="nombre-producto">Producto</div>
-        <label for="selector">Select</label>
-         <select name="producto" id="producto">
-                <option value="producto1">Producto1</option>
-                <option value="producto2">Producto2</option>
-                <option value="producto3">Producto3</option>
-                <option value="producto4">Producto4</option>
-         </select>
-       </div>
-       </div>
-       
-       -->
+
+  
+
+      </section>
        <script src="/jsFront/home.js"></script>
     </main>
     <%- include('./partials/footer') %> 
