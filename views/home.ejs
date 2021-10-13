@@ -21,62 +21,34 @@
 
       <h2> <i class="fas fa-tags"></i>  OFERTAS </h2>
       <section class="products-container">
-        
+    
+
       <div class="productos">
+        
+        <% locals.products.forEach(product => { %>
+
             <div class="producto">
-                <a href="/productos/">
-                    <img src="/images/productos/aceiteBebe.jpg"  alt="Imágen del producto" class="productImg">
+                <a href="/productos/<%=product.id%> ">
+                    <img src="/images/productos/<%=product.image%>"  alt="Imágen del producto" class="productImg">
                 <div class="productInfo">
-                    <h3 class="productName">Acondicionador Dove</h3>
+                    <h3 class="productName"><%=product.name%></h3>
                     <div class="productPricing">
-                        <p class="price">$ 1500</p>
-                        <p class="discount">%10</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="producto">
-                <a href="/productos/">
-                    <img src="/images/productos/aceiteBebe.jpg"  alt="Imágen del producto" class="productImg">
-                <div class="productInfo">
-                    <h3 class="productName">Acondicionador Dove</h3>
-                    <div class="productPricing">
-                        <p class="price">$ 1500</p>
-                        <p class="discount">%10</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="producto">
-                <a href="/productos/">
-                    <img src="/images/productos/aceiteBebe.jpg"  alt="Imágen del producto" class="productImg">
-                <div class="productInfo">
-                    <h3 class="productName">Acondicionador Dove</h3>
-                    <div class="productPricing">
-                        <p class="price">$ 1500</p>
-                        <p class="discount">%10</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="producto">
-                <a href="/productos/">
-                    <img src="/images/productos/aceiteBebe.jpg"  alt="Imágen del producto" class="productImg">
-                <div class="productInfo">
-                    <h3 class="productName">Acondicionador Dove</h3>
-                    <div class="productPricing">
-                        <p class="price">$ 1500</p>
-                        <p class="discount">%10</p>
+                        <p class="price">$<%=product.price%></p>
+                         
+                        <p class="discount">%<%=product.discount%></p>
                     </div>
                     <div class="productDescription">
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At veritatis...</p>
+                        <p><%=product.description.slice(0,60)%>...</p>
                     </div>
                 </div>
                 </a>
             </div>
-            
-      </div>
 
+            
+        <%  }) %> 
+
+
+  
 
       </section>
        <script src="/jsFront/home.js"></script>

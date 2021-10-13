@@ -14,14 +14,15 @@ const { createBrotliCompress } = require('zlib');
 /* const onlyEmployeeMiddleware= require('../middlewares/onlyEmployeeMiddleware');
  */
 const controller = {
-    findRandomProducts: () => {
+    findRandomProducts: (req,res) => {
+        res.send('e')
     // ACA DEBERIA IR LA LOGICA QUE RETORNE 3 PRODUCTOS RANDOM
     },
 
     productsList: (req, res) =>{
         const loggedUser= req.session.loggedUser;
         let userIsEmployee= false;
-        if (loggedUser && loggedUser.type == 'employee'){
+        if (loggedUser && loggedUser.employee == 1){
             userIsEmployee = true;
         }
         
@@ -38,7 +39,7 @@ const controller = {
     },
 
     searchProduct: (req, res)=>{
-        
+ 
     }, 
 
     categories: (req, res)=>{
