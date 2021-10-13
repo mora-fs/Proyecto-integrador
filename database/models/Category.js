@@ -1,4 +1,4 @@
-module.exports = (sequelize, dataTypes) => {
+module.export = (sequelize, dataTypes) => {
     let alias = 'Category';
 
     cols = {

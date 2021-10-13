@@ -7,7 +7,11 @@ fdf3e6 - crema */
 *{
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
+}
+body{
+    width: 100vw;
     margin: 0;
+    padding: 0;
 }
 button{
     cursor: pointer;
@@ -16,6 +20,7 @@ button{
     background-color: #9fc9f1;
     font-family: 'Roboto', sans-serif;
     width: 100vw;
+    margin: 0;
     position: relative;
     height: 100px;
     display: flex;

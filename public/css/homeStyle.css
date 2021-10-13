@@ -49,10 +49,6 @@ main{
 .carousel-img-container a img{
    width: 100%;
 }
-.carousel-img-container{
-   /* position: absolute;
-   z-index: 2; */
-}
 
 .carousel-button{
    position: absolute;
