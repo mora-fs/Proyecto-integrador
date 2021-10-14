@@ -58,20 +58,21 @@ CREATE TABLE `products` (
   `discount` tinyint(4) DEFAULT NULL,
   `capacity` tinyint(4) DEFAULT NULL,
   `image` varchar(60) DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL
+  `category_id` int(11) DEFAULT NULL,
+  `brand` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `description`, `discount`, `capacity`, `image`, `category_id`) VALUES
-(20, 'Johnson´s Aceite de Bebé', 300, 'Aceite para bebés puro. 100ml. Humecta y suaviza.', 25, 30, 'product-1633987924117.jpg', 6),
-(21, 'Acondicionador Dove Nutritive Secrets', 400, 'Acondicionador Dove Nutritive Secrets. Linea RITUAL DETOX.  Hecho con matcha y leche de arroz.', 12, 20, 'product-1633988076422.jpg', 5),
-(22, 'Shampoo Control Caspa - Head & Shoulders', 350, 'Shampoo para control de caspa y grasa. Elimina el exceso de grasa en el cuero cabelludo. 375ml', 5, 50, 'product-1633988274049.jpg', 5),
-(23, 'Afeitadora Gillete PrestoBarba', 850, 'Afeitadora Gillete Prestobarba Sensitive 3. Hasta 40 afeitadas suaves. 4 unidades', 20, 20, 'product-1634138823407.jpg', 3),
-(24, 'Alcohol en aerosol - AKTIOL', 300, 'Alcohol en aerosol con glicerina. Alcohol 70%. 143ml.', 25, 30, 'product-1634139758438.jpg', 6),
-(25, 'Aacohol en Gel', 250, 'Alcohol en gel Anti-Bacteriano Gezzi. 50g. Elimina el 99,9% de las bacterias y virus.', 25, 127, 'product-1634140230399.jpg', 6);
+INSERT INTO `products` (`id`, `name`, `price`, `description`, `discount`, `capacity`, `image`, `category_id`, `brand`) VALUES
+(20, 'Johnson´s Aceite de Bebé', 300, 'Aceite para bebés puro. 100ml. Humecta y suaviza.', 25, 30, 'product-1633987924117.jpg', 6, 'Johnson & Johnson'),
+(21, 'Acondicionador Dove Nutritive Secrets', 400, 'Acondicionador Dove Nutritive Secrets. Linea RITUAL DETOX.  Hecho con matcha y leche de arroz.', 12, 20, 'product-1633988076422.jpg', 5, 'Dove'),
+(22, 'Shampoo Control Caspa - Head & Shoulders', 350, 'Shampoo para control de caspa y grasa. Elimina el exceso de grasa en el cuero cabelludo. 375ml', 5, 50, 'product-1633988274049.jpg', 5, 'Head & Shoulders'),
+(23, 'Afeitadora Gillete PrestoBarba', 850, 'Afeitadora Gillete Prestobarba Sensitive 3. Hasta 40 afeitadas suaves. 4 unidades', 20, 20, 'product-1634138823407.jpg', 3, 'Gillete'),
+(24, 'Alcohol en aerosol - AKTIOL', 300, 'Alcohol en aerosol con glicerina. Alcohol 70%. 143ml.', 25, 30, 'product-1634139758438.jpg', 6, 'Aktiol'),
+(25, 'Aacohol en Gel', 250, 'Alcohol en gel Anti-Bacteriano Gezzi. 50g. Elimina el 99,9% de las bacterias y virus.', 25, 127, 'product-1634140230399.jpg', 6, 'Gezzi');
 
 -- --------------------------------------------------------
 

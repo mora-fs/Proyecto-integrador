@@ -1,8 +1,8 @@
 window.onload = () => {
     const images = [
-        '../images/carousel/carouselDermaglos.png',
-        '../images/carousel/carouselMedicamentos.png',
-        '../images/carousel/carouselCovid.png'
+        '/images/carousel/carouselDermaglos.png',
+        '/images/carousel/carouselMedicamentos.png',
+        '/images/carousel/carouselCovid.png'
     ];
 
     let carousel = document.querySelector('.carousel')
