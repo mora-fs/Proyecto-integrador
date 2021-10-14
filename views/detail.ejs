@@ -6,7 +6,11 @@
 <body>
     <%- include('partials/header') %> 
     <main class="product-main">
-        <a href="/productos">Volver</a>
+        <div class="links">
+            <a href="/">Home</a>   /
+            <a href="/productos">Productos</a>   /
+            <a href="/productos/<%=productParam.id%>"><%=productParam.name%></a> 
+        </div>
         <section class="area-prod">
                 <div class="tituloyfoto">
                     <div class="prodyprecio">
@@ -14,7 +18,7 @@
                         <h2 class="precio-prod">$<%= productParam.price %> </h2>
                     </div>                
                     <div class="container-img-prod">
-                        <img src="/images/productos/<%= productParam.image%>" alt="Foto <%= productParam.name %> ">
+                        <img class="prodImage"src="/images/productos/<%= productParam.image%>" alt="Foto <%= productParam.name %> ">
                     </div>
                 </div>
                 <div class="desarrollo-prod">

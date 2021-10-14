@@ -150,6 +150,7 @@ body {
         width: 21%;
         height: 400px;
         transition: height 200ms;
+        padding-bottom: 40px;
     }
     .productos{
        height: 100%;

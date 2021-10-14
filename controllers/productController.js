@@ -104,8 +104,6 @@ const controller = {
         let randomProduct= parsedProductsDb.find((product)=> product.id == randomId);
         similarProducts.push(randomProduct)
     }
-
-
 // 
 // 
 // 
