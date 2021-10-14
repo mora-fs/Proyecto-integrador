@@ -1,7 +1,149 @@
-#mainProfile{
-    margin: 30px;
+main{
+    background-color: #eef3f8;
 }
+
+h2{
+    margin: 0px;
+}
+
 #profilePic{
-    width: 8%;
-    margin: 10px;
+    width:40%;
+    border-radius: 100px;
+
+    box-shadow: 0 1px 2px rgba(39, 39, 39, 0.07), 
+    0 2px 4px rgba(39, 39, 39, 0.07), 
+    0 4px 8px rgba(39, 39, 39, 0.07), 
+    0 8px 16px rgba(39, 39, 39, 0.07),
+    0 16px 32px rgba(39, 39, 39, 0.07), 
+    0 32px 64px rgba(39, 39, 39, 0.07);
+
+    /* margin: 10px; */
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftContainer{
+    /* margin:auto; */
+    width: 38%;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+}
+.leftContainer h4{
+    color: black;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.leftContainer h5{
+    color: rgb(49, 49, 49);
+    margin-top: 0px;
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.rightContainer{
+    /* margin:auto; */
+    /* text-align: left; */
+    width: 68%;
+}
+.rightContainer h3{
+    text-align: center;
+    width: 65%;
+    font-size: 23px;
+    padding-top: 20px;
+}
+.rightContainer a{
+    text-decoration: none;
+    color: rgb(59, 59, 59);
+}
+
+.rightContainer i{
+    display: none;
+}
+.container h3{
+    color: #33189b;
+}
+
+
+.datos{
+    /* background-color: #9fc9f1; */
+    /* border-radius: 3px; */
+    font-size: 18px;
+
+    
+
+    width: 65%;
+}
+
+.label{
+    box-shadow: 0 1px 2px rgba(39, 39, 39, 0.07), 
+    0 2px 4px rgba(39, 39, 39, 0.07), 
+    0 4px 8px rgba(39, 39, 39, 0.07), 
+    0 8px 16px rgba(39, 39, 39, 0.07),
+    0 16px 32px rgba(39, 39, 39, 0.07), 
+    0 32px 64px rgba(39, 39, 39, 0.07);
+
+    border-radius: 5px;
+
+    margin-bottom: 60px;
+
+
+}
+
+.datos h4{
+    background-color: #9fc9f1;
+    margin: 0px;
+    padding: 10px 0px 10px 10px;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+.datos p{
+    /* border-bottom: 1px solid #b6d3ee; */
+    color: rgb(59, 59, 59);
+    background-color: #b6d3ee;
+    margin: 0px;
+    padding: 10px 0px 10px 15px;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.datos p:hover{
+    background-color: #9fc9f1;
+}
+
+.datos p:hover i{
+    display: inline;
+}
+
+.profileButton{
+    border-radius: 100px;
+    border: 1px solid #372770;
+    color: #372770;
+    font-size: 16px;
+    width: 160px;
+    padding: 10px;
+    transition: 0.3s;
+}
+.logout{
+    margin-top: 20px;
+}
+.createButton{
+    margin-top: 20px;
+}
+.profileButton:hover{
+    background-color: #9fc9f1;
+    font-weight: bold;
+}
+
+.logout:hover{
+    background-color: #F54c8a;
+    color: black;
+    border-color: black;
+
 }

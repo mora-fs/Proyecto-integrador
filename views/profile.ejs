@@ -6,16 +6,56 @@
 <body>
     <%- include ('partials/header') %> 
     <main id="mainProfile">
-        <h2>Bienvenido <%= user.name %> <%= user.lastName %></h2>
-        <div>
-            <img src="/images/users/<%=user.profileImage%>" alt="foto de perfil de <%= user.name %>" id='profilePic'>
+        <h2>Bienvenido <%= user.name %>!</h2>
+        <div class="container">
+            
+            <div class="leftContainer">
+                <div>
+                    <img src="/images/users/<%=user.profileImage%>" alt="foto de perfil de <%= user.name %>" id='profilePic'>
+                    <h4><%=user.name%> <%=user.lastName %></h4>
+                    <h5><%= user.email %> </h5>
+                </div>
+                <form action="/productos">
+                    <button class="profileButton" type="submit">Explorar productos</button>
+                </form>
+                <%if(user.employee == 1){  %> 
+                    <form action="/productos/crear">
+                        <button class="profileButton createButton" type="submit">Añadir productos</button>
+                    </form>
+                <%} %> 
+                <form action="/cuenta/logout" method="POST">
+                    <button class="profileButton logout">Cerrar sesión</button>
+                </form>
+            </div>
+                
+                <div class="rightContainer">
+                    <h3>Mis datos</h3>
+                    <div class="datos">
+                        <div class="label">
+                            <h4>Nombre: </h4>
+                            <a href="/cuenta/profile/<%=user.id%>/edit"><p><%=user.name%> <i class="fas fa-edit"></i></p></a>
+                        </div>
+                        <div class="label">
+                            <h4>Apellido:</h4>
+                            <a href="/cuenta/profile/<%=user.id%>/edit"><p><%=user.lastName%> <i class="fas fa-edit"></i></p></a>
+                        </div>
+                        <div class="label">
+                            <h4>Email:</h4>
+                            <a href="/cuenta/profile/<%=user.id%>/edit"><p><%=user.email%> <i class="fas fa-edit"></i></p></a>
+                        </div>
+                        <div class="label">
+                            <h4>Usuario:</h4>
+                            <a href="/cuenta/profile/<%=user.id%>/edit"><p><%=user.employee==1?'Empleado':'Consumidor'%> <i class="fas fa-edit"></i></p></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                
         </div>
-        <form action="/productos">
-            <button type="submit">Explorar productos</button>
-        </form>
-        <form action="/cuenta/logout" method="POST">
-            <button>Cerrar sesión</button>
-        </form>
+        <div class="lastVisited">
+            Ultimos Visitados
+        </div>
     </main>
     <%- include ('partials/footer') %> 
 </body>
