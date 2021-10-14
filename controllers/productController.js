@@ -149,7 +149,6 @@ const controller = {
     createProduct: (req, res) =>{
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            /* console.log(req.file.filename) */
             categoryValue =  parseInt(req.body.category)
             db.Product.create({
                 name: req.body.name,
@@ -182,19 +181,6 @@ const controller = {
                 }
             })
             .catch(error => {res.send(error)} )
-        
-        
-        /* let idEdit= req.params.id;
-        let productEdit= parsedProductsDb.find(producto=>producto.id == idEdit);
-        if (productEdit){
-            let editParam = {
-                editParam: productEdit
-            }
-            return res.render('editForm', editParam);
-        }
-        else {
-            return res.send("Producto no encontrado...");
-        } */
     },
 
     edit: (req,res)=>{
@@ -224,9 +210,15 @@ const controller = {
     ,
     delete: (req, res)=>{
         const idDelete= req.params.id;
-        const notDeleted= parsedProductsDb.filter(producto=> producto.id != idDelete);
-        fs.writeFileSync(productosDbPath, JSON.stringify(notDeleted, null, 2));
-        res.render('productsList')
+        db.Product.destroy({
+            where: {
+                id: idDelete
+            }
+        })
+            .then(()=>{
+                res.redirect('/productos')
+            })
+            .catch((error) => {res.send(error)})
     },
 
     logOut: (req, res) => {
