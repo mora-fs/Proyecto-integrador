@@ -24,7 +24,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         image: {
             type: dataTypes.STRING
-        }
+        }, 
+        category_id: dataTypes.INTEGER
     };
 
     let config = {
@@ -34,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
 
 
     const Product = sequelize.define(alias, cols, config)
-
+/* 
    
     Product.associate = function(models) {
         Product.belongsToMany(models.Brands, {
@@ -43,9 +44,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'id_product',
             otherKey: 'id_brand',
             timestamps: false
-        });
+        }); */
 
-
+    Product.associate = function(models) {
         Product.belongsToMany(models.Category, {
             as: 'category',
             through: 'products_categories',
@@ -53,9 +54,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: 'id_categories',
             timestamps: false
         });
-
     }
-   
 
     return Product
 }

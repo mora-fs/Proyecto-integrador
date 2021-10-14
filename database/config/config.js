@@ -2,7 +2,7 @@ module.exports= {
   "development": {
     "username": "root",
     "password": null,
-    "database": "grupo_8_digital_farma",
+    "database": "new_grupo_8_digital_farma.sql",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
