@@ -70,6 +70,8 @@ router.post('/crear', uploadFile.single('imgNewProduct') ,onlyEmployeeMiddleware
 
 
 
+router.get('/search', controller.searchProduct)
+
 router.get('/:id',  controller.detail);
 
 router.get('/:id/editar', onlyEmployeeMiddleware, controller.editForm);
@@ -77,7 +79,7 @@ router.put('/:id/editar', onlyEmployeeMiddleware, controller.edit)
 
 router.delete('/:id', onlyEmployeeMiddleware, controller.delete);
 
-router.get('/:queryBusqueda', controller.searchProduct);
-router.get('/:categoria', controller.categories);
+// router.get('/:queryBusqueda', controller.searchProduct);
+// router.get('/:categoria', controller.categories);
 
 module.exports = router;

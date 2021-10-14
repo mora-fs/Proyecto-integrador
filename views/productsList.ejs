@@ -6,7 +6,7 @@
 <body>
     <%- include('partials/header') %> 
     <main>
-        <h2 class="listadoTitulo">Listado de productos</h2>
+        <h2 class="listadoTitulo">Explorar productos</h2>
         <% if (userIsEmployee == true) { %> 
             <div id="button-crear">
                 <a href="/productos/crear">Añadir producto nuevo al inventario</a>
@@ -15,17 +15,22 @@
         <div class="productos">
             <% products.forEach(product => { %>
                 <div class="producto">
-                    <a href="/productos/<%=product.id%>">
-                        <img src="/images/productos/<%=product.image%>"  alt="Imágen del producto <%= product.name %>" class="productImg">
-                    <div>
-                        <h3 class="productName"><%= product.name %></h3>
+                    <a href="/productos/<%=product.id%> ">
+                        <img src="/images/productos/<%=product.image%>"  alt="Imágen del producto" class="productImg">
+                    <div class="productInfo">
+                        <h3 class="productName"><%=product.name.slice(0,25)%>... </h3>
                         <div class="productPricing">
-                            <p class="price">$ <%= product.price %></p>
-                            <p class="discount"><%= product.discount %></p>
+                            <p class="price">$<%=product.price%></p>
+                             
+                            <p class="discount">%<%=product.discount%></p>
+                        </div>
+                        <div class="productDescription">
+                            <p><%=product.description.slice(0,60)%>...</p>
                         </div>
                     </div>
                     </a>
                 </div>
+
             <% }); %> 
         </div>
     </main>

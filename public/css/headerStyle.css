@@ -9,7 +9,7 @@ fdf3e6 - crema */
     box-sizing: border-box;
 }
 body{
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
@@ -22,7 +22,7 @@ button{
 #headerContainer{
     background-color: #9fc9f1;
     font-family: 'Roboto', sans-serif;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     position: relative;
     height: 100px;
@@ -94,7 +94,7 @@ button{
     width: 230px;
     height: 30px;
     border: none;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 #searchBar input::placeholder{
     color: #372770;
