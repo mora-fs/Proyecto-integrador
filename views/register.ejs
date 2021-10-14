@@ -7,13 +7,8 @@
     <%- include('./partials/header')  %> 
     <main id="mainRegister">
         <h3 id="titulo">Creá tu cuenta</h3>
-<<<<<<< HEAD
-        <form action="/register" method="POST" enctype="multipart/form-data" id="formularioRegistro">
-            <div class="nameContainer">
-=======
         <form action="/register" method="POST" enctype="multipart/form-data" id="formulario">
-            <div>
->>>>>>> 413e67a98a75fefef0f7878d1327222adea64d84
+            <div class="nameContainer">
                 <label for="nombre">Nombre</label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.nombre){%>
                     <div><p class="validation-error"><%=  errorMessage.nombre.msg %></p></div> 

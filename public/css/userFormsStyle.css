@@ -42,13 +42,8 @@ main input{
     text-align: center;
     background-color: #f8fcff;
     border: solid 1px #372770;
-<<<<<<< HEAD:public/css/registerStyle.css
     border-radius: 16px;
     padding: 5px;
-=======
-    border-radius: 6px;
-    padding: 10px;
->>>>>>> 413e67a98a75fefef0f7878d1327222adea64d84:public/css/userFormsStyle.css
     width: 80%;
     height: 40px;
 }
@@ -73,12 +68,9 @@ main input{
     padding: 10px;
     margin: 7px;
     transition: 0.5s;
-<<<<<<< HEAD:public/css/registerStyle.css
     margin-bottom: 60px;
     margin-top: 30px;
-=======
     text-decoration: none;
->>>>>>> 413e67a98a75fefef0f7878d1327222adea64d84:public/css/userFormsStyle.css
 }
 .botonFormulario:hover{
     background-color: #9fc9f1;
@@ -90,6 +82,7 @@ main input{
     display: inline-block;
     width: fit-content;
 }
+
 @media (min-width: 1000px){
     input{
         width: 45%;
