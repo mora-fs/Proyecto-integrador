@@ -69,7 +69,7 @@
                         <div class="button edit">
                             <a href="/productos/<%= productParam.id %>/editar"  class="edit-ref">Editar producto</a>
                         </div>
-                        <form action="/productos/<%= productParam.id %>/?_method=" method="POST">
+                        <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST">
                             <button class="button delete" type="submit">Eliminar producto</button>
                         </form>
                     </div>

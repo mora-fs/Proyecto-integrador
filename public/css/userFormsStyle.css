@@ -20,7 +20,7 @@ main{
     text-align: center;
     font-size: 30px;
 }
-#formularioRegistro{
+#formulario{
     color: #000;
     width: 50vw;
     margin: auto;
@@ -42,8 +42,13 @@ main input{
     text-align: center;
     background-color: #f8fcff;
     border: solid 1px #372770;
+<<<<<<< HEAD:public/css/registerStyle.css
     border-radius: 16px;
     padding: 5px;
+=======
+    border-radius: 6px;
+    padding: 10px;
+>>>>>>> 413e67a98a75fefef0f7878d1327222adea64d84:public/css/userFormsStyle.css
     width: 80%;
     height: 40px;
 }
@@ -56,7 +61,9 @@ main input{
 /* form div div div{
     margin: 300px 0px;
 } */
-
+#divBotones{
+    margin: 20px 0;
+}
 .botonFormulario{
     border-radius: 100px;
     border: 1px solid #372770;
@@ -64,17 +71,28 @@ main input{
     font-size: 16px;
     width: 150px;
     padding: 10px;
+    margin: 7px;
     transition: 0.5s;
+<<<<<<< HEAD:public/css/registerStyle.css
     margin-bottom: 60px;
     margin-top: 30px;
+=======
+    text-decoration: none;
+>>>>>>> 413e67a98a75fefef0f7878d1327222adea64d84:public/css/userFormsStyle.css
 }
 .botonFormulario:hover{
     background-color: #9fc9f1;
     font-weight: bold;
 
 }
-@media (min-width: 740px){
+.botonLink{
+    background-color: rgb(239, 239, 239);
+    display: inline-block;
+    width: fit-content;
+}
+@media (min-width: 1000px){
     input{
-        width: 65%;
+        width: 45%;
+        
     }
 }

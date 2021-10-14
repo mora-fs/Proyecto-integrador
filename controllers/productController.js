@@ -105,11 +105,28 @@ const controller = {
     }, 
 
     categories: (req, res)=>{
-
+        const loggedUser= req.session.loggedUser;
+        let userIsEmployee= false;
+        if (loggedUser && loggedUser.employee == 1){
+            userIsEmployee = true;
+        }
+        let categoryId= req.params.categoryId;
+        db.Product.findAll({
+            where: {
+                category_id: categoryId
+            }
+        })
+            .then(requestedProducts=>{
+                let products= {
+                    products: requestedProducts, 
+                    userIsEmployee
+                }
+                return res.render('productsList', products)
+            })
+            .catch(error => { res.send(error)});
     },
 
     detail: (req, res)=>{
-
         // ESTA LOGICA DE MOSTRAR PRODUCTOS RELACIONADOS NO LA PUDE HACER DENTRO DE ESTE MISMO METODO, PORQUE HABIAN ERRORES 
         // CON EL TEMA DEL .then     
         // ESTO CREO QUE ES MEJOR HACERLO EN EL METODO AL PRINCIPIO DEL CONTROLADOR UQE SE LLAMA findRandomProduct, Y LLAMAR
@@ -149,7 +166,6 @@ const controller = {
     createProduct: (req, res) =>{
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            /* console.log(req.file.filename) */
             categoryValue =  parseInt(req.body.category)
             db.Product.create({
                 name: req.body.name,
@@ -182,19 +198,6 @@ const controller = {
                 }
             })
             .catch(error => {res.send(error)} )
-        
-        
-        /* let idEdit= req.params.id;
-        let productEdit= parsedProductsDb.find(producto=>producto.id == idEdit);
-        if (productEdit){
-            let editParam = {
-                editParam: productEdit
-            }
-            return res.render('editForm', editParam);
-        }
-        else {
-            return res.send("Producto no encontrado...");
-        } */
     },
 
     edit: (req,res)=>{
@@ -224,9 +227,15 @@ const controller = {
     ,
     delete: (req, res)=>{
         const idDelete= req.params.id;
-        const notDeleted= parsedProductsDb.filter(producto=> producto.id != idDelete);
-        fs.writeFileSync(productosDbPath, JSON.stringify(notDeleted, null, 2));
-        res.render('productsList')
+        db.Product.destroy({
+            where: {
+                id: idDelete
+            }
+        })
+            .then(()=>{
+                res.redirect('/productos')
+            })
+            .catch((error) => {res.send(error)})
     },
 
     logOut: (req, res) => {

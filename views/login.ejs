@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head', {title: 'Log-in', stylesheet: 'loginStyle.css'}) %> 
+    <%- include('./partials/head', {title: 'Log-in', stylesheet: 'userFormsStyle.css'}) %> 
 </head>
 <body>
     <%- include('./partials/header') %>
     <main>
-        <h2>INICIÁ SESIÓN</h2>
-        <form method="POST" action="/login" class="form-login">
+        <h2 id="titulo">INICIÁ SESIÓN</h2>
+        <form method="POST" action="/login" id="formulario">
             <div class="form-and-logo">    
                 <div class="image-user">
                     <i class="fas fa-users"></i>
@@ -31,11 +31,10 @@
                     </div>
                 </div>
             </div>
-            <div class="buttons">
-                <div class="button"><button type="submit">INGRESAR</button></div>
-                <div class="button"><button type="reset">BORRAR DATOS</button></div>
+            <div id="divBotones">
+                <button type="submit" class="botonFormulario">Ingresar</button>
+                <a class="botonFormulario botonLink" href="/register">¿Aún no tienes cuenta?</a>
             </div>
-            <div class="contenedor-link"><a class="link-redireccion" href="/register">¿Aún no tienes cuenta?</a></div>
         </form>
     </main>
     <%- include('./partials/footer') %>

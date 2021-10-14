@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head', {title: 'Register', stylesheet: 'registerStyle.css'}) %> 
+    <%- include('./partials/head', {title: 'Register', stylesheet: 'userFormsStyle.css'}) %> 
 </head>
 <body>
     <%- include('./partials/header')  %> 
     <main id="mainRegister">
         <h3 id="titulo">Creá tu cuenta</h3>
+<<<<<<< HEAD
         <form action="/register" method="POST" enctype="multipart/form-data" id="formularioRegistro">
             <div class="nameContainer">
+=======
+        <form action="/register" method="POST" enctype="multipart/form-data" id="formulario">
+            <div>
+>>>>>>> 413e67a98a75fefef0f7878d1327222adea64d84
                 <label for="nombre">Nombre</label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.nombre){%>
                     <div><p class="validation-error"><%=  errorMessage.nombre.msg %></p></div> 
@@ -57,7 +62,7 @@
                 <input type="file" name="userImage" id="inputFotoPerfil" accept=".jpg , .png">
             </div>
 
-            <div>
+            <div id="divBotones">
                 <button type="submit" class="botonFormulario">Guardar</button>
             </div>
 <!-- 
