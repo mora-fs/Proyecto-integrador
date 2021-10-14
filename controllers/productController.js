@@ -39,7 +39,48 @@ const controller = {
     },
 
     searchProduct: (req, res)=>{
- 
+        let query = "%" + req.query.searchQuery + "%";
+        let slicedQuery = query.slice(0, 5)
+        console.log(slicedQuery)
+        function getMoreProducts(prod){
+                db.Product.findAll({
+                    where: {description: {[Op.like]: slicedQuery}}
+                })
+                .then(finalProducts =>{
+
+                    prod = [...prod, ...finalProducts]
+
+                    if(prod.length>=8){
+                        res.send(prod)
+                    }
+                    else if(prod.length > 0 && prod.length < 8){
+                        db.Product.findAll({
+                            where: {category_id: prod[0].category_id}
+                        }).then(newProd => {
+                            prod = [...prod, ...newProd]
+                            if(prod.length > 0){
+                                res.send(prod);
+                            }
+                            else{
+                                res.send('No se encontro tu producto')
+                            }
+                        })
+                    }
+                })
+        }
+
+        db.Product.findAll({
+            where: {name: {[Op.like]: query}}
+        })
+        .then(data => {
+            if(data.length > 8){
+                res.send(data)
+            }
+            else if(data.length>0 && data.length<8){
+                getMoreProducts(data)
+            }
+           
+        })
     }, 
 
     categories: (req, res)=>{

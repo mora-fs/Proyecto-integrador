@@ -33,7 +33,7 @@
                 <a href="/productos/<%=product.id%> ">
                     <img src="/images/productos/<%=product.image%>"  alt="Imágen del producto" class="productImg">
                 <div class="productInfo">
-                    <h3 class="productName"><%=product.name%></h3>
+                    <h3 class="productName"><%=product.name.slice(0,25)%>... </h3>
                     <div class="productPricing">
                         <p class="price">$<%=product.price%></p>
                          
