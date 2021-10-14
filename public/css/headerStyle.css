@@ -77,11 +77,12 @@ button{
 .menuItem{
     margin: 8px;
     padding: 5px 0;
+    font-size: 14px;
+    color: #fdf3e6;
 }
 .menuItem a{
     text-decoration: none;
     color: #fdf3e6;
-    font-size: 14px;
 }
 #searchBar{
     display: flex;
@@ -100,7 +101,14 @@ button{
     color: #372770;
     font-weight: 400;
     font-size: 14px;
-}/* 
+}
+.categoriesSectionTitle{
+    color: #9fc9f1;
+}
+#categoriesSection{
+    padding-left: 25px;
+}
+/* 
 #searchBar button{
     background-color: transparent;
     color: #372770;

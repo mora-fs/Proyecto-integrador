@@ -8,7 +8,7 @@
     text-align: center;
     font-size: 30px;
 }
-#formularioRegistro{
+#formulario{
     color: #000;
     width: 90vw;
     margin: auto;
@@ -26,7 +26,7 @@ input{
     background-color: transparent;
     border: solid 1px #372770;
     border-radius: 6px;
-    padding: 5px;
+    padding: 10px;
     width: 80%;
 }
 /* .input-tipo-archivo{
@@ -38,23 +38,32 @@ input{
 /* form div div div{
     margin: 300px 0px;
 } */
-
+#divBotones{
+    margin: 20px 0;
+}
 .botonFormulario{
     border-radius: 100px;
     border: 1px solid #372770;
     color: #372770;
     font-size: 16px;
     width: 150px;
-    margin-top: 20px;
     padding: 10px;
+    margin: 7px;
     transition: 0.5s;
+    text-decoration: none;
 }
 .botonFormulario:hover{
     background-color: #9fc9f1;
     font-weight: bold;
 }
-@media (min-width: 740px){
+.botonLink{
+    background-color: rgb(239, 239, 239);
+    display: inline-block;
+    width: fit-content;
+}
+@media (min-width: 1000px){
     input{
-        width: 65%;
+        width: 45%;
+        
     }
 }

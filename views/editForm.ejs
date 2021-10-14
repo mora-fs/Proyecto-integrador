@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head', {title: productToEdit.name, stylesheet: 'registerStyle.css'}) %> 
+    <%- include('./partials/head', {title: productToEdit.name, stylesheet: 'productForms.css'}) %> 
 </head>
 <body>
     <%- include('./partials/header') %> 
     <main>
         <form action="/productos/<%=productToEdit.id%>/editar/?_method=PUT" method="POST">
+            <h3 id="titulo">Carga los datos a modificar de "<%= productToEdit.name %> ":</h3>
             <div class="campo">
                 <label for="name">Nombre del producto:</label>
-                <input type="text" id="name" name="name" value= <%= productToEdit.name %>>
+                <input type="text" id="name" name="name" value= <%= productToEdit.name %> class="dataInput">
             </div>
-            
             <div class="campo">
                 <label for="brand">Marca:</label>
-                <input type="text" name="marca" value= <%= productToEdit.brand %>>
+                <input type="text" name="marca" value="<%= productToEdit.brand %>"  class="dataInput">
             </div>
             <div class="campo">
                 <label for="price">Precio:</label>
-                <input type="number" name="brand" id="brand" value= <%= productToEdit.price %>>
+                <input type="number" name="brand" id="brand" value= <%= productToEdit.price %> class="dataInput">
             </div>
             <div class="campo">
                 <label for="discount">Descuento:</label>
-                <input type="number" name="discount" id="discount" value= <%= productToEdit.discount %>>
+                <input type="number" name="discount" id="discount" value= <%= productToEdit.discount %> class="dataInput">
             </div>
             <div class="campo">
                 <label for="capacity">Capacidad:</label>
-                <input type="text" name="capacity" id="capacity" value= <%= productToEdit.capacity  %>  >
+                <input type="text" name="capacity" id="capacity" value= <%= productToEdit.capacity  %> class="dataInput">
             </div>
             <!-- <div class="campo">
                 <label for="color">Color:</label>
@@ -34,7 +34,7 @@
             </div> -->
             <div class="campo">
                 <label for="category">Categoría:</label>
-                <select name="category" id="category">
+                <select name="category" id="category" class="dataInput">
                     <option value="1" <%= productToEdit.category == "bucal"?"selected":null%> >Cuidado bucal</option>
                     <option value="2" <%= productToEdit.category == "corporal"?"selected":null%>>Cuidado corporal</option>
                     <option value="3" <%= productToEdit.category == "facial"?"selected":null%>>Cuidado facial</option>
@@ -45,15 +45,17 @@
             </div>
             <div class="campo">
                 <label for="description">Descripción:</label>
-                <textarea name="description" id="description"><%=productToEdit.description%></textarea>
+                <textarea name="description" id="description" class="dataInput"><%=productToEdit.description%></textarea>
             </div>
             <div class="campo">
                 <label for="image">Imagen:</label>
-                <input type="file" name="image" id="image" class="input-file" value="<%= productToEdit.image %>">
+                <input type="file" name="image" id="image" class="input-file" value="<%= productToEdit.image %>" class="dataInput">
                 <p>Imagen actual: <%= productToEdit.image %> </p>
                 
             </div>
-            <button type="submit" class="campo">Guardar cambios</button>
+            <div id="submitDiv">
+                <button type="submit" id="submitButton">Guardar cambios</button>
+            </div>
         </form>
         <a href="/productos/<%= productToEdit.id %>">Cancelar</a>
     <%- include('./partials/footer') %> 

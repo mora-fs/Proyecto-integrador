@@ -13,8 +13,6 @@ fdf3e6 - crema */
     padding: 20px 30px 0px;
     margin: auto;
     text-align: center;
-    /* margin-top: 20px; */
-    /* margin: auto; */
 }
 .footerDiv{
     padding-bottom: 15px;
@@ -67,7 +65,6 @@ li{
     #footerContainer{
         display: flex;
         justify-content: space-between;
-        margin: auto;
     }
     .footerDiv{
         width: 30%;
