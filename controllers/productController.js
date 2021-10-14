@@ -39,32 +39,52 @@ const controller = {
     },
 
     searchProduct: (req, res)=>{
+        const loggedUser= req.session.loggedUser;
+        let userIsEmployee= false;
+        if (loggedUser && loggedUser.employee == 1){
+            userIsEmployee = true;
+        }
+
+
         let query = "%" + req.query.searchQuery + "%";
         let slicedQuery = query.slice(0, 5)
         console.log(slicedQuery)
         function getMoreProducts(prod){
                 db.Product.findAll({
-                    where: {description: {[Op.like]: slicedQuery}}
+                    where: {description: {[Op.like]: slicedQuery}, name: {[Op.ne]:prod.name}}
+                
                 })
                 .then(finalProducts =>{
-
-                    prod = [...prod, ...finalProducts]
-
-                    if(prod.length>=8){
-                        res.send(prod)
-                    }
-                    else if(prod.length > 0 && prod.length < 8){
-                        db.Product.findAll({
-                            where: {category_id: prod[0].category_id}
-                        }).then(newProd => {
-                            prod = [...prod, ...newProd]
-                            if(prod.length > 0){
-                                res.send(prod);
+                    newArr = [...prod, ...finalProducts]
+                    prod = [...new Set(newArr)]
+                    if(prod.length > 0){
+                        if(prod.length>=8){
+                            // res.send(prod)r
+                            res.render('search', {prod, userIsEmployee})
+                        }
+                        else if(prod.length >= 0 && prod.length < 8){
+                            db.Product.findAll({
+                                where: {category_id: prod[0].category_id, name: {[Op.ne]:prod[0].name}}
+                            })
+                            .then(newProd => {
+                                
+                                newFilteredArr = [...prod, ...newProd]
+                                
+                                prod = [...new Set(newFilteredArr)]
+                               
+                                if(prod.length > 0){
+                                    res.render('search', {prod, userIsEmployee})
+                                    // res.send(prod)
+                                }
+                                else{
+                                    res.render('search', {prod: undefined, userIsEmployee})
+                                    // res.send('nosirve')
+                                }
+                            })
+                        
                             }
-                            else{
-                                res.send('No se encontro tu producto')
-                            }
-                        })
+                    }else{
+                        res.render('search', {prod: undefined, userIsEmployee})
                     }
                 })
         }
@@ -73,10 +93,11 @@ const controller = {
             where: {name: {[Op.like]: query}}
         })
         .then(data => {
-            if(data.length > 8){
-                res.send(data)
+            if(data.length >= 8){
+                res.render('search', {prod: data, userIsEmployee})
+                // res.send(data)
             }
-            else if(data.length>0 && data.length<8){
+            else if(data.length<8){
                 getMoreProducts(data)
             }
            

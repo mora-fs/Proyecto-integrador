@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head', {title: 'Tu Búsqueda', stylesheet: 'productsStyle.css'}) %>
+</head>
+<body>
+    <%- include('partials/header') %> 
+    <main>
+        <h2 class="listadoTitulo">Resultados de tu Búsqueda</h2>
+        <% if(locals && locals.prod && locals.prod.length > 0) {%> 
+        <div class="productos">
+            <% prod.forEach(product => { %>
+                <div class="producto">
+                    <a href="/productos/<%=product.id%> ">
+                        <img src="/images/productos/<%=product.image%>"  alt="Imágen del producto" class="productImg">
+                    <div class="productInfo">
+                        <h3 class="productName"><%=product.name.slice(0,25)%>... </h3>
+                        <div class="productPricing">
+                            <p class="price">$<%=product.price%></p>
+                             
+                            <p class="discount">%<%=product.discount%></p>
+                        </div>
+                        <div class="productDescription">
+                            <p><%=product.description.slice(0,60)%>...</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+            <% }); %> 
+        </div>
+        <% } %> 
+        <% if(!locals.prod || locals.prod.length == 0){%> 
+            <h2>No encontramos resultados para tu busqueda</h2>
+        <% } %> 
+    </main>
+    <%- include('partials/footer') %> 
+</body>
+</html>
