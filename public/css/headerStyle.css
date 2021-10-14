@@ -123,7 +123,7 @@ button{
 .navbar{
     justify-content: center;
 } */
-@media (min-width: 460px) {
+@media (min-width: 675px) {
     #dropDownItemsMobile{
         display: none;
     }

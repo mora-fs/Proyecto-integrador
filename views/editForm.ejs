@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head', {title: editParam.name, stylesheet: 'editStyle.css'}) %> 
+    <%- include('./partials/head', {title: productToEdit.name, stylesheet: 'registerStyle.css'}) %> 
 </head>
 <body>
     <%- include('./partials/header') %> 
     <main>
-        <form action="/productos/<%=editParam.id%>/editar/?_method=PUT" method="POST">
+        <form action="/productos/<%=productToEdit.id%>/editar/?_method=PUT" method="POST">
             <div class="campo">
-                <label for="nombre">Nombre del producto:</label>
-                <input type="text" id="name" name="nombre" value= <%= editParam.name %>>
+                <label for="name">Nombre del producto:</label>
+                <input type="text" id="name" name="name" value= <%= productToEdit.name %>>
             </div>
             
             <div class="campo">
-                <label for="marca">Marca:</label>
-                <input type="text" name="marca" value= <%= editParam.marca %>>
+                <label for="brand">Marca:</label>
+                <input type="text" name="marca" value= <%= productToEdit.brand %>>
             </div>
             <div class="campo">
                 <label for="price">Precio:</label>
-                <input type="number" name="price" value= <%= editParam.price %>>
+                <input type="number" name="brand" id="brand" value= <%= productToEdit.price %>>
             </div>
             <div class="campo">
                 <label for="discount">Descuento:</label>
-                <input type="number" name="discount" value= <%= editParam.discount %>>
+                <input type="number" name="discount" id="discount" value= <%= productToEdit.discount %>>
             </div>
             <div class="campo">
-                <label for="cantidad">Cantidad:</label>
-                <input type="text" name="cantidad" value= <%= editParam.stock  %>  >
+                <label for="capacity">Capacidad:</label>
+                <input type="text" name="capacity" id="capacity" value= <%= productToEdit.capacity  %>  >
             </div>
             <!-- <div class="campo">
                 <label for="color">Color:</label>
@@ -34,30 +34,28 @@
             </div> -->
             <div class="campo">
                 <label for="category">Categoría:</label>
-                <select name="category" id="categoria">
-                    <option value="bucal" <%= editParam.category == "bucal"?"selected":null%> >Cuidado bucal</option>
-                    <option value="corporal" <%= editParam.category == "corporal"?"selected":null%>>Cuidado corporal</option>
-                    <option value="facial" <%= editParam.category == "facial"?"selected":null%>>Cuidado facial</option>
-                    <option value="verano" <%= editParam.category == "verano"?"selected":null%>>Verano</option>
-                    <option value="capilar" <%= editParam.category == "capilar"?"selected":null%>>Capilar</option>
-                    <option value="higiene" <%= editParam.category == "higiene"?"selected":null%>>Higiene</option>
+                <select name="category" id="category">
+                    <option value="1" <%= productToEdit.category == "bucal"?"selected":null%> >Cuidado bucal</option>
+                    <option value="2" <%= productToEdit.category == "corporal"?"selected":null%>>Cuidado corporal</option>
+                    <option value="3" <%= productToEdit.category == "facial"?"selected":null%>>Cuidado facial</option>
+                    <option value="4" <%= productToEdit.category == "verano"?"selected":null%>>Verano</option>
+                    <option value="5" <%= productToEdit.category == "capilar"?"selected":null%>>Capilar</option>
+                    <option value="6" <%= productToEdit.category == "higiene"?"selected":null%>>Higiene</option>
                 </select>
             </div>
             <div class="campo">
                 <label for="description">Descripción:</label>
-                <textarea name="description"><%=editParam.description%> </textarea>
+                <textarea name="description" id="description"><%=productToEdit.description%></textarea>
             </div>
             <div class="campo">
-                <label for="">Imagen:</label>
-                <input type="file" name="img-new-prod" class="input-file">
-                <p>Imagen actual: <%= editParam.image %> </p>
+                <label for="image">Imagen:</label>
+                <input type="file" name="image" id="image" class="input-file" value="<%= productToEdit.image %>">
+                <p>Imagen actual: <%= productToEdit.image %> </p>
                 
             </div>
             <button type="submit" class="campo">Guardar cambios</button>
         </form>
-        <form action="/productos/<%= editParam.id %>">
-            <button type="submit" class="campo">Cancelar</button>
-        </form>
+        <a href="/productos/<%= productToEdit.id %>">Cancelar</a>
     <%- include('./partials/footer') %> 
 </body>
 </html>

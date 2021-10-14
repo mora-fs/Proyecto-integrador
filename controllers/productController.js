@@ -88,11 +88,6 @@ const controller = {
     },
 
     detail: (req, res)=>{
-        const loggedUser= req.session.loggedUser;
-        let userIsEmployee= false;
-        if (loggedUser && loggedUser.type == 'employee'){
-            userIsEmployee = true;
-        };
 
         // ESTA LOGICA DE MOSTRAR PRODUCTOS RELACIONADOS NO LA PUDE HACER DENTRO DE ESTE MISMO METODO, PORQUE HABIAN ERRORES 
         // CON EL TEMA DEL .then     
@@ -107,14 +102,18 @@ const controller = {
 // 
 // 
 // 
-
+    const loggedUser= req.session.loggedUser;
+    let userIsEmployee= false;
+    if (loggedUser && loggedUser.employee == 1){
+        userIsEmployee = true;
+    }
     let data = {}
         db.Product.findByPk(req.params.id)
-        .then(productDetail => {
+        .then((productDetail) => {
             return data= {
                 productParam: productDetail, 
                 recommended: similarProducts,
-                userIsEmployee
+                userIsEmployee: userIsEmployee
             }
         })
         .then(data => {
@@ -129,10 +128,11 @@ const controller = {
     createProduct: (req, res) =>{
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            console.log(req.file.filename)
+            /* console.log(req.file.filename) */
             categoryValue =  parseInt(req.body.category)
             db.Product.create({
                 name: req.body.name,
+                brand: req.body.brand, 
                 price: req.body.price,
                 description: req.body.description,
                 discount: req.body.discount,
@@ -151,7 +151,19 @@ const controller = {
 
     
     editForm: (req, res)=>{
-        let idEdit= req.params.id;
+        db.Product.findByPk(req.params.id)
+            .then(foundProduct => {
+                if(foundProduct){
+                    productToEdit= {
+                        productToEdit: foundProduct
+                    }
+                    return res.render('editForm', productToEdit);
+                }
+            })
+            .catch(error => {res.send(error)} )
+        
+        
+        /* let idEdit= req.params.id;
         let productEdit= parsedProductsDb.find(producto=>producto.id == idEdit);
         if (productEdit){
             let editParam = {
@@ -161,26 +173,32 @@ const controller = {
         }
         else {
             return res.send("Producto no encontrado...");
-        }
+        } */
     },
 
     edit: (req,res)=>{
-        // aca va la logica que edita los datos del producto en la base de datos
-        let idEdit= req.params.id;
-        let arrayPosition = idEdit -1;
-        parsedProductsDb[arrayPosition].name = req.body.name;
-        parsedProductsDb[arrayPosition].marca = req.body.marca;
-        parsedProductsDb[arrayPosition].price = req.body.price;
-        parsedProductsDb[arrayPosition].discount = req.body.discount;
-        // parsedProductsDb[arrayPosition].image = req.file.filename;
-        parsedProductsDb[arrayPosition].stock = req.body.cantidad;
-        parsedProductsDb[arrayPosition].description = req.body.description;
-        parsedProductsDb[arrayPosition].category = req.body.category;
-
-        fs.writeFileSync(productsDbPath, JSON.stringify(parsedProductsDb))
-        let redirectionRoute = '/productos/' + parsedProductsDb[arrayPosition].id;
-       
-        return res.redirect(redirectionRoute)        
+        let categoryValue =  parseInt(req.body.category)
+        let idProduct= req.params.id;
+        db.Product.update(
+            {
+               name: req.body.name.value, 
+               brand: req.body.brand,
+               price: req.body.price,
+               discount: req.body.discount, 
+               capacity: req.body.capacity, 
+               category_id: categoryValue, 
+               description: req.body.description, 
+               image: req.body.image
+            }, 
+            {
+                where: {id: idProduct}
+            }
+        )
+            .then(function(){
+                let redirectionRoute= '/productos/' + idProduct;
+                return res.redirect(redirectionRoute) 
+            })
+            .catch(error => {res.render(error)});      
     }
     ,
     delete: (req, res)=>{
