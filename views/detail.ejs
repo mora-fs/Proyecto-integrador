@@ -5,77 +5,60 @@
 </head>
 <body>
     <%- include('partials/header') %> 
-    <main class="product-main">
+    <main id="productMain">
         <div class="links">
             <a href="/">Home</a>   /
             <a href="/productos">Productos</a>   /
             <a href="/productos/<%=productParam.id%>"><%=productParam.name%></a> 
         </div>
-        <section class="area-prod">
-                <div class="tituloyfoto">
-                    <div class="prodyprecio">
-                        <h3 class="nombre-prod"><%= productParam.name %> </h3>
-                        <h2 class="precio-prod">$<%= productParam.price %> </h2>
-                    </div>                
-                    <div class="container-img-prod">
-                        <img class="prodImage"src="/images/productos/<%= productParam.image%>" alt="Foto <%= productParam.name %> ">
+        <section class="areaProducto">
+                <h3 id="nombreProducto"><%= productParam.name %></h3>
+                <section id="flex">
+                    <div id="imageDiv">
+                        <img id="productImage"src="/images/productos/<%= productParam.image%>" alt="Foto <%= productParam.name %>">
                     </div>
-                </div>
-                <div class="desarrollo-prod">
-                    <div class="container-textos">
-                        <div class="descripcion-prod desc-comp-hover">
-                            <div class="box-descripcion-prod box-hover">
-                                <h4 class="titulo-descripcion-prod">Descripcion del producto</h4>
-                                <div id="logo-arrow">
-                                    <i class="fas fa-chevron-down"></i>
+                    <section id="texto">
+                        <div id="precioYprod">
+                            <h3>$<%= productParam.price %> </h3>
+                            <% if (productParam.discount > 0){ %> 
+                                <h3><%= productParam.discount %>%</h3>
+                            <% } %> 
+                        </div>
+                        <div class="detalleProd">
+                            <p class="description"><%= productParam.description %></p>
+                            <h4 class="titulo-componentes-prod">Marca <%= productParam.brand %></h4>
+                            <% if (userIsEmployee == false) { %>
+                                <form action="/cuenta/cart/<%=productParam.id%>" method="POST" id="userButtons">
+                                        <div id="chooseCuantity">
+                                            <label for="quantity">Elige las unidades</label>
+                                            <select name="quantity" id="quantity">
+                                            <% if(productParam.stock) {%> 
+                                                <% for(i=1; i <= productParam.stock; i++){ %> 
+                                                    <option value="<%=i%>"><%=i%></option>
+                                                <% } %> 
+                                            <% } %>
+                                            <% if(!productParam.stock){%> 
+                                                <option value="1">1</option>
+                                            <% } %> 
+                                            </select>
+                                        </div>
+                                        <button type="submit" id="CartButton">Agregar al carrito</button>
+                                </form>
+                            <% } %> 
+                            <% if (userIsEmployee == true) { %> 
+                                <div class="employeeButtons">
+                                    <div class="button editButton">
+                                        <a href="/productos/<%= productParam.id %>/editar"  id="editLink">Editar producto</a>
+                                    </div>
+                                    <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST">
+                                        <button class="button deleteButton" type="submit">Eliminar producto</button>
+                                    </form>
                                 </div>
-                            </div>
-                            <p class="texto-descripcion-prod texto-hover-appear">
-                                <%= productParam.description %>
-                            </p>
+                            <% } %> 
                         </div>
-                        <div class="componentes-prod desc-comp-hover">
-                            <div class="box-componentes-prod box-hover">
-                                <h4 class="titulo-componentes-prod">Marca</h4>
-                                <div id="logo-arrow">
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <p class="texto-componentes-prod texto-hover-appear">
-                                <%= productParam.brand %>
-                            </p>
-                        </div>
-                    </div>
-                    <% if (userIsEmployee == false) { %>
-                    <form action="/cuenta/cart/<%=productParam.id%>" method="POST" class="unidades-carrito">
-                            <div class="caja-unidades">
-                                <label for="unidades">Elige las unidades</label>
-                                <select name="quantity" id="unidades">
-                                <% if(productParam.stock) {%> 
-                                    <% for(i=1; i <= productParam.stock; i++){ %> 
-                                        <option value="<%=i%>"><%=i%></option>
-                                    <% } %> 
-                                <% } %>
-                                <% if(!productParam.stock){%> 
-                                    <option value="1">1</option>
-                                <% } %> 
-                                </select>
-                            </div>
-                            <button type="submit" class="button add-carrito">Agregar al carrito</button>
-                    </form>
-                    <% } %> 
-                    <% if (userIsEmployee == true) { %> 
-                    <div class="buttons-empleado">
-                        <div class="button edit">
-                            <a href="/productos/<%= productParam.id %>/editar"  class="edit-ref">Editar producto</a>
-                        </div>
-                        <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST">
-                            <button class="button delete" type="submit">Eliminar producto</button>
-                        </form>
-                    </div>
-                    <% } %> 
-                </div>
-        </section>
+                    </section>
+            </section>
+   </section>
         <!-- <section class="relacionados">
             <h3>Poductos relacionados</h3>
             <div class="imagenes-relacionados">
