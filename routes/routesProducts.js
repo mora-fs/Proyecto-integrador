@@ -70,7 +70,7 @@ router.post('/crear', uploadFile.single('imgNewProduct') ,onlyEmployeeMiddleware
 
 
 
-router.get('/:id', onlyEmployeeMiddleware, controller.detail);
+router.get('/:id',  controller.detail);
 
 router.get('/:id/editar', onlyEmployeeMiddleware, controller.editForm);
 router.put('/:id/editar', onlyEmployeeMiddleware, controller.edit)
