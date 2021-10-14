@@ -70,11 +70,41 @@ const controller= {
         res.render('profile', user)
     },
     editProfileForm: (req,res) => {
-        res.send('hola')
+        let user = req.session.loggedUser
+        console.log(user)
+        res.render('editProfile', {user})
     },
 
     editProfile: (req,res)=>{
-        res.send('aa')
+        // let newFile;
+        // if(req.file){
+        //     newFile = req.file.filename
+        // }
+        // else{newFile = req.session.loggedUser.profileImage}
+        let newName= req.body.nombre
+        let newLastName = req.body.apellido
+        let newEmail = req.body.email
+        db.User.update(
+            {
+                name: newName,
+                lastName: newLastName,
+                // password:req.body.contraseña,
+                email: newEmail
+                // profileImage: newFile
+            },
+            {
+                where: {id: parseInt(req.params.id)}
+            }
+        )
+        .then(data => {
+            console.log(data)
+            db.User.findByPk(req.params.id)
+            .then(user => {
+                console.log(user)
+                req.session.loggedUser = user;
+                res.redirect('/')
+            })
+        })
     } ,
 
     logOut: (req, res) => {

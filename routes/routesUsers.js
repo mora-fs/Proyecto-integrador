@@ -7,8 +7,8 @@ router.get('/cart', hideFromGuestMiddleware,  controller.cart)
 router.post('/cart/:id', hideFromGuestMiddleware, controller.addToCart)
 router.post('/cart/:id/delete',  controller.deleteFromCart)
 router.get('/profile', hideFromGuestMiddleware, controller.profile)
-router.get('/profile/edit', hideFromGuestMiddleware, controller.editProfileForm)
-router.post('/profile/edit', controller.editProfile)
+router.get('/profile/:id/edit', hideFromGuestMiddleware, controller.editProfileForm)
+router.post('/profile/:id/edit', controller.editProfile)
 router.post('/logout', controller.logOut)
 
 module.exports = router;
