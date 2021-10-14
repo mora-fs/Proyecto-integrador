@@ -1,59 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head', {title: 'Edit Profile', stylesheet: 'registerStyle.css'}) %> 
+    <%- include('./partials/head', {title: 'Edit Profile', stylesheet: 'userFormsStyle.css'}) %> 
 </head>
 <body>
     <%- include('./partials/header')  %> 
     <main id="mainRegister">
         <h3 id="titulo">Creá tu cuenta</h3>
-        <form action="/cuenta/profile/<%=user.id%>/edit" method="POST" enctype="multipart/form-data" id="formularioRegistro">
+        <form action="/cuenta/profile/<%=user.id%>/edit" method="POST" enctype="multipart/form-data" id="formulario">
             <div class="nameContainer">
                 <label for="nombre">Nombre</label>
-                <% if(locals && locals.errorMessage && locals.errorMessage.nombre){%>
-                    <div><p class="validation-error"><%=  errorMessage.nombre.msg %></p></div> 
-                <% } %>
                 <input type="text" value="<%=user.name%>" name="nombre" id="nombre">
             </div>
 
             <div>
                 <label for="apellido">Apellido</label>
-                <% if(locals.errorMessage && locals.errorMessage.apellido){%>
-                    <div><p class="validation-error"><%=  errorMessage.apellido.msg %></p></div> 
-                <% } %>
                 <input type="text" value="<%=user.lastName%>" name="apellido" id="apellido">
             </div>
 
             <div>
                 <label for="email">Correo Electrónico</label>
-                <% if(locals && locals.errorMessage && locals.errorMessage.email){%>
-                    <div><p class="validation-error"><%=  errorMessage.email.msg %></p></div> 
-                <% } %>
                 <input type="text" value="<%=user.email%>" name="email" id="email">
             </div>
             
 
             <div>
                 <label for="contraseña">Contraseña</label>
-                <% if(locals && locals.errorMessage && locals.errorMessage.password){%>
-                    <div><p class="validation-error"><%=  errorMessage.password.msg %></p></div> 
-                <% } %>
                 <input type="password" name="password" id="contraseña">
             </div>
 
             <div>
                 <label for="confirmarContraseña">Confirmar contraseña</label>
-                <% if(locals && locals.errorMessage && locals.errorMessage.confirmPassword){%>
-                    <div><p class="validation-error"><%=  errorMessage.confirmPassword.msg %></p></div> 
-                <% } %>
                 <input type="password" name="confirmPassword" id="confirmarContraseña">
             </div>
 
             <div>
                 <label for="fotoPerfil">Foto de Perfil (si no deseas cambiarla o añadir una, deja este campo vacio)</label>
-                <% if(locals && locals.errorMessage && locals.errorMessage.userImage){%>
-                    <div><p class="validation-error"><%=  errorMessage.userImage.msg %></p></div> 
-                <% } %>
+           
                 <input type="file" name="userImage" id="inputFotoPerfil" accept=".jpg , .png">
             </div>
 

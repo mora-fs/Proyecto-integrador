@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head', {title: 'Creando producto', stylesheet: 'productForms.css'}) %>
+    <%- include('./partials/head', {title: 'Creando producto', stylesheet: 'userFormsStyle.css'}) %>
     
 </head>
 <body>
     <%- include('partials/header') %> 
     <main id="createFormBody">
         <h5 id="titulo">Ingresa los datos correspondientes para añadir el nuevo producto al inventario:</h5>
-        <form action="/productos/crear" enctype="multipart/form-data" method="POST">
+        <form action="/productos/crear" id="formulario"enctype="multipart/form-data" method="POST">
             <div class="campo">
                 <label for="name"></label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.name){%>
@@ -39,10 +39,10 @@
             </div>
             <div class="campo">
                 <label for="brand"></label>
-                <% if(locals && locals.errorMessage && locals.errorMessage.brand){%>
-                    <div><p class="validation-error"><%=  errorMessage.brand.msg %></p></div> 
+                <% if(locals && locals.errorMessage && locals.errorMessage.marca){%>
+                    <div><p class="validation-error"><%=  errorMessage.marca.msg %></p></div> 
                 <% } %>
-                <input type="text" value="<%=locals&&locals.old&&locals.old.brand?old.brand:null%>" class="dataInput" name="brand" id="brand" placeholder="Marca:">
+                <input type="text" value="<%=locals&&locals.old&&locals.old.marca?old.marca:null%>" class="dataInput" name="marca" id="brand" placeholder="Marca:">
             </div>
             <div class="campo">
                 <label for="category"></label>
@@ -72,7 +72,7 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.imgNewProduct){%>
                     <div><p class="validation-error"><%=  errorMessage.imgNewProduct.msg %></p></div> 
                 <% } %>
-                <input type="file" name="imgNewProduct" id="uploadImage" class="dataInput">
+                <input type="file" name="imgNewProduct" id="inputFotoPerfil" class="dataInput">
             </div>
             <div id="submitDiv">
                 <button type="submit" class="campo" id="submitButton">Crear producto</button>

@@ -205,7 +205,7 @@ const controller = {
         let idProduct= req.params.id;
         db.Product.update(
             {
-               name: req.body.name.value, 
+               name: req.body.name, 
                brand: req.body.brand,
                price: req.body.price,
                discount: req.body.discount, 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2021 a las 01:35:07
+-- Tiempo de generación: 14-10-2021 a las 23:15:10
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `grupo_8_digital_farma`
+-- Base de datos: `new_grupo_8_digital_farma`
 --
 
 -- --------------------------------------------------------
@@ -72,7 +72,7 @@ INSERT INTO `products` (`id`, `name`, `price`, `description`, `discount`, `capac
 (22, 'Shampoo Control Caspa - Head & Shoulders', 350, 'Shampoo para control de caspa y grasa. Elimina el exceso de grasa en el cuero cabelludo. 375ml', 5, 50, 'product-1633988274049.jpg', 5, 'Head & Shoulders'),
 (23, 'Afeitadora Gillete PrestoBarba', 850, 'Afeitadora Gillete Prestobarba Sensitive 3. Hasta 40 afeitadas suaves. 4 unidades', 20, 20, 'product-1634138823407.jpg', 3, 'Gillete'),
 (24, 'Alcohol en aerosol - AKTIOL', 300, 'Alcohol en aerosol con glicerina. Alcohol 70%. 143ml.', 25, 30, 'product-1634139758438.jpg', 6, 'Aktiol'),
-(25, 'Aacohol en Gel', 250, 'Alcohol en gel Anti-Bacteriano Gezzi. 50g. Elimina el 99,9% de las bacterias y virus.', 25, 127, 'product-1634140230399.jpg', 6, 'Gezzi');
+(25, 'Alcohol en Gel', 250, 'Alcohol en gel Anti-Bacteriano Gezzi. 50g. Elimina el 99,9% de las bacterias y virus.', 25, 127, 'product-1634140230399.jpg', 6, 'Gezzi');
 
 -- --------------------------------------------------------
 

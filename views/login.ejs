@@ -18,7 +18,7 @@
                         <% if(locals && locals.errorMessage && locals.errorMessage == 'Usuario no encontrado'){ %> 
                         <h3><%= errorMessage  %> </h3>
                         <% } %> 
-                        <label for="nombre-usuario">USUARIO</label>
+                        <label for="nombre-usuario">EMAIL</label>
                         
                         <input id="nombre-usuario" name="username"  value="<%=locals&&locals.old&&locals.old.username?old.username:null%>" required>
                     </div>

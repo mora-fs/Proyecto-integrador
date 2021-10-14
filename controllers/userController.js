@@ -32,23 +32,28 @@ const controller= {
 
     addToCart: (req,res) => {
         const idDetail= req.params.id;
-        const productToAdd= parsedProductsDb.find(product=> product.id == idDetail);
-        productToAdd.quantity = req.body.quantity;
-
-        if(req.session.productsOnCart){
-            req.session.productsOnCart.push(productToAdd)
-        }
-        else{
-            req.session.productsOnCart = []
-            
-            req.session.productsOnCart.push(productToAdd)
-        }
-
-        redirectionRoute = '/productos/' + idDetail;
-
-        return res.redirect(redirectionRoute)
-        // res.send(productToAdd)
+        // const productToAdd= parsedProductsDb.find(product=> product.id == idDetail);
+        // productToAdd.quantity = req.body.quantity;
+        db.Product.findByPk(req.params.id)
+        .then(productToAdd => {
+            productToAdd.quantity = req.body.quantity
+            if(req.session.productsOnCart){
+                req.session.productsOnCart.push(productToAdd)
+            }
+            else{
+                req.session.productsOnCart = []
+                
+                req.session.productsOnCart.push(productToAdd)
+            }
+    
+            redirectionRoute = '/productos/' + idDetail;
+    
+            return res.redirect(redirectionRoute)
+            // res.send(productToAdd)
+        })
     },
+
+
 
     deleteFromCart: (req,res) => {
         // req.session.productsOnCart = req.session.productsOnCart.filter(product => product.id != req.params.id)

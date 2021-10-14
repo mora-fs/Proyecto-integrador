@@ -10,15 +10,23 @@ body {
     margin-bottom: -10px;
 }
 #button-crear {
-    margin: 30px;
-    border: #F0E5D8 solid 3px;
-    border-radius: 5px;
+   text-align: center;
+    margin: auto;
+    border-radius: 100px;
+    border: 1px solid #372770;
+    color: #372770;
+    font-size: 18px;
+    width: 340px;
     padding: 10px;
-    width: fit-content;
+    /* margin: 7px; */
     transition: 0.5s;
+    margin-bottom: 60px;
+    margin-top: 30px;
+    text-decoration: none;
 }
 #button-crear:hover {
-    background-color: #F0E5D8;
+   background-color: #9fc9f1;
+   font-weight: bold;
 }
 /* .productos {
     display: flex;

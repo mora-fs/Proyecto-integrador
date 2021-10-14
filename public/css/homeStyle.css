@@ -80,7 +80,7 @@ main{
 
 .ofertas{
    color: #33189b;
-   font-size: 25px;
+   font-size: 18px;
    /* margin-top: 30px; */
    padding-left: 35px;
    padding-top: 50px;
@@ -171,6 +171,9 @@ a{
    }
 }
 @media (min-width: 1025px) {
+   .ofertas{
+      font-size: 25px;
+   }
    .productDescription{
       display: block;
    }
@@ -180,7 +183,7 @@ a{
        transition: height 200ms;
    }
    .productos{
-      height: 500px;
+      /* height: 500px; */
       padding-bottom: 100px;
    }
 
