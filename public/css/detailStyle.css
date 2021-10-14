@@ -1,10 +1,14 @@
 body{
     background-color: #eef3f8;
 }
+.links{
+    margin-top: 10px;
+}
 #productMain{
     width: 90vw;
     margin: auto;
     font-size: 15px;
+    margin-bottom: 20px;
 }
 #nombreProducto{
     color: #f03e36;
@@ -17,22 +21,51 @@ body{
 #productImage{
     width: 100%;
     margin: auto;
+    border-radius: 20px;
+}
+#texto{
+    width: 45vw;
 }
 #precioYprod{
-    display: flex;
-    justify-content: space-between;
+    width: 30%;
+}
+#precioYprod h3{
+    color: #f03e36;
+    font-size: 20px;
 }
 #imageDiv{
     width: 40vw;
 }
+#employeeButtons{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+    width: 80%;
+    align-items: center;
+}
 .deleteButton{
     padding: 10px 15px;
     color: #372770;
+    font-size: 16px;
     background-color: #eef3f8;
     border: solid #372770 1px;
     border-radius: 100px;
+    align-self: center;
 }
 .deleteButton:hover{
+    background-color: #9fc9f1;
+}
+#editLink{
+    padding: 10px 15px;
+    color: #372770;
+    font-size: 16px;
+    background-color: #eef3f8;
+    border: solid #372770 1px;
+    border-radius: 100px;
+    text-decoration: none;
+    align-self: baseline;
+}
+#editLink:hover{
     background-color: #9fc9f1;
 }
 /* 

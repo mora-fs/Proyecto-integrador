@@ -26,7 +26,7 @@
                         </div>
                         <div class="detalleProd">
                             <p class="description"><%= productParam.description %></p>
-                            <h4 class="titulo-componentes-prod">Marca <%= productParam.brand %></h4>
+                            <!-- <h4 class="titulo-componentes-prod">Marca <%=// productParam.brand %></h4> -->
                             <% if (userIsEmployee == false) { %>
                                 <form action="/cuenta/cart/<%=productParam.id%>" method="POST" id="userButtons">
                                         <div id="chooseCuantity">
@@ -46,13 +46,15 @@
                                 </form>
                             <% } %> 
                             <% if (userIsEmployee == true) { %> 
-                                <div class="employeeButtons">
-                                    <div class="button editButton">
+                                <div id="employeeButtons">
+                                    <div id="button editButton">
                                         <a href="/productos/<%= productParam.id %>/editar"  id="editLink">Editar producto</a>
                                     </div>
-                                    <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST">
-                                        <button class="button deleteButton" type="submit">Eliminar producto</button>
-                                    </form>
+                                    <div>
+                                        <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST">
+                                            <button class="button deleteButton" type="submit">Eliminar producto</button>
+                                        </form>
+                                    </div>
                                 </div>
                             <% } %> 
                         </div>
