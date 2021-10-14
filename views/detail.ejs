@@ -51,8 +51,8 @@
                             <div class="caja-unidades">
                                 <label for="unidades">Elige las unidades</label>
                                 <select name="quantity" id="unidades">
-                                <% if(productParam.stock) {%> 
-                                    <% for(i=1; i <= productParam.stock; i++){ %> 
+                                <% if(productParam.capacity) {%> 
+                                    <% for(i=1; i <= productParam.capacity; i++){ %> 
                                         <option value="<%=i%>"><%=i%></option>
                                     <% } %> 
                                 <% } %>
