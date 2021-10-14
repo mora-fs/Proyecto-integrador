@@ -68,6 +68,32 @@ body{
 #editLink:hover{
     background-color: #9fc9f1;
 }
+#userButtons{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+    width: 80%;
+    align-items: center;
+}
+.buttonQuantityYCart {
+    padding: 10px 15px;
+    color: #372770;
+    font-size: 16px;
+    background-color: #eef3f8;
+    border: solid #372770 1px;
+    border-radius: 100px;
+    align-self: center;
+}
+#cartButton{
+    transition: 0.5s;
+}
+#cartButton:hover{
+    background-color: #9fc9f1;
+}
+#quantityLabel{
+    padding-right: 20px;
+    color: #372770;
+}
 /* 
 .descripcion-prod, .componentes-prod{
     border: 1px #BFD8BD solid;

@@ -29,8 +29,8 @@
                             <!-- <h4 class="titulo-componentes-prod">Marca <%=// productParam.brand %></h4> -->
                             <% if (userIsEmployee == false) { %>
                                 <form action="/cuenta/cart/<%=productParam.id%>" method="POST" id="userButtons">
-                                        <div id="chooseCuantity">
-                                            <label for="quantity">Elige las unidades</label>
+                                        <div id="chooseQuantity" class="buttonQuantityYCart">
+                                            <label for="quantity" id="quantityLabel">Elige las unidades</label>
                                             <select name="quantity" id="quantity">
                                             <% if(productParam.stock) {%> 
                                                 <% for(i=1; i <= productParam.stock; i++){ %> 
@@ -42,7 +42,7 @@
                                             <% } %> 
                                             </select>
                                         </div>
-                                        <button type="submit" id="CartButton">Agregar al carrito</button>
+                                        <button type="submit" class="buttonQuantityYCart" id="cartButton">Agregar al carrito</button>
                                 </form>
                             <% } %> 
                             <% if (userIsEmployee == true) { %> 
