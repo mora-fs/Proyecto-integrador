@@ -101,7 +101,7 @@ const controller = {
                 image: req.file.filename,
                 category_id: categoryValue
             })
-            .then(data => {
+        .then(data => {
             return res.redirect('/productos')})
             .catch(error => { res.send(error)})
         }
