@@ -69,7 +69,7 @@ router.get('/crear', onlyEmployeeMiddleware,  controller.createForm);
 router.post('/crear', uploadFile.single('imgNewProduct') ,onlyEmployeeMiddleware, validations, controller.createProduct);
 
 
-
+router.get('/categories/:categoryId', controller.categories);
 router.get('/search', controller.searchProduct)
 
 router.get('/:id',  controller.detail);

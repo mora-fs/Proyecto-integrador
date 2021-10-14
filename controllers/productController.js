@@ -105,11 +105,28 @@ const controller = {
     }, 
 
     categories: (req, res)=>{
-
+        const loggedUser= req.session.loggedUser;
+        let userIsEmployee= false;
+        if (loggedUser && loggedUser.employee == 1){
+            userIsEmployee = true;
+        }
+        let categoryId= req.params.categoryId;
+        db.Product.findAll({
+            where: {
+                category_id: categoryId
+            }
+        })
+            .then(requestedProducts=>{
+                let products= {
+                    products: requestedProducts, 
+                    userIsEmployee
+                }
+                return res.render('productsList', products)
+            })
+            .catch(error => { res.send(error)});
     },
 
     detail: (req, res)=>{
-
         // ESTA LOGICA DE MOSTRAR PRODUCTOS RELACIONADOS NO LA PUDE HACER DENTRO DE ESTE MISMO METODO, PORQUE HABIAN ERRORES 
         // CON EL TEMA DEL .then     
         // ESTO CREO QUE ES MEJOR HACERLO EN EL METODO AL PRINCIPIO DEL CONTROLADOR UQE SE LLAMA findRandomProduct, Y LLAMAR
