@@ -21,7 +21,7 @@ const controller = {
         // }
         // return res.render('home', productos)
 
-        db.Products.findAll({
+        db.Product.findAll({
             where: {discount: {[Op.gte]: 20}},
             limit: 8
         })
