@@ -17,11 +17,11 @@
                                 </div>
                                 <div class="info-producto">
                                     <h3 class="nombre-producto"><%= producto.name %></h3>
-                                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur, adipisicing elit</p>
+                                    <p class="descripcion-producto"><%=producto.description%></p>
                                     <h4 class="precio-producto">$<%= producto.price %></h4>
                                 </div>
                                 <div>
-                                    <p>Unidades: <%=producto.quantity  %> </p>
+                                    <!-- <p>Unidades: <%=producto.quantity%> </p> -->
                                 </div>
                             </div>
                             <div class="contenedor-boton-borrar">
@@ -101,17 +101,10 @@
     </section>
     <% } %> 
     <% if(!productsInCart || productsInCart.length == 0){ %>
-        <h2>Aún no añadiste productos a tu carrito</h2>
-        <section id="recommendedSection">
-            <% for (i=0; i<3; i++) { %> 
-                <a href="/productos/<%=productsRecommend[i].id%>" class="recommendedProduct">
-                    <img src="/images/productos/<%= productsRecommend[i].image %>" alt="Producto recomendado para vos" class="recommendedProductImg">
-                    <p><%= productsRecommend[i].name %> </p>
-                </a>
-            <% } %> 
-        </section>
-        <a href="/productos">Ver más</a>
+        <a href="/productos" style="color: #372770;display:block;font-size: 25px;margin-left: 35%;padding-bottom: 300px;">Aún no añadiste productos a tu carrito</a>
+        
     <% } %> 
+    
     <%- include('./partials/footer') %> 
 </body>
 </html>
