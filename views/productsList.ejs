@@ -9,7 +9,7 @@
         <h2 class="listadoTitulo">Explorar productos</h2>
         <% if (userIsEmployee == true) { %> 
             <div id="buttonCrear">
-                <a href="/productos/crear" class="botonFormulario" id="buttonLink">Añadir producto nuevo al inventario</a>
+                <a href="/productos/crear" id="buttonLink">Añadir producto nuevo al inventario</a>
             </div>
         <% } %> 
         <div class="productos">
@@ -21,7 +21,7 @@
                             <h3 class="productName"><%=product.name.slice(0,25)%> </h3>
                             <div class="productPricing">
                                 <p class="price">$<%=product.price%></p>
-                                <% if (product.dicount > 0){ %>
+                                <% if (product.discount > 0){ %>
                                     <p class="discount">%<%=product.discount%></p>
                                 <% } %> 
                             </div>

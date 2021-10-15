@@ -2,7 +2,8 @@
 372770 - violeta más tranqui
 9fc9f1 - celeste
 eef3f8 - celeste claro
-f03e36 - rojo 
+f03e36 - rojo 1
+F54c8a - rojo 2
 fdf3e6 - crema */
 *{
     font-family: 'Lato', sans-serif;
@@ -15,9 +16,6 @@ body{
 }
 a{
     color:black
-}
-button{
-    cursor: pointer;
 }
 #headerContainer{
     background-color: #9fc9f1;

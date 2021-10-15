@@ -21,20 +21,19 @@ fdf3e6 - crema */
 .listContent {
     list-style-type: none;
     margin: auto;
-    /* text-align: center; */
-    /* display: inline-block; text-align: left; */
     display: table;
-  margin: 0 auto;
-  padding: 0px;
+    margin: 0 auto;
+    padding: 0px;
 }
-h3{
+.sectionTitle{
+    margin: 5px;
     color: #9fc9f1;
-    padding-bottom: 20px;
-    /* text-align: center */
 }
-li{
+.footerLi{
     padding: 5px 0;
-    /* margin: auto */
+}
+.contact{
+    color: #9fc9f1;
 }
 .redSocial{
     width: fit-content;
@@ -55,10 +54,6 @@ li{
     color: #9fc9f1;
 }
 .redSocial:hover .redesLink{
-    color: #9fc9f1;
-}
-
-.contact{
     color: #9fc9f1;
 }
 @media (min-width: 760px){
