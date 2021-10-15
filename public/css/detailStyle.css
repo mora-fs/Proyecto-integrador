@@ -1,38 +1,22 @@
 body{
     background-color: white;
 }
-.links{
-    margin-top: 10px;
-}
-#productMain{
+main{
     width: 90vw;
     margin: auto;
     font-size: 15px;
     margin-bottom: 20px;
 }
-#nombreProducto{
-    color: #372770;
-    display: block;
-    /* margin-left: 70%; */
-    text-align: center;
-    font-size: 25px;
-    padding-top: 30px;
+.links{
+    margin-top: 10px;
 }
-#flex{
-    display: flex;
-    justify-content: space-between;
-}
-#productImage{
-    width: 80%;
+#detailProductCard{
+    background-color: #eef3f8;
     margin: auto;
-    margin-left: 20px;
+    width: 95%;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 7px;
-
-}
-a{
-    text-decoration: none;
-}
-#productImage:hover{
     box-shadow: 1px 3px 4px rgba(0,0,0,0.07), 
     1px 4px 6px rgba(0,0,0,0.07), 
     1px 6px 10px rgba(0,0,0,0.07), 
@@ -40,254 +24,117 @@ a{
     1px 16px 34px rgba(0,0,0,0.07), 
     1px 34px 66px rgba(0,0,0,0.07);
 }
-#texto{
-    width: 45vw;
+#productName{
+    display: block;
+    font-size: 25px;
+    padding: 15px 0 0 20px;
+    color: #372770;
 }
-#precioYprod{
+#cardImage{
+    margin: auto;
+    width: 90%;
+}
+#productImage{
+    margin: auto;
     width: 100%;
-
+    border-radius: 7px;
 }
-#precioYprod h3 {
-    color: rgb(21, 216, 21);
-    font-size: 18px;
+#cardText{
+    width: 90%;
+    margin: auto;
+}
+#pricing{
     display: flex;
     justify-content: space-between;
-
+    color: #F54c8a;
+    font-size: 18px;
 }
-#precioYprod h3 div{
-    width: 50%;
+#userButtons{
+    width: 85%;
+    margin: auto;
 }
-#imageDiv{
-    width: 40vw;
+#buttonQuantity{
+    margin: auto;
+    text-align: center;
 }
-#employeeButtons{
-    display: flex;
-    margin-top: 40px;
-    justify-content: space-around;
-    width: 80%;
-    align-items: center;
-}
-.deleteButton{
-    padding: 10px 15px;
+#quantityLabel{
+    padding-right: 10px;
     color: #372770;
-    font-size: 16px;
+}
+#cartDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+#buttonCart {
     background-color: #eef3f8;
     border: solid #372770 1px;
     border-radius: 100px;
-    align-self: center;
-}
-.deleteButton:hover{
-    background-color: #9fc9f1;
-}
-#editLink{
-    padding: 10px 15px;
     color: #372770;
     font-size: 16px;
-    background-color: #eef3f8;
+    padding: 7px 15px;
+    transition: 0.5s;
+}
+#buttonCart:hover{
+    background-color: #9fc9f1;
+}
+#editLinkDiv{
+    width: fit-content;
+    padding: 10px 15px;
+    margin-bottom: 10px;
     border: solid #372770 1px;
     border-radius: 100px;
     text-decoration: none;
-    align-self: baseline;
+}
+#editLink{
+    color: #372770;
+    font-size: 16px;
+    background-color: #eef3f8;
 }
 #editLink:hover{
     background-color: #9fc9f1;
 }
-#userButtons{
-    display: flex;
-    margin-top: 40px;
-    justify-content: space-around;
-    width: 80%;
-    align-items: center;
-}
-.buttonQuantityYCart {
+#deleteButton{
     padding: 10px 15px;
     color: #372770;
     font-size: 16px;
     background-color: #eef3f8;
     border: solid #372770 1px;
     border-radius: 100px;
-    align-self: center;
 }
-#cartButton{
-    transition: 0.5s;
-}
-#cartButton:hover{
+#deleteButton:hover{
     background-color: #9fc9f1;
 }
-#quantityLabel{
-    padding-right: 20px;
-    color: #372770;
+
+@media (min-width: 760px){
+    #cardFlex{
+        display: flex;
+        justify-content: space-between;
+    }
+    #cardImage{
+        padding-left: 20px;
+    }
+    #cardText{
+        padding: 0 10%;
+    }
 }
 
-.areaProducto{
-    background-color: #eef3f8;
-    margin: auto;
-    width: 90%;
-    padding-bottom: 100px;
-    margin-bottom: 100px;
-    border-radius: 7px;
-    box-shadow: 1px 3px 4px rgba(0,0,0,0.07), 
-    1px 4px 6px rgba(0,0,0,0.07), 
-    1px 6px 10px rgba(0,0,0,0.07), 
-    1px 10px 18px rgba(0,0,0,0.07),
-    1px 16px 34px rgba(0,0,0,0.07), 
-    1px 34px 66px rgba(0,0,0,0.07);
-}
-
-/* 
-.descripcion-prod, .componentes-prod{
-    border: 1px #BFD8BD solid;
-    margin: 10px 0;
-    height: 60px;
-}
-.box-descripcion-prod, .box-componentes-prod{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.texto-hover-appear{
-    display: none;
-    padding: 0 15px;
-}
-.box-hover :hover .desc-comp-hover{
-    height: fit-content;
-}
-.titulo-componentes-prod, .titulo-descripcion-prod{
-    padding-left: 15px;
-}
-#logo-arrow{
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 20px;
-    color: #BFD8BD;
-}
-.unidades-carrito{
-    padding: 5px;
-    border: none;
-    display: flex;
-    justify-content: space-around;
-    margin-right: 10px;
-}
-.add-carrito{
-    margin-left: 10px;
-}
-.caja-unidades{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    margin: 5px;
-}
-select #unidades{
-    background-color: #fff;
-    border: 1px solid #BDC0C7;
-    border-radius: 5px;
-}
-label{
-    padding: 5px;
-}
-.buttons-empleado{
-    display: flex;
-    justify-content: space-between;
-    margin: 5px;
-}
-.button{
-    max-width: 200px;
-    font-size: 15px;
-    font-weight: 200;
-    text-align: center;
-    padding: 10px;
-    background-color: #FFFFFF;
-    border: #BDC0C7 1px solid;
-    border-radius: 5px;
-    transition: all 500ms;
-}
-.button:hover{
-    background-color: #0FD24C;
-    color: #FFFFFF;
-}
-.edit-ref{
-    text-decoration: none;
-    color: #000;
-}
-.edit-ref:hover{
-    color: #FFFFFF;
-}
-.recommendedLink{
-    padding: 0;
-}
-.img-relacionado{
-    width: 70%;
-    padding: 0;
-    border: 1px #000 solid;
-    margin: auto;
-    margin-bottom: 20px;
-    display: block;
-}
-.links{
-    display: none;
-}
-@media (min-width:760px){
-    .links{
-        display: block;
-        padding-top: 16px;
-        font-size: 13px;
-        
-    }
-    .links a{
-        text-decoration: none;
-        color: #372770;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 400;
-        margin-right: 15px;
-        margin-left: 15px;
-    }
-    .tituloyfoto{
-        width: 80%;
-        margin: auto;
-    }
-    .texto-descripcion-prod, .texto-componentes-prod{
-        display: inline-block;
-    }
-    .descripcion-prod, .componentes-prod{
-        height: fit-content;
-    }
-    .imagenes-relacionados{
+@media (min-width: 1024px){
+    #userButtons{
+        width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-evenly;
+        align-items: center;
     }
-    .img-relacionado{
-        width: 25%;
+    #cartDiv{
+        margin-top: 0;
     }
-    .edit, .delete{
-        width: 300px;
-        justify-content: center;
-    }
-}
-@media (min-width:1000px){
-    .areaProducto{
+    #employeeButtons{
         display: flex;
-        flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
     }
-    .tituloyfoto{
-        width: 50%;
-        margin: 5% 0;
+    #editLinkDiv{
+        margin: 0;
     }
-    .desarrollo-prod{
-        width: 50%;
-        margin: 5%;
-    }
-    .container-textos{
-        display: flex;
-        justify-content: space-between;
-    }
-    .descripcion-prod{
-        margin-right: 15px;
-    }
-    .componentes-prod{
-        margin-left: 15px;
-    }
-} */
+}

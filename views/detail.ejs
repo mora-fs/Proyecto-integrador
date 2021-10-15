@@ -5,66 +5,64 @@
 </head>
 <body>
     <%- include('partials/header') %> 
-    <main id="productMain">
+    <main>
         <div class="links">
             <a href="/">Home</a>   /
             <a href="/productos">Productos</a>   /
             <a href="/productos/<%=productParam.id%>"><%=productParam.name%></a> 
         </div>
-        <section class="areaProducto">
-                <h3 id="nombreProducto"><%= productParam.name %></h3>
-                <section id="flex">
-                    
-                    <div id="imageDiv">
-                        <img id="productImage"src="/images/productos/<%= productParam.image%>" alt="Foto <%= productParam.name %>">
-                    </div>
-                    <section id="texto">
-                        <div id="precioYprod">
-                            <h3><div>Precio $<%= productParam.price %></div> 
-                            <% if (productParam.discount > 0){ %> 
-                                <div> Descuento <%= productParam.discount %>%</div>
-                                <% } %> 
-                            </h3>
-                            </div>
-                            <div class="detalleProd">
-                                <p class="description"><%= productParam.description %></p>
-                                
-                            <!-- <h4 class="titulo-componentes-prod">Marca <%=// productParam.brand %></h4> -->
-                            <% if (userIsEmployee == false) { %>
-                                <form action="/cuenta/cart/<%=productParam.id%>" method="POST" id="userButtons">
-                                        <div id="chooseQuantity" class="buttonQuantityYCart">
-                                            <label for="quantity" id="quantityLabel">Elige las unidades</label>
-                                            <select name="quantity" id="quantity">
-                                            <% if(productParam.capacity) {%> 
-                                                <% for(i=1; i <= productParam.capacity; i++){ %> 
-                                                    <option value="<%=i%>"><%=i%></option>
-                                                <% } %> 
-                                            <% } %>
-                                            <% if(!productParam.capacity){%> 
-                                                <option value="1">1</option>
+        <section id="detailProductCard">
+            <h3 id="productName"><%= productParam.name %></h3>
+            <section id="cardFlex">
+                <div id="cardImage">
+                    <img id="productImage"src="/images/productos/<%= productParam.image%>" alt="Foto <%= productParam.name %>">
+                </div>
+                <div id="cardText">
+                    <div id="pricing">
+                        <h3>Precio $<%= productParam.price %></h3> 
+                        <% if (productParam.discount > 0){ %> 
+                            <h3> <%= productParam.discount %>%</h3>
+                        <% } %>
+                    </div> 
+                    <div id="productDetail">
+                        <p class="description"><%= productParam.description %></p>
+                        <!-- AGREGAR MARCA -->
+                        <% if (userIsEmployee == false) { %>
+                            <form action="/cuenta/cart/<%=productParam.id%>" method="POST" id="userButtons">
+                                <div id="buttonQuantity">
+                                    <label for="quantity" id="quantityLabel">Elige las unidades</label>
+                                    <select name="quantity" id="quantityInput">
+                                        <% if(productParam.capacity) {%> 
+                                            <% for(i=1; i <= productParam.capacity; i++){ %> 
+                                                <option value="<%=i%>"><%=i%></option>
                                             <% } %> 
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="buttonQuantityYCart" id="cartButton">Agregar al carrito</button>
-                                </form>
-                            <% } %> 
-                            <% if (userIsEmployee == true) { %> 
-                                <div id="employeeButtons">
-                                    <div id="button editButton">
-                                        <a href="/productos/<%= productParam.id %>/editar"  id="editLink">Editar producto</a>
-                                    </div>
-                                    <div>
-                                        <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST">
-                                            <button class="button deleteButton" type="submit">Eliminar producto</button>
-                                        </form>
-                                    </div>
+                                        <% } %>
+                                        <% if(!productParam.capacity){%> 
+                                            <option value="1">1</option>
+                                        <% } %> 
+                                    </select>
                                 </div>
-                            <% } %> 
-                        </div>
-                    </section>
+                                <div id="cartDiv">
+                                    <button type="submit" id="buttonCart">Agregar al carrito</button>
+                                </div>
+                            </form>
+                        <% } %> 
+                        <% if (userIsEmployee == true) { %> 
+                            <div id="employeeButtons">
+                                <div id="editLinkDiv">
+                                    <a href="/productos/<%= productParam.id %>/editar"  id="editLink">Editar producto</a>
+                                </div>
+                                <div>
+                                    <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST">
+                                        <button id="deleteButton" type="submit">Eliminar producto</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <% } %> 
+                    </div>
+                </div>
             </section>
-   </section>
-  
+        </section>
     </main>
     <%- include('partials/footer') %> 
 </body>

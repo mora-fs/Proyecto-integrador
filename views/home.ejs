@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('./partials/head', {title: 'Home', stylesheet: 'homeStyle.css'}) %>
+    <%- include('./partials/head', {title: 'Home' , stylesheet: 'homeStyle.css' }) %>
 </head>
+
 <body>
     <%- include('./partials/header') %>
-    <main>
-      <div class="container">
-        <div class="carousel" >
-            <div class="carousel-container">
-             
-                <button id="left" class="carousel-button left"><i class="fas fa-chevron-left"></i></button>
-                <button id="right" class="carousel-button right"><i class="fas fa-chevron-right"></i></button>
-              
-              <div class="carousel-img-container">
-                <a href="/productos"><img id="image-carousel" src="/images/carousel/carrouselCovid.png" alt=""></a></div>
-              </div>
-            </div>
-      </div>
-      <div class="ofertas">
-            <h2 > <i class="fas fa-tags"></i>  OFERTAS  <i class="fas fa-tags"></i></h2>
-      </div>
-      
-      <section class="products-container">
-    
-
-      <div class="productos">
-        
-        <% locals.products.forEach(product => { %>
-            <div class="producto">
-                <a href="/productos/<%=product.id%> ">
-                    <img src="/images/productos/<%=product.image%>"  alt="Imágen del producto" class="productImg">
-                <div class="productInfo">
-                    <h3 class="productName"><%=product.name.slice(0,25)%>... </h3>
-                    <div class="productPricing">
-                        <p class="price">$<%=product.price%></p>
-                         
-                        <p class="discount">%<%=product.discount%></p>
-                    </div>
-                    <div class="productDescription">
-                        <p><%=product.description.slice(0,60)%>...</p>
+        <main>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <button id="left" class="carousel-button left"><i class="fas fa-chevron-left"></i></button>
+                    <button id="right" class="carousel-button right"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-img-container">
+                        <a href="/productos"><img id="image-carousel" src="/images/carousel/carrouselCovid.png"
+                                alt="Carrousel de nuestras ofertas"></a>
                     </div>
                 </div>
-                </a>
             </div>
-            
-        <%  }) %> 
-
-
-  
-
-      </section>
-       <script src="/jsFront/home.js"></script>
-    </main>
-    <%- include('./partials/footer') %> 
+            <div class="ofertas">
+                <h2>
+                    <!-- <i class="fas fa-tags"></i>  -->OFERTAS IMPERDIBLES
+                    <!-- <i class="fas fa-tags"></i> -->
+                </h2>
+            </div>
+            <section class="products-container">
+                <div class="productos">
+                    <% locals.products.forEach(product=> { %>
+                        <div class="producto">
+                            <a href="/productos/<%=product.id%> ">
+                                <img src="/images/productos/<%=product.image%>" alt="Imágen del producto"
+                                    class="productImg">
+                            </a>
+                            <div class="productInfo">
+                                <h3 class="productName">
+                                    <%=product.name.slice(0,25)%>...
+                                </h3>
+                                <div class="productPricing">
+                                    <p class="price">$<%=product.price%>
+                                    </p>
+                                    <% if (product.discount> 0){ %>
+                                        <p class="discount">%<%=product.discount%>
+                                        </p>
+                                        <% } %>
+                                </div>
+                                <div class="productDescription">
+                                    <p>
+                                        <%=product.description.slice(0,60)%>...
+                                    </p>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <% }) %>
+                </div>
+            </section>
+            <script src="/jsFront/home.js"></script>
+        </main>
+        <%- include('./partials/footer') %>
 </body>
+
 </html>
