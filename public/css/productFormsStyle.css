@@ -11,12 +11,17 @@
     font-size: 14px;
     transition: 0.5s;
 }
+.campo label{
+    color: #F54c8a;
+    font-size: 14px;
+}
 .dataInput{
     background-color: #eef3f8; 
     border: 10px;
     border-radius: 10px;
     width: 100%;
     padding: 10px;
+    margin-top: 7px;
 }
 #uploadImage{
     margin-top: 7px;

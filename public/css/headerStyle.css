@@ -50,7 +50,11 @@ a{
 }
 .menuButtonIcon{
     color: #372770;
-    font-size: 20px;
+    font-size: 26px;
+    cursor: pointer;
+}
+#menuButton:hover .menuButtonIcon{
+    color: #F54c8a;
 }
 .menuOff{
     display: none;
