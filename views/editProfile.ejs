@@ -6,16 +6,16 @@
 <body>
     <%- include('./partials/header')  %> 
     <main id="mainRegister">
-        <h3 id="titulo">Creá tu cuenta</h3>
-        <form action="/cuenta/profile/<%=user.id%>/edit" method="POST" enctype="multipart/form-data" id="formulario">
+        <h3 id="titulo">Editá tu perfil</h3>
+        <form action="/cuenta/profile/edit" method="POST" id="formulario" enctype="multipart/form-data">
             <div class="nameContainer">
-                <label for="nombre">Nombre</label>
-                <input type="text" value="<%=user.name%>" name="nombre" id="nombre">
+                <label for="name">Nombre</label>
+                <input type="text" value="<%=user.name%>" name="name" id="nombre">
             </div>
 
             <div>
                 <label for="apellido">Apellido</label>
-                <input type="text" value="<%=user.lastName%>" name="apellido" id="apellido">
+                <input type="text" value="<%=user.lastName%>" name="lastName" id="apellido">
             </div>
 
             <div>
@@ -26,7 +26,7 @@
 
             <div>
                 <label for="contraseña">Contraseña</label>
-                <input type="password" name="password" id="contraseña">
+                <input type="password" name="password" id="password" >
             </div>
 
             <div>

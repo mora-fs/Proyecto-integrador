@@ -26,7 +26,6 @@ const controller = {
             limit: 8
         })
         .then(products => {
-            console.log(products)
             return res.render('home', {products})
         })
     }, 
