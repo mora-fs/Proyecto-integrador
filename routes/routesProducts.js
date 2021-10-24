@@ -20,8 +20,9 @@ const uploadFile= multer({storage});
 const {body} = require('express-validator');
 
 const validations = [
-    body('name').notEmpty().withMessage('El producto debe tener un nombre!'),
-    body('marca').notEmpty().withMessage('Debes incluir la marca de tu producto'),
+    body('name').notEmpty().withMessage('El producto debe tener un nombre!').bail()
+    .isLength({min: 2}).withMessage('Debe tener al menos 2 caracteres'),
+    body('brand').notEmpty().withMessage('Debes incluir la marca de tu producto'),
     body('price').notEmpty().withMessage('Debes añadirle un precio a tu producto').bail()
     .isInt().withMessage('Debe ser un numero simbolos ni caracteres'),
     body('discount').notEmpty().withMessage('Debes aclarar el descuento en caso de no tenerlo, poner 0 (cero)').bail()
@@ -33,7 +34,7 @@ const validations = [
         }
         return true
     }),
-    body('cantidad').notEmpty().withMessage('Debes indicar la cantidad disponible de unidades de este producto').bail()
+    body('capacity').notEmpty().withMessage('Debes indicar la cantidad disponible de unidades de este producto').bail()
     .custom((value, {req}) => {
         let cantidad = req.body.cantidad;
         if(cantidad <= 0){
@@ -56,7 +57,7 @@ const validations = [
         return true
     }).bail()
     .custom((value, {req}) => {
-        let acceptedExtensions = ['.jpg', '.png'];
+        let acceptedExtensions = ['.jpg', '.png', 'jpeg', 'gif'];
         if(!acceptedExtensions.includes(path.extname(req.file.originalname))){
             throw new Error('Extension no valida')
         }
@@ -75,7 +76,7 @@ router.get('/search', controller.searchProduct)
 router.get('/:id',  controller.detail);
 
 router.get('/:id/editar', onlyEmployeeMiddleware, controller.editForm);
-router.put('/:id/editar', onlyEmployeeMiddleware, controller.edit)
+router.put('/:id/editar', uploadFile.single('imgNewProduct') ,onlyEmployeeMiddleware, validations, controller.edit)
 
 router.delete('/:id', onlyEmployeeMiddleware, controller.delete);
 

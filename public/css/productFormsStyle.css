@@ -27,19 +27,37 @@
     margin-top: 7px;
 }
 #submitButton{
+    cursor: pointer;
     background-color: #eef3f8;
     border: 1px solid #33189b;
     border-radius: 100px;
     margin-top: 5px;
     padding: 10px 25px;
-    transition: 1s;
+    transition: 0.3s;
     margin-bottom: 20px;
+}
+.cancelButton{
+    display: block;
+    text-align: center;
+    margin: auto;
+    background-color: #eef3f8;
+    border: 1px solid #33189b;
+    border-radius: 100px;
+    /* margin-top: 5px; */
+    padding: 10px 25px;
+    transition: 0.3s;
+    margin-bottom: 40px;
+    width: 120px;
 }
 #submitDiv{
     display: flex;
     justify-content: center;
 }
 #submitButton:hover{
+    background-color: #33189b;
+    color: rgb(253, 243, 230);
+}
+.cancelButton:hover{
     background-color: #33189b;
     color: rgb(253, 243, 230);
 }

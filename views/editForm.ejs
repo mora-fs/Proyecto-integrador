@@ -6,27 +6,42 @@
 <body>
     <%- include('./partials/header') %> 
     <main>
-        <form action="/productos/<%=productToEdit.id%>/editar/?_method=PUT" method="POST">
+        <form action="/productos/<%=locals&&locals.old&&locals.id?id:productToEdit.id%>/editar/?_method=PUT" method="POST">
             <h3 id="titulo">Carga los datos a modificar de "<%= productToEdit.name %> ":</h3>
             <div class="campo">
                 <label for="name">Nombre del producto:</label>
-                <input type="text" id="name" name="name" value= <%= productToEdit.name %> class="dataInput">
+                <% if(locals && locals.errorMessage && locals.errorMessage.name){%>
+                    <div><p class="validation-error"><%=  errorMessage.name.msg %></p></div> 
+                <% } %>
+                <input type="text" id="name" name="name" value='<%=locals&&locals.old&&locals.old.name?old.name:productToEdit.name%>' class="dataInput">
             </div>
             <div class="campo">
                 <label for="brand">Marca:</label>
-                <input type="text" name="marca" value="<%= productToEdit.brand %>"  class="dataInput">
+                <% if(locals && locals.errorMessage && locals.errorMessage.brand){%>
+                    <div><p class="validation-error"><%=  errorMessage.brand.msg %></p></div> 
+                <% } %>
+                <input type="text" name="brand" value='<%=locals&&locals.old&&locals.old.brand?old.brand:productToEdit.brand%>'  class="dataInput">
             </div>
             <div class="campo">
                 <label for="price">Precio:</label>
-                <input type="number" name="brand" id="brand" value= <%= productToEdit.price %> class="dataInput">
+                <% if(locals && locals.errorMessage && locals.errorMessage.price){%>
+                    <div><p class="validation-error"><%=  errorMessage.price.msg %></p></div> 
+                <% } %>
+                <input type="number" name="price" id="price" value='<%=locals&&locals.old&&locals.old.price?old.price:productToEdit.price%>' class="dataInput">
             </div>
             <div class="campo">
                 <label for="discount">Descuento:</label>
-                <input type="number" name="discount" id="discount" value= <%= productToEdit.discount %> class="dataInput">
+                <% if(locals && locals.errorMessage && locals.errorMessage.discount){%>
+                    <div><p class="validation-error"><%=  errorMessage.discount.msg %></p></div> 
+                <% } %>
+                <input type="number" name="discount" id="discount" value='<%=locals&&locals.old&&locals.old.discount?old.discount:productToEdit.discount%>' class="dataInput">
             </div>
             <div class="campo">
                 <label for="capacity">Capacidad:</label>
-                <input type="text" name="capacity" id="capacity" value= <%= productToEdit.capacity  %> class="dataInput">
+                <% if(locals && locals.errorMessage && locals.errorMessage.capacity){%>
+                    <div><p class="validation-error"><%=  errorMessage.capacity.msg %></p></div> 
+                <% } %>
+                <input type="text" name="capacity" id="capacity" value='<%=locals&&locals.old&&locals.old.capacity?old.capacity:productToEdit.capacity%>' class="dataInput">
             </div>
             <!-- <div class="campo">
                 <label for="color">Color:</label>
@@ -34,30 +49,36 @@
             </div> -->
             <div class="campo">
                 <label for="category">Categoría:</label>
+                <% if(locals && locals.errorMessage && locals.errorMessage.category){%>
+                    <div><p class="validation-error"><%=  errorMessage.category.msg %></p></div> 
+                <% } %>
                 <select name="category" id="category" class="dataInput">
-                    <option value="1" <%= productToEdit.category == "bucal"?"selected":null%> >Cuidado bucal</option>
-                    <option value="2" <%= productToEdit.category == "corporal"?"selected":null%>>Cuidado corporal</option>
-                    <option value="3" <%= productToEdit.category == "facial"?"selected":null%>>Cuidado facial</option>
-                    <option value="4" <%= productToEdit.category == "verano"?"selected":null%>>Verano</option>
-                    <option value="5" <%= productToEdit.category == "capilar"?"selected":null%>>Capilar</option>
-                    <option value="6" <%= productToEdit.category == "higiene"?"selected":null%>>Higiene</option>
+                    <option value="1" <%= productToEdit.category_id == 1 || (locals && locals.old && locals.old.category == '1')?"selected":null%> >Cuidado bucal</option>
+                    <option value="2" <%= productToEdit.category_id == 2 || (locals && locals.old && locals.old.category == '2')?"selected":null%>>Cuidado corporal</option>
+                    <option value="3" <%= productToEdit.category_id == 3 || (locals && locals.old && locals.old.category == '3')?"selected":null%>>Cuidado facial</option>
+                    <option value="4" <%= productToEdit.category_id == 4 || (locals && locals.old && locals.old.category == '4')?"selected":null%>>Verano</option>
+                    <option value="5" <%= productToEdit.category_id == 5 || (locals && locals.old && locals.old.category == '5')?"selected":null%>>Capilar</option>
+                    <option value="6" <%= productToEdit.category_id == 6 || (locals && locals.old && locals.old.category == '6')?"selected":null%>>Higiene</option>
                 </select>
             </div>
             <div class="campo">
                 <label for="description">Descripción:</label>
-                <textarea name="description" id="description" class="dataInput"><%=productToEdit.description%></textarea>
+                <% if(locals && locals.errorMessage && locals.errorMessage.description){%>
+                    <div><p class="validation-error"><%=  errorMessage.description.msg %></p></div> 
+                <% } %>
+                <textarea name="description" id="description" class="dataInput"><%=locals&&locals.old&&locals.old.description?old.description:productToEdit.description%></textarea>
             </div>
             <div class="campo">
                 <label for="image">Imagen:</label>
-                <input type="file" name="image" id="image" class="input-file" value="<%= productToEdit.image %>" class="dataInput">
-                <p>Imagen actual: <%= productToEdit.image %> </p>
+                <input type="file" name="imgNewProduct" id="image" class="input-file" value="<%=locals&&locals.old&&locals.old.imgNewProduct?old.imgNewProduct:productToEdit.image%>" class="dataInput">
+                <p>Imagen actual: <%=locals&&locals.old&&locals.old.imgNewProduct?old.imgNewProduct:productToEdit.image%></p>
                 
             </div>
             <div id="submitDiv">
                 <button type="submit" id="submitButton">Guardar cambios</button>
             </div>
         </form>
-        <a href="/productos/<%= productToEdit.id %>">Cancelar</a>
+        <a href="/productos/<%= productToEdit.id %>" class="cancelButton">Cancelar</a>
     <%- include('./partials/footer') %> 
 </body>
 </html>

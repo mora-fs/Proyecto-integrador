@@ -173,7 +173,7 @@ const controller = {
                 price: req.body.price,
                 description: req.body.description,
                 discount: req.body.discount,
-                capacity: req.body.cantidad,
+                capacity: req.body.capacity,
                 image: req.file.filename,
                 category_id: categoryValue
             })
@@ -201,28 +201,35 @@ const controller = {
     },
 
     edit: (req,res)=>{
-        let categoryValue =  parseInt(req.body.category)
-        let idProduct= req.params.id;
-        db.Product.update(
-            {
-               name: req.body.name, 
-               brand: req.body.brand,
-               price: req.body.price,
-               discount: req.body.discount, 
-               capacity: req.body.capacity, 
-               category_id: categoryValue, 
-               description: req.body.description, 
-               image: req.body.image
-            }, 
-            {
-                where: {id: idProduct}
-            }
-        )
-            .then(function(){
-                let redirectionRoute= '/productos/' + idProduct;
-                return res.redirect(redirectionRoute) 
-            })
-            .catch(error => {res.render(error)});      
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            let categoryValue =  parseInt(req.body.category)
+            let idProduct= req.params.id;
+            db.Product.update(
+                {
+                name: req.body.name, 
+                brand: req.body.brand,
+                price: req.body.price,
+                discount: req.body.discount, 
+                capacity: req.body.capacity, 
+                category_id: categoryValue, 
+                description: req.body.description, 
+                image: req.file.filename
+                }, 
+                {
+                    where: {id: idProduct}
+                }
+            )
+                .then(function(){
+                    let redirectionRoute= '/productos/' + idProduct;
+                    return res.redirect(redirectionRoute) 
+                })
+                .catch(error => {res.render(error)});      
+        }
+        else{
+                    
+            return res.render('editForm', {errorMessage: errors.mapped(), old: req.body, id: req.params.id})
+        }
     }
     ,
     delete: (req, res)=>{

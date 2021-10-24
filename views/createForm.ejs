@@ -35,14 +35,14 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.cantidad){%>
                     <div><p class="validation-error"><%=  errorMessage.cantidad.msg %></p></div> 
                 <% } %>
-                <input type="text" value="<%=locals&&locals.old&&locals.old.cantidad?old.cantidad:null%>" name="cantidad" class="dataInput" id="capacity"  placeholder="Capacidad">
+                <input type="text" value="<%=locals&&locals.old&&locals.old.cantidad?old.cantidad:null%>" name="capacity" class="dataInput" id="capacity"  placeholder="Capacidad">
             </div>
             <div class="campo">
                 <label for="brand"></label>
                 <% if(locals && locals.errorMessage && locals.errorMessage.marca){%>
                     <div><p class="validation-error"><%=  errorMessage.marca.msg %></p></div> 
                 <% } %>
-                <input type="text" value="<%=locals&&locals.old&&locals.old.marca?old.marca:null%>" class="dataInput" name="marca" id="brand" placeholder="Marca:">
+                <input type="text" value="<%=locals&&locals.old&&locals.old.marca?old.marca:null%>" class="dataInput" name="brand" id="brand" placeholder="Marca:">
             </div>
             <div class="campo">
                 <label for="category"></label>
