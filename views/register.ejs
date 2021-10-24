@@ -29,6 +29,9 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.email){%>
                     <div><p class="validation-error"><%=  errorMessage.email.msg %></p></div> 
                 <% } %>
+                <% if(locals && locals.existingEmail){%>
+                    <div><p class="validation-error"><%= existingEmail %></p></div> 
+                <% } %>
                 <input type="text" value="<%=locals&&locals.old&&locals.old.email?old.email:null%>" name="email" id="email">
             </div>
             

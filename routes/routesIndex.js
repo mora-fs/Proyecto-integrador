@@ -7,13 +7,14 @@ const hideFromUserMiddleware= require('../middlewares/hideFromUserMiddleware');
 const {body} = require('express-validator');
 
 const validations = [
-    body('nombre').notEmpty().withMessage('Debes poner tu nombre'),
-    body('apellido').notEmpty().withMessage('Debes poner tu apellido'),
+    body('nombre').notEmpty().withMessage('Debes poner tu nombre').bail()
+    .isLength({min:2}).withMessage('Tu nombre debe tener al menos 2 caracteres'),
+    body('apellido').notEmpty().withMessage('Debes poner tu apellido').isLength({min:2}).withMessage('Tu apellido debe tener al menos 2 caracteres'),
     // check('birthDate').notEmpty().withMessage('Debes poner tu fecha de nacimiento'),
     body('email').notEmpty().withMessage('Debes poner tu email').bail()
     .isEmail().withMessage('Email no válido'),
     body('password').notEmpty().withMessage('Debes poner tu contraseña').bail()
-    .isLength({min:6}).withMessage('Tu contraseña debe tener al menos 6 caracteres'),
+    .isLength({min:8}).withMessage('Tu contraseña debe tener al menos 8 caracteres'),
     body('confirmPassword').notEmpty().withMessage('Debes confirmar tu contraseña').bail()
     .custom((value, {req}) => {
         let password = req.body.password;
@@ -30,7 +31,7 @@ const validations = [
         return true
     }).bail()
     .custom((value, {req}) => {
-        let acceptedExtensions = ['.jpg', '.png'];
+        let acceptedExtensions = ['.jpg', '.png', 'jpeg', 'gif'];
         if(!acceptedExtensions.includes(path.extname(req.file.originalname))){
             throw new Error('extension no valida')
         }

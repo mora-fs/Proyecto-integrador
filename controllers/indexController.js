@@ -36,24 +36,34 @@ const controller = {
     register: (req, res) => {
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            let idLastUser = (parsedUsersDb.length) -1;
-            let newUser = {
-                name: req.body.nombre,
-                lastName: req.body.apellido,
-                password: bcrypt.hashSync(req.body.password, 10),
-                email: req.body.email,
-                employee: 'user',
-                profileImage: req.file.filename 
-            };
-
-            db.User.create(newUser)
-            .then(data => {
-                req.session.loggedUser = newUser
-                res.redirect('/cuenta/profile')
+            db.User.findOne({
+                where: {email: req.body.email}
             })
-            .catch(error => { res.send(error)})
-
-        }
+            .then(foundExistingUser => {
+                if(!foundExistingUser){
+                    let idLastUser = (parsedUsersDb.length) -1;
+                    let newUser = {
+                        name: req.body.nombre,
+                        lastName: req.body.apellido,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        email: req.body.email,
+                        employee: 'user',
+                        profileImage: req.file.filename 
+                    };
+        
+                    db.User.create(newUser)
+                    .then(data => {
+                        req.session.loggedUser = newUser
+                        res.redirect('/cuenta/profile')
+                    })
+                    .catch(error => { res.send(error)})
+        
+                }
+                else{
+                    return res.render('register', {existingEmail: 'Este email ya se encuentra en uso', old: req.body})
+                }
+                })
+                }
         else{
             // console.log(errors.mapped())
             return res.render('register', {errorMessage: errors.mapped(), old: req.body})
