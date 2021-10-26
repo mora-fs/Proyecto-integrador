@@ -19,18 +19,7 @@ Descripción de integrantes:
 
 * Mora Fernandez: Soy de buenos aires, tengo 17 años y hace unos meses empecé a aprender algo básico de programacaión. como me andaba gustando mucho decidí aprenderlo un mejor. me viene gustando mucho y espero poder ayudar a que el proyecto salga lo más parecido posible a lo que tenemos en mente. 
 
-* Leonardo Siano: Tengo 38 años, vivo en Mar de Ajó (Pcia. De Bs. As.)y trabajo como jefe técnico en un ISP (proveedor de servicios de internet). Desde muy chico me gusta la programación y hasta que comencé el curso, la aprendía de forma autodidacta.
-Espero poder ayudar en este equipo y logremos un excelente proyecto integrador.
-
 * Jeremias Jauregui: Soy de Capital, tengo 28 años y estudio traducción de inglés.
 
 * Bautista Llobeta: Me dicen "Bau" o "Bauti", tengo 18 años. Soy de Tucumán. Estudio ingenieria en computacion.
 
-* Nahuel Monzó Calvo: Soy de Carlos Tejedor provincia de Buenos Aires, tengo 24 años y estoy cursando el ultimo año de administración de empresas.
-
-Paleta de colores: 
-VERDE (principal) #0FD24C 
-GRIS OSCURO(muy oscuro)  #BDC0C7 
-GRIS(azulado) #BFD8BD 
-GRIS CLARO (intermedio) #DDE7C7 
-GRIS CLARO (casi blanco) #F5F5F5 
