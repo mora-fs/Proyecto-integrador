@@ -2,7 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    margin-bottom: 20px;
     padding: 10px;
     justify-content: space-between;
  }

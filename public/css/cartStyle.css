@@ -1,289 +1,149 @@
-/* 
-VERDE (principal) #0FD24C 
-GRIS OSCURO(muy oscuro)  #BDC0C7 
-GRIS(azulado) #BFD8BD 
-GRIS CLARO (intermedio) #DDE7C7 
-GRIS CLARO (casi blanco) #F5F5F5 
- */
-
- /* estilos a elementos generales */
-*{
-    box-sizing: border-box;
-}
 body{
     background-color: #F5F5F5;
 }
-
-.referencia-del-header{
-    background-color: #0FD24C;
-    width: 100%;
-    height: 150px;
+#titulo{
+    color: #33189b;
+    font-size: 16px;
+    margin: 30px;
+    margin-bottom: 10px;
 }
-
-
-/* MAIN / CARRITO */
-.titulo{
-    font-size: 30px;
-    text-align: center;
-    padding-top: 30px;
-    margin: 0px 0px 40px 0px;
-}
-
-
-
-.contenedor-carrito{
+#cartProductsList{
     background-color: #FFF;
-    
-    width: 100%;
-    
     display: flex;
     flex-wrap: wrap;
-    
-    border-top: 3px solid #DDE7C7;
-    border-bottom: 3px solid #DDE7C7;
-
     padding: 20px 0px;
-
     margin: auto;
 }
-
-.lista-productos{
-    width: 100%;
-}
-
-.botones{
-    width: 100%;
-}
-
-.producto{
-    height: 115px;
-
+.cartProduct{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    
-    border-radius: 3px;
-    
-    padding: 5px 5px 5px 20px;
-    
-    margin-bottom: 20px;
-
+    border: 2px solid #F54c8a;
+    border-radius: 10px;
+    width: 98%;
+    padding: 10px 20px;
+    margin: 10px auto;
     transition: all 200ms;
 }
-
-.contenedor-img{
-    width: 20%;
+.cartProduct:hover{
+    background-color: #F5F5F5 ;
+}
+.imageDiv{
+    width: 30%;
     max-width: 105px;
-    min-width: 45px;
-   
-    border: solid 2px #DDE7C7;
-    border-radius: 5px;
 }
-
-.contenedor-img img{
+.imageDiv img{
+    border-radius: 10px;
     width: 100%;
-    max-width: 100px;
-    min-width: 40px;
-   
-    border-radius: 5px;
+    margin: auto;
 }
-
-.contenedor-img-info{
-    width: 85%;
-    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+.infoContainer{
+    width: 100%;
 }
-
-.info-producto{
+.topInfoDiv{
     width: 75%;
+    margin-bottom: 10px;
 }
-
 .nombre-producto{
-    color: black;
+    color: #372770;
     font-size: 16px;
-    
-    width: 100%;
-    position: relative;
-    top: -5px;
-    
     margin: 0px;
 }
-
-.precio-producto{
-    font-size: 14px;
-    color: #0FD24C;
-
-    width: 100%;
-    position: relative;
-    bottom: -5px;
-
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-.contenedor-boton-borrar{
-    width: 15%;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-
-
-    padding: 10px;
-}
-
-.contenedor-boton-borrar button{
-    background-color: inherit;
-
-    border: none;
-}
-
-.contenedor-boton-borrar button i{
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.descripcion-producto{
-    font-size: 14px;
-    
-    width: 100%;
-    
+.descripcionProducto{
     display: none;
 }
 
-
-.botones{
-    width: 100%;
-    max-width: 250px;
+.bottomInfoDiv{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center ;
-   
-    padding: 0px 10px;
-   
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 200px;
-}
-
-.botones button{
-    font-size: 16px;
-    
-    width: 100%;
-    min-width: 94px;
-    max-width: 250px;
-    height: 40px;
-    color: #0FD24C;
-    background-color: white;
-    border-radius: 3px;
-    border: 1px solid #0FD24C;
-    margin-bottom: 25px;
-
-    transition: all 150ms;
-
-}
-
-.precio-a-pagar{
-    padding: 25px 20% 5px;
-
-
-    border-top: 3px solid #DDE7C7;
-}
-.precio-a-pagar div{
-    color: #717274;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 12px;
-
     justify-content: space-between;
-
+    align-items: center;
+    margin-right: 20%;
 }
-
-.total-a-pagar{
-    border-top: 1px solid #DDE7C7;
+.precioProducto{
+    margin: 0;
+    font-size: 14px;
+    color: #F54c8a;
 }
-.total-a-pagar h3{
-    color: black;
-    font-size: 18px;
+.bottomInfoDiv button{
+    background-color: inherit;
+    border: none;
 }
-
-
-.botones button:hover{
-    background-color: #18e659;
-    color: black;
+.deleteIcon{
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #372770;
 }
-
-
-.producto:hover{
-    background-color: #F5F5F5 ;
-}
-
-.contenedor-boton-borrar button i:hover{
+.deleteIcon:hover{
     color: red;
 }
+#totalPrice{
+    margin-top: 15px;
+    border-top: 2px solid #9fc9f1;
+    padding-left: 20%;
+}
+#totalPrice h3{
+    color: #9fc9f1;
+    font-size: 18px;
+}
+#purchaseButtons{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+#purchaseButtons button{
+    font-size: 16px;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    color: #372770;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #9fc9f1;
+    transition: all 1s;
+}
+#purchaseButtons button:hover{
+    background-color: #9fc9f1;
+}
+#emptyCartSign{
+    color: #372770;
+    display: block;
+    font-size: 25px;
+    margin-left: 35%;
+    padding-bottom: 300px;
+}
 
-#recommendedSection{
+/* #recommendedSection{
     width: 90vw;
     margin: auto;
 }
 .recommendedProductImg{
     width: 80%;
-}
+} */
 
 @media(min-width:760px){
-    .descripcion-producto{
-        margin: 0px;
-        display: block;
-    }
-    .producto{
-        height: 150px;
-    }
-    .nombre-producto{
-        position: inherit;
-    }
-
-
-    .info-producto{
-        height: 90px;
-        /* width: 80%; */
-        display: flex;
-        flex-wrap: wrap;
-        /* align-content: flex-start; */
-        justify-content: flex-start;
-    }
-    .contenedor-carrito{
-        width: 60%;
-        border-radius: 5px;
+    #cartProductsList{
+        width: 90%;
+        border-radius: 10px;
         padding: 30px;
-        border: 3px solid #DDE7C7;
+        border: 3px solid #9fc9f1;
     }
-    .botones{
-        width: 55%;
-        max-width: 600px;
-        justify-content: space-between ;
+    .descripcionProducto{
+        display: inline-block;
     }
-    .botones button{
-        font-size: 18px;
-        height: 60px;
-        width: 45%;
-    }
-
-    .precio-a-pagar{
-        font-size: 16px;
-    }
-    .total-a-pagar h3{
+    .deleteIcon{
         font-size: 22px;
+        padding-bottom: 30px;
     }
-    #recommendedSection{
-        display: flex;
+    #purchaseButtons{
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        width: 92%;
+        margin: 20px auto;
     }
-    .recommendedProductImg{
-        width: 30%;
+    #purchaseButtons button{
+        width: 40%;
     }
 }

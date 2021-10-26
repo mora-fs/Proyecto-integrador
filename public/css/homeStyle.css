@@ -28,17 +28,16 @@ main{
 }
 .carousel-button{
    position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -30px;
-  padding: 16px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-weight: bold;
-  font-size: 22px;
-  background-color: transparent;
-  border: none;
-
+   top: 50%;
+   width: auto;
+   margin-top: -30px;
+   padding: 16px;
+   padding-left: 20px;
+   padding-right: 20px;
+   font-weight: bold;
+   font-size: 22px;
+   background-color: transparent;
+   border: none;
 }
 .right{
    right: 0px;

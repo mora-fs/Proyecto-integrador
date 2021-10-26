@@ -5,106 +5,47 @@
 </head>
 <body>
     <%- include('./partials/header')%>
-    <h2 class="titulo">Tu Carrito</h2>
+    <h2 id="titulo">Tu Carrito</h2>
     <% if(productsInCart != undefined && productsInCart.length > 0) {%> 
-    <div class="contenedor-carrito">
-            <section class="lista-productos">
-                    <% productsInCart.forEach(producto=>{ %>
-                        <article class="producto">
-                            <div class="contenedor-img-info">
-                                <div class="contenedor-img">
-                                    <img src="/images/productos/<%= producto.image %>" alt="<%= producto.name %>">
-                                </div>
-                                <div class="info-producto">
-                                    <h3 class="nombre-producto"><%= producto.name %></h3>
-                                    <p class="descripcion-producto"><%=producto.description%></p>
-                                    <h4 class="precio-producto">$<%= producto.price %></h4>
-                                </div>
-                                <div>
-                                    <!-- <p>Unidades: <%=producto.quantity%> </p> -->
-                                </div>
+        <section id="cartProductsList">
+            <% productsInCart.forEach(producto=>{ %>
+                    <article class="cartProduct">
+                        <div class="imageDiv">
+                            <img src="/images/productos/<%= producto.image %>" alt="<%= producto.name %>">
+                        </div>
+                        <div class="infoContainer">
+                            <div class="topInfoDiv">
+                                <h3 class="nombre-producto"><%= producto.name %></h3>
+                                <p class="descripcionProducto"><%=producto.description%></p>
                             </div>
-                            <div class="contenedor-boton-borrar">
+                            <div class="bottomInfoDiv">
+                                <h4 class="precioProducto">$<%= producto.price %></h4>
                                 <form action="/cuenta/cart/<%=producto.id%>/delete" method="POST">
-                                    <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                                    <button type="submit"><i class="fas fa-trash-alt deleteIcon"></i></button>
                                 </form>
                             </div>
-                        </article>
-                    <% }) %> 
-
-                
-            <!--
-            <article class="producto">
-                <div class="contenedor-img-info">
-                    <div class="contenedor-img">
-                        <img src="productos/images/crema-img.jpg" alt="">
-                    </div>
-                    <div class="info-producto">
-                        <h3 class="nombre-producto">Crema Generica</h3>
-                        <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur, adipisicing elit.  </p>
-                        <h4 class="precio-producto">Precio</h4>
-                    </div>
-                </div>
-                <div class="contenedor-boton-borrar">
-                    <form action="">
-                        <button type="submit"><i class="fas fa-trash-alt"></i></button>
-                    </form>
-                </div>
-            </article>
-
-            <article class="producto">
-                <div class="contenedor-img-info">
-                    <div class="contenedor-img">
-                        <img src="/images/crema-img.jpg" alt="">
-                    </div>
-                    <div class="info-producto">
-                        <h3 class="nombre-producto">Crema Generica</h3>
-                        <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur, adipisicing elit.  </p>
-                        <h4 class="precio-producto">Precio</h4>
-                    </div>
-                </div>
-                <div class="contenedor-boton-borrar">
-                    <button type="button"><i class="fas fa-trash-alt"></i></button>
-                </div>
-            </article>
-
-            <article class="producto">
-                <div class="contenedor-img-info">
-                    <div class="contenedor-img">
-                        <img src="/images/crema-img.jpg" alt="">
-                    </div>
-                    <div class="info-producto">
-                        <h3 class="nombre-producto">Crema Generica</h3>
-                        <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur, adipisicing elit.  </p>
-                        <h4 class="precio-producto">Precio</h4>
-                    </div>
-                </div>
-                <div class="contenedor-boton-borrar">
-                    <button type="button"><i class="fas fa-trash-alt"></i></button>
-                </div>
-            </article>
-            -->
-            <div class="precio-a-pagar">
-    
-                <div class="total-a-pagar">
-                    <h3>Total: </h3>
-                    <%let price = 0; %> 
-                    <%productsInCart.forEach(prod =>{ price += prod.price})%>
-                    <h3>$<%= price %> </h3>
-                </div>
+                        </div>
+                        <!--
+                            <div>
+                                <p>Unidades: <%=//producto.quantity%> </p>
+                            </div>
+                        -->
+                    </article>
+            <% }) %> 
+            <div id="totalPrice">
+                <%let price = 0; %> 
+                <%productsInCart.forEach(prod =>{ price += prod.price})%>
+                <h3>Total: $<%= price %></h3>
             </div>
         </section>
-    </div>
-    <section class="botones">
-        <button>Seguir Comprando</button>
-        <button>Finalizar Compra</button>
-    </section>
+        <section id="purchaseButtons">
+            <button>Seguir Comprando</button>
+            <button>Finalizar Compra</button>
+        </section>
     <% } %> 
     <% if(!productsInCart || productsInCart.length == 0){ %>
-        <a href="/productos" style="color: #372770;display:block;font-size: 25px;margin-left: 35%;padding-bottom: 300px;">Aún no añadiste productos a tu carrito</a>
-        
+        <a href="/productos" id="emptyCartSign">Aún no añadiste productos a tu carrito</a>
     <% } %> 
-    
     <%- include('./partials/footer') %> 
 </body>
 </html>

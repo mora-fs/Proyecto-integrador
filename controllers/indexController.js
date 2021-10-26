@@ -2,9 +2,9 @@ const fs= require('fs');
 const { parse } = require('path');
 const path= require('path');
 
-const productsDbPath= path.join(__dirname, '../data/productsDataBase.json');
+const productsDbPath= path.join(__dirname, '../data(JSON)/productsDataBase.json');
 const parsedProductsDb= JSON.parse(fs.readFileSync(productsDbPath, 'utf-8'));
-const usersDbPath = path.join(__dirname, '../data/usersDataBase.json');
+const usersDbPath = path.join(__dirname, '../data(JSON)/usersDataBase.json');
 const parsedUsersDb= JSON.parse(fs.readFileSync(usersDbPath, 'utf-8'));
 
 const {validationResult} = require('express-validator');
