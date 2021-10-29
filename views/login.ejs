@@ -14,20 +14,26 @@
                 </div>
                 <div class="user-pass">
 
+                    <% if(locals && locals.errorMessage && locals.errorMessage == 'Usuario no encontrado'){ %> 
+                        <div><p class="validation-error"><%=  errorMessage %></p></div>
+                    <% } %> 
                     <div class="username">
-                        <% if(locals && locals.errorMessage && locals.errorMessage == 'Usuario no encontrado'){ %> 
-                        <h3><%= errorMessage  %> </h3>
-                        <% } %> 
                         <label for="nombre-usuario">EMAIL</label>
+                        <% if(locals && locals.errorMessage && locals.errorMessage.email){ %> 
+                            <div><p class="validation-error"><%=  errorMessage.email.msg %></p></div>
+                        <% } %> 
                         
-                        <input id="nombre-usuario" name="username"  value="<%=locals&&locals.old&&locals.old.username?old.username:null%>" required>
+                        <input id="nombre-usuario" name="email"  value="<%=locals&&locals.old&&locals.old.email?old.email:null%>" >
                     </div>
                     <div class="password">    
-                        <% if(locals && locals.errorMessage && locals.errorMessage == 'Contraseña incorrecta'){ %> 
-                            <h3><%= errorMessage  %> </h3>
-                            <% } %> 
                         <label for="contraseña">CONTRASEÑA</label>
-                        <input type="password" id="password"  name="password" required>
+                        <% if(locals && locals.errorMessage && locals.errorMessage == 'Contraseña incorrecta'){ %> 
+                            <div><p class="validation-error"><%=  errorMessage %></p></div>
+                        <% } %> 
+                        <% if(locals && locals.errorMessage && locals.errorMessage.password){ %> 
+                            <div><p class="validation-error"><%=  errorMessage.password.msg %></p></div>
+                        <% } %> 
+                        <input type="password" id="password"  name="password" >
                     </div>
                 </div>
             </div>

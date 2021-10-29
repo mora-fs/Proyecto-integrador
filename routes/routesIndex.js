@@ -6,7 +6,7 @@ const hideFromUserMiddleware= require('../middlewares/hideFromUserMiddleware');
 
 const {body} = require('express-validator');
 
-const validations = [
+const validationsRegister = [
     body('nombre').notEmpty().withMessage('Debes poner tu nombre').bail()
     .isLength({min:2}).withMessage('Tu nombre debe tener al menos 2 caracteres'),
     body('apellido').notEmpty().withMessage('Debes poner tu apellido').isLength({min:2}).withMessage('Tu apellido debe tener al menos 2 caracteres'),
@@ -39,6 +39,12 @@ const validations = [
     })
 ]
 
+validationsLogin = [
+    body('email').notEmpty().withMessage('Debes poner tu email').bail()
+    .isEmail().withMessage('Email no válido'),
+    body('password').notEmpty().withMessage('Debes poner tu contraseña'),
+]
+
 const multer= require('multer');
 // const { off } = require("process");
 const storage = multer.diskStorage({
@@ -54,8 +60,8 @@ const upload= multer({storage});
 
 router.get('/', controller.home)
 router.get('/login', hideFromUserMiddleware, controller.loginForm)
-router.post('/login', controller.login)
+router.post('/login', validationsLogin, controller.login)
 router.get('/register', controller.registerForm);
-router.post('/register', upload.single('userImage'), validations,  controller.register);
+router.post('/register', upload.single('userImage'), validationsRegister,  controller.register);
 
 module.exports = router;

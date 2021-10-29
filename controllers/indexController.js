@@ -16,10 +16,6 @@ const Op = db.Sequelize.Op;
 
 const controller = {
     home: (req, res)=>{
-        // const productos= {
-        //     productos: parsedProductsDb
-        // }
-        // return res.render('home', productos)
 
         db.Product.findAll({
             where: {discount: {[Op.gte]: 20}},
@@ -73,30 +69,31 @@ const controller = {
         return res.render('login')
     }, 
     login: (req, res) => {
-        // Esta logica es de un login "provisorio", solo esta para ir probando los ruteos, para el login habria que hacer una verificacion completa 
-        // let userToLogIn= parsedUsersDb.find(user=> user.email==req.body.nombreUsuario);
-        // req.session.loggedUser= userToLogIn;
-        // return res.redirect('/cuenta/profile');
+        let errors = validationResult(req);
 
-        db.User.findOne({
-            where: {email: req.body.username}
-        })
-        .then(user => {
-            let old = req.body
-            // console.log(user.password)
-            if(user){
-                let passwordCheck = bcrypt.compareSync(req.body.password, user.password)
-                if(passwordCheck){
-                    req.session.loggedUser = user;
-                    res.redirect('/cuenta/profile')
+        if(errors.isEmpty()){
+            db.User.findOne({
+                where: {email: req.body.email}
+            })
+            .then(user => {
+                let old = req.body
+                // console.log(user.password)
+                if(user != null){
+                    let passwordCheck = bcrypt.compareSync(req.body.password, user.password)
+                    if(passwordCheck){
+                        req.session.loggedUser = user;
+                        res.redirect('/cuenta/profile')
+                    }else{
+                        res.render('login', {errorMessage: 'Contraseña incorrecta', old})
+                    }
                 }else{
-                    res.render('login', {errorMessage: 'Contraseña incorrecta', old})
+                    res.render('login', {errorMessage: 'Usuario no encontrado', old})
                 }
-            }else{
-                res.render('login', {errorMessage: 'Usuario no encontrado', old})
-            }
-        })
-        .catch(error => { res.send(error)})
+            })
+            .catch(error => { res.send(error)})
+        }else{
+            res.render('login',  {errorMessage: errors.mapped(), old: req.body})
+        }
     }
 }
 
