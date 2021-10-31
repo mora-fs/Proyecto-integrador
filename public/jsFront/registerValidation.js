@@ -37,6 +37,7 @@ email.addEventListener('keydown', function(){
 const password= document.querySelector('#contraseña');
 const passwordLengthError= document.querySelector('.largoContraseñaError');
 password.addEventListener('keydown', function(){
+    console.log(password.value)
     if (password.value.length<8){
         passwordLengthError.classList.remove('invisible')
         password.classList.remove('acceptedInput')
@@ -44,17 +45,5 @@ password.addEventListener('keydown', function(){
     else{
         passwordLengthError.classList.add('invisible')
         password.classList.add('acceptedInput')
-    };
-});
-const confirmPwd= document.querySelector('#confirmarContraseña');
-const confirmPwdError= document.querySelector('.confirmarContraseñaError');
-confirmPwd.addEventListener('keydown', function(){
-    if (confirmPwd.value == password.value){
-        confirmPwdError.classList.add('invisible')
-        confirmPwd.classList.add('acceptedInput')
-    }
-    else{
-        confirmPwdError.classList.remove('invisible')
-        confirmPwd.classList.remove('acceptedInput')
     };
 });

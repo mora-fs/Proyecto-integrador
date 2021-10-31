@@ -21,6 +21,7 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.price){%>
                     <div><p class="validation-error"><%=  errorMessage.price.msg %></p></div> 
                 <% } %>
+                <p class="priceError invisible validation-error">El precio mínimo es $300</p>
                 <input type="number" value="<%=locals&&locals.old&&locals.old.price?old.price:null%>" class="dataInput" name="price" id="price" placeholder="Precio">
             </div>
             <div class="campo">
@@ -78,8 +79,7 @@
                 <button type="submit" class="campo botonFormulario" id="submitButton">Crear producto</button>
             </div>
         </form>
-        <script src="/jsFront/productFormsValidation.js"></script>
-        </main>
-        <%- include('partials/footer') %> 
+    </main>
+    <%- include('partials/footer') %> 
 </body>
 </html>

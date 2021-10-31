@@ -23,6 +23,9 @@
     padding: 10px;
     margin-top: 7px;
 }
+.dataInput:focus{
+    outline: none;
+}
 #uploadImage{
     margin-top: 7px;
 }
@@ -64,6 +67,13 @@
 .validation-error{
     color: red;
     font-size: 18px;
+}
+.invisible{
+    display: none;
+}
+.acceptedInput{
+    background-color: #EAF8DE;
+    border: 2px solid #95DB57;
 }
 @media (min-width: 760px){
     #titulo{

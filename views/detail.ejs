@@ -11,7 +11,16 @@
             <a href="/productos">Productos</a>   /
             <a href="/productos/<%=productParam.id%>"><%=productParam.name%></a> 
         </div>
-        <section id="detailProductCard">
+        <div class="dontShowAlert confirmDeleteDiv">
+            <p>El producto eliminado no se puede recuperar, ¿Está seguro que quiere eliminarlo?</p>
+            <div id="confirmDeleteButtons">
+                <button id="cancelDeleteButton">Conservar producto</button>
+                <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST" id="deleteForm">
+                    <button id="confirmDeleteButton">Eliminar permanentemente</button>
+                </form>
+            </div>
+        </div>
+        <section class="detailProductCard">
             <h3 id="productName"><%= productParam.name %></h3>
             <section id="cardFlex">
                 <div id="cardImage">
@@ -53,9 +62,7 @@
                                     <a href="/productos/<%= productParam.id %>/editar"  id="editLink">Editar producto</a>
                                 </div>
                                 <div>
-                                    <form action="/productos/<%= productParam.id %>/?_method=DELETE" method="POST">
-                                        <button id="deleteButton" type="submit">Eliminar producto</button>
-                                    </form>
+                                    <button id="deleteButton" type="submit">Eliminar producto</button>
                                 </div>
                             </div>
                         <% } %> 
@@ -63,6 +70,7 @@
                 </div>
             </section>
         </section>
+        <script src="/jsFront/deleteConfirmation.js"></script>
     </main>
     <%- include('partials/footer') %> 
 </body>

@@ -10,7 +10,7 @@ main{
 .links{
     margin-top: 10px;
 }
-#detailProductCard{
+.detailProductCard{
     background-color: #eef3f8;
     margin: auto;
     width: 95%;
@@ -111,6 +111,41 @@ main{
 #deleteButton:hover{
     background-color: #9fc9f1;
 }
+.blurBackground{
+    filter: blur(4px);
+}
+.dontShowAlert{
+    display: none;
+}
+.confirmDeleteDiv{
+    width: 70vw;
+    padding: 20px;
+    text-align: center;
+    background-color: #eef3f8;
+    font-size: 14px;
+    border: #9fc9f1 1.5px solid;
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    z-index: 1;
+}
+.confirmDeleteDiv p{
+    margin: auto;
+}
+.confirmDeleteDiv button{
+    display: block;
+    background-color: transparent;
+    border: 1.5px #F54c8a solid;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 15px auto;
+    transition: 0.3s;
+}
+.confirmDeleteDiv button:hover{
+    color: #F54c8a;
+    font-weight: bold;
+}
 
 @media (min-width: 760px){
     #cardFlex{
@@ -122,6 +157,18 @@ main{
     }
     #cardText{
         padding: 0 10%;
+    }
+    .confirmDeleteDiv{
+        width: 55vw;
+        left: 20%;
+    }
+    .confirmDeleteDiv button{
+        margin: 10px 0;
+    }
+    #confirmDeleteButtons{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
     }
 }
 
