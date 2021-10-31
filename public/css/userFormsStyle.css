@@ -84,12 +84,20 @@ input:focus{
     font-size: 18px;
     color: red;
 }
+.validation-error-front{
+    color: red;
+    font-size: 14px;
+    margin-bottom: 5px
+}
 .invisible{
     display: none;
 }
 .acceptedInput{
     background-color: #EAF8DE;
     border: 2px solid #95DB57;
+}
+.errorInput{
+    border: red 1px solid;
 }
 
 @media (min-width: 1000px){

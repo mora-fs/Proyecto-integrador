@@ -20,15 +20,9 @@ const controller= {
         else{
             productos = undefined
         }
-        let productsRelacionados= [];
-        for (i=0; i<3; i++){
-            let randomId= Math.round(Math.random() * parsedProductsDb.length);
-            let randomProduct= parsedProductsDb.find((product)=> product.id == randomId);
-            productsRelacionados.push(randomProduct)
-        }
+        
         let products= {
-            productsInCart: productos, 
-            productsRecommend: productsRelacionados
+            productsInCart: productos
         };
         return res.render('shoppingCart', products)
     },

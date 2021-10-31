@@ -13,7 +13,7 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.nombre){%>
                     <div><p class="validation-error"><%=  errorMessage.nombre.msg %></p></div> 
                 <% } %>
-                <p class="nombreError invisible validation-error">El campo del nombre debe ser completado</p>
+                <p class="nombreError invisible validation-error-front">El campo del nombre debe ser completado</p>
                 <input type="text" value="<%=locals&&locals.old&&locals.old.nombre?old.nombre:null%>" name="nombre" id="nombre">
             </div>
 
@@ -34,7 +34,7 @@
                 <% if(locals && locals.existingEmail){%>
                     <div><p class="validation-error"><%= existingEmail %></p></div> 
                 <% } %>
-                <p class="emailError invisible validation-error"> Ingresar un email válido</p>
+                <p class="emailError invisible validation-error-front"> Ingresar un email válido</p>
                 <input type="text" value="<%=locals&&locals.old&&locals.old.email?old.email:null%>" name="email" id="email">
             </div>
             

@@ -66,8 +66,9 @@
 }
 .validation-error{
     color: red;
-    font-size: 18px;
+    font-size: 16px;
 }
+
 .invisible{
     display: none;
 }
