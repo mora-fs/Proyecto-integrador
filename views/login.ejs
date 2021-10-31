@@ -13,7 +13,6 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="user-pass">
-
                     <% if(locals && locals.errorMessage && locals.errorMessage == 'Usuario no encontrado'){ %> 
                         <div><p class="validation-error"><%=  errorMessage %></p></div>
                     <% } %> 
@@ -22,7 +21,7 @@
                         <% if(locals && locals.errorMessage && locals.errorMessage.email){ %> 
                             <div><p class="validation-error"><%=  errorMessage.email.msg %></p></div>
                         <% } %> 
-                        
+                        <p class="validation-error invisible usernameError">Ingrese su email de usuario</p>
                         <input id="nombre-usuario" name="email"  value="<%=locals&&locals.old&&locals.old.email?old.email:null%>" >
                     </div>
                     <div class="password">    
@@ -33,6 +32,7 @@
                         <% if(locals && locals.errorMessage && locals.errorMessage.password){ %> 
                             <div><p class="validation-error"><%=  errorMessage.password.msg %></p></div>
                         <% } %> 
+                        <p class="largoContraseñaError invisible validation-error">Ingrese su contraseña de al menos 8 caracteres</p>
                         <input type="password" id="password"  name="password" >
                     </div>
                 </div>
@@ -42,6 +42,7 @@
                 <a class="botonFormulario botonLink" href="/register">¿Aún no tienes cuenta?</a>
             </div>
         </form>
+        <script src="/jsFront/loginValidation.js"></script>
     </main>
     <%- include('./partials/footer') %>
 </body>

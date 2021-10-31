@@ -7,13 +7,13 @@ const hideFromUserMiddleware= require('../middlewares/hideFromUserMiddleware');
 const {body} = require('express-validator');
 
 const validationsRegister = [
-    body('nombre').notEmpty().withMessage('Debes poner tu nombre').bail()
+    body('nombre').notEmpty().withMessage('Debes ingresar tu nombre').bail()
     .isLength({min:2}).withMessage('Tu nombre debe tener al menos 2 caracteres'),
-    body('apellido').notEmpty().withMessage('Debes poner tu apellido').isLength({min:2}).withMessage('Tu apellido debe tener al menos 2 caracteres'),
+    body('apellido').notEmpty().withMessage('Debes ingresar tu apellido').isLength({min:2}).withMessage('Tu apellido debe tener al menos 2 caracteres'),
     // check('birthDate').notEmpty().withMessage('Debes poner tu fecha de nacimiento'),
-    body('email').notEmpty().withMessage('Debes poner tu email').bail()
+    body('email').notEmpty().withMessage('Debes ingresar tu email').bail()
     .isEmail().withMessage('Email no válido'),
-    body('password').notEmpty().withMessage('Debes poner tu contraseña').bail()
+    body('password').notEmpty().withMessage('Debes ingresar tu contraseña').bail()
     .isLength({min:8}).withMessage('Tu contraseña debe tener al menos 8 caracteres'),
     body('confirmPassword').notEmpty().withMessage('Debes confirmar tu contraseña').bail()
     .custom((value, {req}) => {
@@ -33,16 +33,16 @@ const validationsRegister = [
     .custom((value, {req}) => {
         let acceptedExtensions = ['.jpg', '.png', 'jpeg', 'gif'];
         if(!acceptedExtensions.includes(path.extname(req.file.originalname))){
-            throw new Error('extension no valida')
+            throw new Error('Extension no válida')
         }
         return true;
     })
 ]
 
 validationsLogin = [
-    body('email').notEmpty().withMessage('Debes poner tu email').bail()
+    body('email').notEmpty().withMessage('Debes ingresar tu email').bail()
     .isEmail().withMessage('Email no válido'),
-    body('password').notEmpty().withMessage('Debes poner tu contraseña'),
+    body('password').notEmpty().withMessage('Debes ingresar tu contraseña'),
 ]
 
 const multer= require('multer');

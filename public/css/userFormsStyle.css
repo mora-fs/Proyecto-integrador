@@ -7,11 +7,6 @@ main{
     border: none;
     width: 50%;
 }
-
-.validation-error{
-    font-size: 18px;
-    color: red;
-}
 #titulo{
     margin: 40px;
     margin-top: 0px;
@@ -22,7 +17,7 @@ main{
 }
 #formulario{
     color: #000;
-    width: 50vw;
+    width: 100vw;
     margin: auto;
     text-align: center;
 }
@@ -37,7 +32,7 @@ label{
 .nameContainer label{
     padding-top: 0px;
 }
-main input{
+input{
     margin: auto;
     text-align: center;
     background-color: #f8fcff;
@@ -46,6 +41,9 @@ main input{
     padding: 5px;
     width: 80%;
     height: 40px;
+}
+input:focus{
+    outline: none;
 }
 /* .input-tipo-archivo{
     margin: 20px 0px;
@@ -82,10 +80,20 @@ main input{
     display: inline-block;
     width: fit-content;
 }
+.validation-error{
+    font-size: 18px;
+    color: red;
+}
+.invisible{
+    display: none;
+}
+.acceptedInput{
+    background-color: #EAF8DE;
+    border: 2px solid #95DB57;
+}
 
 @media (min-width: 1000px){
-    input{
-        width: 45%;
-        
+    #formulario{
+        width: 70vw;
     }
 }
