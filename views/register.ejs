@@ -22,7 +22,7 @@
                 <% if(locals.errorMessage && locals.errorMessage.apellido){%>
                     <div><p class="validation-error"><%=  errorMessage.apellido.msg %></p></div> 
                 <% } %>
-                <p class="apellidoError invisible validation-error">El campo del apellido debe ser completado</p>
+                <p class="apellidoError invisible validation-error-front">El campo del apellido debe ser completado</p>
                 <input type="text" value="<%=locals&&locals.old&&locals.old.apellido?old.apellido:null%>" name="apellido" id="apellido">
             </div>
 
@@ -44,7 +44,7 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.password){%>
                     <div><p class="validation-error"><%=  errorMessage.password.msg %></p></div> 
                 <% } %>
-                <p class="largoContraseñaError invisible validation-error"> La contraseña debe tener al menos 8 caracteres</p>
+                <p class="largoContraseñaError invisible validation-error-front"> La contraseña debe tener al menos 8 caracteres</p>
                 <input type="password" name="password" id="contraseña">
             </div>
 
@@ -53,8 +53,8 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.confirmPassword){%>
                     <div><p class="validation-error"><%=  errorMessage.confirmPassword.msg %></p></div> 
                 <% } %>
-                <p class="confirmarContraseñaError invisible validation-error"> Asegurese que su contraseña coincida</p>
-                <input type="password" name="confirmPassword" id="confirmarContraseña">
+                <p class="confirmarContrasenaError invisible validation-error-front"> Asegurese que su contraseña coincida</p>
+                <input type="password" name="confirmPassword" id="confirmarContrasena">
             </div>
 
             <div>
@@ -66,7 +66,7 @@
             </div>
 
             <div id="divBotones">
-                <button type="submit" class="botonFormulario">Guardar</button>
+                <button type="submit" class="botonFormulario submitButton" id="submitButton">Guardar</button>
             </div>
 <!-- 
             <div>

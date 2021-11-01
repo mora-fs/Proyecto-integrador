@@ -14,6 +14,7 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.name){%>
                     <div><p class="validation-error"><%=  errorMessage.name.msg %></p></div> 
                 <% } %>
+                <p class="validation-error-front invisible nameError">El nombre debe tener al menos 5 caracteres!</p>
                 <input type="text" value="<%=locals&&locals.old&&locals.old.name?old.name:null%>" class="dataInput" id="name" name="name" placeholder="Nombre del producto">
             </div>
             <div class="campo">
@@ -66,6 +67,7 @@
                 <% if(locals && locals.errorMessage && locals.errorMessage.description){%>
                     <div><p class="validation-error"><%=  errorMessage.description.msg %></p></div> 
                 <% } %>
+                <p class="validation-error-front invisible descriptionError">La descripcion debe tener al menos 20 caracteres!</p>
                 <textarea name="description" id="description" placeholder="Descripción del producto" class="dataInput" rows="4" cols="50" ><%=locals&&locals.old&&locals.old.description?old.description:null%></textarea>
             </div>
             <div class="campo">
@@ -80,6 +82,11 @@
             </div>
         </form>
     </main>
+
+
     <%- include('partials/footer') %> 
+    <script src="/jsFront/productCreateEditValid.js"></script>
 </body>
+
+
 </html>

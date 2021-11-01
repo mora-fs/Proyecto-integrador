@@ -21,7 +21,7 @@
                         <% if(locals && locals.errorMessage && locals.errorMessage.email){ %> 
                             <div><p class="validation-error"><%=  errorMessage.email.msg %></p></div>
                         <% } %> 
-                        <p class="validation-error invisible usernameError">Ingrese su email de usuario</p>
+                        <p class="validation-error-front invisible usernameError">Ingrese su email de usuario</p>
                         <input id="nombre-usuario" name="email"  value="<%=locals&&locals.old&&locals.old.email?old.email:null%>" >
                     </div>
                     <div class="password">    
@@ -32,13 +32,13 @@
                         <% if(locals && locals.errorMessage && locals.errorMessage.password){ %> 
                             <div><p class="validation-error"><%=  errorMessage.password.msg %></p></div>
                         <% } %> 
-                        <p class="largoContraseñaError invisible validation-error">Ingrese su contraseña de al menos 8 caracteres</p>
+                        <p class="largoContraseñaError invisible validation-error-front">Ingrese su contraseña de al menos 8 caracteres</p>
                         <input type="password" id="password"  name="password" >
                     </div>
                 </div>
             </div>
             <div id="divBotones">
-                <button type="submit" class="botonFormulario">Ingresar</button>
+                <button type="submit" class="botonFormulario" id="submitButton">Ingresar</button>
                 <a class="botonFormulario botonLink" href="/register">¿Aún no tienes cuenta?</a>
             </div>
         </form>

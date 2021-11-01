@@ -56,18 +56,26 @@
     display: flex;
     justify-content: center;
 }
-#submitButton:hover{
+#submitButton:enabled:hover{
     background-color: #33189b;
     color: rgb(253, 243, 230);
 }
+#submitButton:disabled,
+#submitButton[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .cancelButton:hover{
     background-color: #33189b;
     color: rgb(253, 243, 230);
 }
 .validation-error{
     color: red;
-    font-size: 16px;
+    font-size: 15px;
 }
+
 
 .invisible{
     display: none;
@@ -76,6 +84,17 @@
     background-color: #EAF8DE;
     border: 2px solid #95DB57;
 }
+
+.validation-error-front{
+    color: red;
+    font-size: 14px;
+    margin-bottom: 5px
+}
+
+.errorInput{
+    border: red 1px solid;
+}
+
 @media (min-width: 760px){
     #titulo{
         font-size: 18px;
